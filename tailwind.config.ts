@@ -1,4 +1,7 @@
-import type { Config } from 'tailwindcss'
+import type {Config} from 'tailwindcss'
+import {addDynamicIconSelectors} from '@iconify/tailwind'
+
+import daisyui from 'daisyui'
 
 const config: Config = {
   content: [
@@ -15,6 +18,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [daisyui, addDynamicIconSelectors()],
 }
 export default config
