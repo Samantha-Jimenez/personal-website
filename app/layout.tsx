@@ -1,6 +1,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import NavBar from './components/NavBar'
+import Footer from './components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +18,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        </style>
+        {/* <link rel="stylesheet" href="https://code.iconify.design/3/3.1.0/iconify.min.css" /> */}
+      </head>
+      <body className={`${inter.className} montserrat-mine`}>
+        <NavBar />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
