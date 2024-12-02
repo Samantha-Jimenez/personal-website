@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThinInstagramIcon, ThinTikTokIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinGitHubIcon, ThinLinkedInIcon, ThinGoogleMailIcon, YoutubeIcon, InstagramIcon, TikTokIcon, ThinStravaIcon, GoodreadsIcon, GoodReadsIcon } from '../icons/Icons'
+import { ThinInstagramIcon, ThinTikTokIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinGitHubIcon, ThinLinkedInIcon, ThinGoogleMailIcon, YoutubeIcon, InstagramIcon, TikTokIcon, ThinStravaIcon, GoodReadsIcon } from '../icons/Icons'
 
 const NavBar = () => {
   return (
