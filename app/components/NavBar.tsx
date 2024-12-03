@@ -1,14 +1,15 @@
 import React from 'react'
-import { ThinInstagramIcon, ThinTikTokIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinGitHubIcon, ThinLinkedInIcon, ThinGoogleMailIcon, YoutubeIcon, InstagramIcon, TikTokIcon, ThinStravaIcon, GoodReadsIcon } from '../icons/Icons'
+import { ThinInstagramIcon, ThinTikTokIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinGitHubIcon, ThinLinkedInIcon, ThinGoogleMailIcon, YoutubeIcon, InstagramIcon, ThinStravaIcon, GoodReadsIcon, ThinPorftolioIcon } from '../icons/Icons'
 
 const NavBar = () => {
   return (
-    <div className="navbar bg-zinc-900 flex flex-col sm:flex-row justify-between">
+    <div className="navbar bg-zinc-900 flex flex-col min-[715px]:flex-row min-[546px]:flex-col min-[455px]:flex-row justify-between">
       <div className="">
-            <a className="btn btn-ghost text-xl bungee-hairline-regular hover:scale-110 hover:bg-transparent transition-transform duration-200">aka.jimena</a>
+            <a className="px-5 btn-ghost text-xl bungee-hairline-regular hover:bg-transparent active:transform-none focus:transform-none">aka.jimena</a>
         </div>
         <div className="flex-none">
-            <ul className="menu menu-horizontal px-1 max-[340px]:grid max-[340px]:grid-cols-3 min-[340px]:flex">
+            <ul className="menu menu-horizontal px-1 max-[545px]:grid max-[545px]:grid-flow-col max-[545px]:grid-cols-5 max-[545px]:grid-rows-2">
+            {/* <ul className="menu menu-horizontal px-1 max-[340px]:grid max-[340px]:grid-cols-3 min-[340px]:flex"> */}
                 <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinInstagramIcon /></a></li>
                 <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinThreadsIcon /></a></li>
                 <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinTikTokIcon /></a></li>
@@ -18,6 +19,7 @@ const NavBar = () => {
                 <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinLinkedInIcon /></a></li>
                 <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinStravaIcon /></a></li>
                 <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><GoodReadsIcon /></a></li>
+                <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinPorftolioIcon /></a></li>
             {/* <li>
                 <details>
                 <summary className="montserrat-mine">Menu</summary>
