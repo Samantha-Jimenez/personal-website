@@ -9,11 +9,19 @@ export const ThinInstagramIcon = () => {
 }
 
 export const ThinTikTokIcon = () => {
-    return <span className={`icon-[arcticons--tiktok] text-xl`}></span>
+    return (
+        <a href="https://www.tiktok.com/@aka.jimena" target="_blank" rel="noopener noreferrer">
+            <span className={`icon-[arcticons--tiktok] text-xl`}></span>
+        </a>
+    );
 }
 
 export const ThinYoutubeIcon = () => {
-    return <span className={`icon-[arcticons--youtube] text-xl`}></span>
+    return (
+        <a href="https://www.youtube.com/@aka.jimena" target="_blank" rel="noopener noreferrer">
+            <span className={`icon-[arcticons--youtube] text-xl`}></span>
+        </a>
+    );
 }
 
 export const ThinThreadsIcon = () => {
@@ -41,7 +49,11 @@ export const ThinLinkedInIcon = () => {
 }
 
 export const ThinStravaIcon = () => {
-    return <span className={`icon-[arcticons--strava] text-xl`}></span>
+    return (
+        <a href="https://strava.app.link/lxN0E2NT0Ob" target="_blank" rel="noopener noreferrer">
+            <span className={`icon-[arcticons--strava] text-xl`}></span>
+        </a>
+    );
 }
 
 export const ThinGoogleMailIcon = () => {
@@ -52,20 +64,20 @@ export const ThinGoogleMailIcon = () => {
     );
 }
 
+export const ThinPorftolioIcon = () => {
+    return (
+        <a href="https://samantha-jimenez.netlify.app/" target="_blank" rel="noopener noreferrer">
+            <span className={`icon-[arcticons--emoji-web] text-xl`}></span>
+        </a>
+    );
+}
+
 // Regular Icons
 
 export const InstagramIcon = () => {
     return (
         <a href="https://www.instagram.com/aka.jimena" target="_blank" rel="noopener noreferrer">
             <span className={`icon-[line-md--instagram] text-xl`}></span>
-        </a>
-    );
-}
-
-export const TikTokIcon = () => {
-    return (
-        <a href="" target="_blank" rel="noopener noreferrer">
-            <span className={`icon-[line-md--tiktok] text-xl`}></span>
         </a>
     );
 }
@@ -81,7 +93,7 @@ export const YoutubeIcon = () => {
 export const GoodReadsIcon = () => {    
     return (
         <a href="https://www.goodreads.com/user/show/183397302-samantha" target="_blank" rel="noopener noreferrer">
-            <span className={`icon-[mdi--goodreads] text-xl font-light`}></span>
+            <span className={`icon-[mdi--goodreads] text-xl font-light opacity-70`}></span>
         </a>
     );
 }   
