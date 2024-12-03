@@ -23,7 +23,7 @@ const NavBar = () => {
   return (
     <div className="navbar bg-zinc-900 flex flex-col min-[715px]:flex-row min-[546px]:flex-col min-[455px]:flex-row justify-between text-gray-200">
       <div className="">
-            <a className="px-5 btn-ghost text-xl bungee-hairline-regular hover:bg-transparent active:transform-none focus:transform-none">aka.jimena</a>
+            <a className="px-5 btn-ghost text-xl bungee-hairline-regular hover:bg-transparent active:transform-none focus:transform-none text-white">aka.jimena</a>
         </div>
         <div className="flex-none">
             <ul className="menu menu-horizontal px-1 max-[545px]:grid max-[545px]:grid-flow-col max-[545px]:grid-cols-5 max-[545px]:grid-rows-2">

@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, FormEvent } from 'react'
 import emailjs from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -40,7 +40,7 @@ const ContactForm = () => {
 
   return (
     <div className="p-4 w-[85vw] text-gray-200">
-      <h2 className="text-xl font-bold mb-4 bungee-hairline-regular">Contact me</h2>
+      <h2 className="text-xl font-bold mb-4 bungee-hairline-regular text-white">Contact me</h2>
       <form ref={form} onSubmit={handleSubmit}>
         <div className="flex flex-col sm:flex-row mb-4 w-full gap-4 text-gray-200">
           <div className="form-control w-full mr-4 sm:mr-0">
@@ -63,7 +63,7 @@ const ContactForm = () => {
           <textarea className="textarea textarea-bordered" placeholder="Your Message" name="message" required></textarea>
         </div>
         <div className="flex justify-center">
-          <button type="submit" className="btn bg-emerald-600 hover:bg-emerald-800 active:bg-emerald-900 text-white w-full my-5 bungee-hairline-regular text-base">Send Message</button>
+          <button type="submit" className="btn bg-emerald-800 hover:bg-emerald-900 active:bg-emerald-950 text-white w-full my-5 bungee-hairline-regular text-lg">Send Message</button>
         </div>
       </form>
     </div>
