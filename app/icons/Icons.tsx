@@ -16,11 +16,12 @@ export const ThinTikTokIcon = () => {
     );
 }
 
-export const ThinYoutubeIcon = () => {
+export const ThinYoutubeIcon = ({ onClick }: { onClick?: () => void }) => {
     return (
-        <a href="https://www.youtube.com/@aka.jimena" target="_blank" rel="noopener noreferrer">
-            <span className={`icon-[arcticons--youtube] text-xl`}></span>
-        </a>
+        <span 
+            className={`icon-[arcticons--youtube] text-xl cursor-pointer`} 
+            onClick={onClick}
+        ></span>
     );
 }
 
@@ -78,14 +79,6 @@ export const InstagramIcon = () => {
     return (
         <a href="https://www.instagram.com/aka.jimena" target="_blank" rel="noopener noreferrer">
             <span className={`icon-[line-md--instagram] text-xl`}></span>
-        </a>
-    );
-}
-
-export const YoutubeIcon = () => {
-    return (
-        <a href="" target="_blank" rel="noopener noreferrer">
-            <span className={`icon-[line-md--youtube] text-xl`}></span>
         </a>
     );
 }
