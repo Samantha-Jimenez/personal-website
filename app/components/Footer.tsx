@@ -13,6 +13,7 @@ const Footer = () => {
         background: '#065f46',
         color: '#fff',
       },
+      duration: 2000,
     }
   );
 

@@ -1,7 +1,7 @@
 "use client";
 import React from 'react'
 import { ThinInstagramIcon, ThinTikTokIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinGitHubIcon, ThinLinkedInIcon, ThinGoogleMailIcon, InstagramIcon, ThinStravaIcon, GoodReadsIcon, ThinPorftolioIcon } from '../icons/Icons'
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 const NavBar = () => {
   const notify = () => toast('check back for my youtube channel',
@@ -13,6 +13,7 @@ const NavBar = () => {
         background: '#065f46',
         color: '#fff',
       },
+      duration: 2000,
     }
   );
 
@@ -23,7 +24,7 @@ const NavBar = () => {
   return (
     <div className="navbar bg-zinc-900 flex flex-col min-[715px]:flex-row min-[559px]:flex-col min-[530px]:flex-row justify-between text-gray-200">
       <div className="self-stretch max-[714px]:pt-2">
-            <a className="px-5 btn-ghost text-xl bungee-hairline-regular hover:bg-transparent active:transform-none focus:transform-none text-white">aka.jimena</a>
+            <a className="px-5 btn-ghost text-xl bungee-hairline-regular hover:bg-transparent active:transform-none focus:transform-none text-white font-weight-bold">aka.jimena</a>
         </div>
         <div className="flex-none self-start">
             <ul className="menu menu-horizontal px-1 max-[558px]:grid max-[558px]:grid-flow-row max-[558px]:grid-cols-5 max-[558px]:grid-rows-2">
