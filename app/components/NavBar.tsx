@@ -10,7 +10,7 @@ const NavBar = () => {
       icon: '👀',
       style: {
         borderRadius: '10px',
-        background: '#333',
+        background: '#065f46',
         color: '#fff',
       },
     }

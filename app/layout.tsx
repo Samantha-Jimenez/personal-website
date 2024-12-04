@@ -30,9 +30,7 @@ export default function RootLayout({
         <NavBar />
         <Toaster 
           toastOptions={{
-            style: {
-              fontFamily: 'bungee-hairline-regular'
-            }
+            className: 'montserrat-mine',
           }}
         />
         {children}

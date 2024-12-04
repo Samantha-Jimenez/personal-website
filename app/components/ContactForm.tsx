@@ -10,7 +10,7 @@ const ContactForm = () => {
       icon: '✅',
       style: {
         borderRadius: '10px',
-        background: '#333',
+        background: '#065f46',
         color: '#fff',
       },
     }
@@ -47,13 +47,13 @@ const ContactForm = () => {
             <label className="label">
               <span className="label-text">Name</span>
             </label>
-            <input type="text" className="input input-bordered" placeholder="Your Name" name="from_name" required />
+            <input type="text" className="input input-bordered text-sm" placeholder="Your Name" name="from_name" required />
           </div>
           <div className="form-control w-full">
             <label className="label">
               <span className="label-text">Email</span>
             </label>
-            <input type="email" name="reply_to" className="input input-bordered" placeholder="Your Email" required />
+            <input type="email" name="reply_to" className="input input-bordered text-sm" placeholder="Your Email" required />
           </div>
         </div>
         <div className="form-control mb-4">
