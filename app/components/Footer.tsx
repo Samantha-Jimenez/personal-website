@@ -25,24 +25,24 @@ const Footer = () => {
         {/* <aside className="grid-flow-col items-center">
             <p className="montserrat-mine font-light">Copyright © {new Date().getFullYear()} - All right reserved</p>
         </aside> */}
-        <nav className="flex-none grid-flow-col gap-6 justify-self-center grid-rows-1 md:justify-self-end">
-            <ul className="menu menu-horizontal px-1 max-[560px]:grid max-[560px]:grid-flow-col max-[560px]:grid-cols-5 max-[560px]:grid-rows-2">
-                <div className="tooltip tooltip-top" data-tip="instagram">
+        <nav className="flex-none w-full justify-end grid-flow-col gap-6 grid-rows-1 md:justify-self-end max-[500px]:justify-center">
+            <ul className="menu menu-horizontal px-1 grid-flow-row grid grid-rows-1 grid-cols-10 grid-flow-col max-[648px]:grid-cols-5 max-[648px]:grid-rows-2 max-[648px]:justify-self-end">
+                <div className="tooltip tooltip-top justify-items-center" data-tip="instagram">
                     <li>
                     <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinInstagramIcon /></a>
                     </li>
                 </div>
-                <div className="tooltip tooltip-top" data-tip="threads">
+                <div className="tooltip tooltip-top justify-items-center" data-tip="threads">
                     <li>
                     <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinThreadsIcon /></a>
                     </li>
                 </div>
-                <div className="tooltip tooltip-top" data-tip="tiktok">
+                <div className="tooltip tooltip-top justify-items-center" data-tip="tiktok">
                     <li>
                     <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinTikTokIcon /></a>
                     </li>
                 </div>
-                <div className="tooltip tooltip-top" data-tip="youtube">
+                <div className="tooltip tooltip-top justify-items-center" data-tip="youtube">
                     <li>
                       <div 
                         className="hover:scale-150 hover:bg-transparent transition-transform duration-200 cursor-pointer"
@@ -52,12 +52,17 @@ const Footer = () => {
                       </div>
                     </li>
                 </div>
-                <div className="tooltip tooltip-top" data-tip="email">
+                <div className="tooltip tooltip-top justify-items-center" data-tip="email">
                     <li>
                         <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinGoogleMailIcon /></a>
                     </li>
                 </div>
-                <div className="tooltip tooltip-top" data-tip="github">
+                <div className="tooltip tooltip-top justify-items-center" data-tip="linkedin">
+                    <li>
+                    <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinLinkedInIcon /></a>
+                    </li>
+                </div>
+                <div className="tooltip tooltip-top justify-items-center" data-tip="github">
                     <li>
                         <details>
                             <summary className="text-sm flex items-center">
@@ -72,22 +77,17 @@ const Footer = () => {
                         </details>
                     </li>
                 </div>
-                <div className="tooltip tooltip-top" data-tip="linkedin">
-                    <li>
-                    <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinLinkedInIcon /></a>
-                    </li>
-                </div>
-                <div className="tooltip tooltip-top" data-tip="strava">
+                <div className="tooltip tooltip-top justify-items-center" data-tip="strava">
                     <li>
                       <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinStravaIcon /></a>
                     </li>
                 </div>
-                <div className="tooltip tooltip-top" data-tip="goodreads">
+                <div className="tooltip tooltip-top justify-items-center" data-tip="goodreads">
                     <li>
                       <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><GoodReadsIcon /></a>
                     </li>
                 </div>
-                <div className="tooltip tooltip-top" data-tip="portfolio">
+                <div className="tooltip tooltip-top justify-items-center" data-tip="portfolio">
                     <li>
                         <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinPorftolioIcon /></a>
                     </li>
