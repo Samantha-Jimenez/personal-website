@@ -24,7 +24,7 @@ const NavBar = () => {
   return (
     <div className="navbar bg-zinc-900 flex flex-col min-[715px]:flex-row min-[559px]:flex-col min-[530px]:flex-row justify-between text-gray-200">
       <div className="self-stretch max-[714px]:pt-2">
-            <a className="px-5 btn-ghost text-xl bungee-hairline-regular hover:bg-transparent active:transform-none focus:transform-none text-white font-weight-bold">aka.jimena</a>
+            <a className="px-5 btn-ghost text-xl bungee-hairline-bold hover:bg-transparent active:transform-none focus:transform-none text-white">aka.jimena</a>
         </div>
         <div className="flex-none self-start">
             <ul className="menu menu-horizontal px-1 max-[558px]:grid max-[558px]:grid-flow-row max-[558px]:grid-cols-5 max-[558px]:grid-rows-2">
@@ -50,6 +50,9 @@ const NavBar = () => {
                 <div className="tooltip tooltip-bottom" data-tip="email">
                   <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinGoogleMailIcon /></a></li>
                 </div>
+                <div className="tooltip tooltip-bottom" data-tip="linkedin">
+                  <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinLinkedInIcon /></a></li>
+                </div>
                 <div className="tooltip tooltip-bottom" data-tip="github">
                   <li>
                     <details>
@@ -64,9 +67,6 @@ const NavBar = () => {
                         </ul>
                     </details>
                   </li>
-                </div>
-                <div className="tooltip tooltip-bottom" data-tip="linkedin">
-                  <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinLinkedInIcon /></a></li>
                 </div>
                 <div className="tooltip tooltip-bottom" data-tip="strava">
                   <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinStravaIcon /></a></li>
