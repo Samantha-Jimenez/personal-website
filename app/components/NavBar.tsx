@@ -21,12 +21,12 @@ const NavBar = () => {
   };
 
   return (
-    <div className="navbar bg-zinc-900 flex flex-col min-[715px]:flex-row min-[546px]:flex-col min-[455px]:flex-row justify-between text-gray-200">
+    <div className="navbar bg-zinc-900 flex flex-col min-[715px]:flex-row min-[559px]:flex-col min-[530px]:flex-row justify-between text-gray-200">
       <div className="">
             <a className="px-5 btn-ghost text-xl bungee-hairline-regular hover:bg-transparent active:transform-none focus:transform-none text-white">aka.jimena</a>
         </div>
         <div className="flex-none">
-            <ul className="menu menu-horizontal px-1 max-[545px]:grid max-[545px]:grid-flow-col max-[545px]:grid-cols-5 max-[545px]:grid-rows-2">
+            <ul className="menu menu-horizontal px-1 max-[558px]:grid max-[558px]:grid-flow-col max-[558px]:grid-cols-5 max-[558px]:grid-rows-2">
                 <div className="tooltip tooltip-bottom" data-tip="instagram">
                   <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinInstagramIcon /></a></li>
                 </div>
@@ -50,7 +50,19 @@ const NavBar = () => {
                   <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinGoogleMailIcon /></a></li>
                 </div>
                 <div className="tooltip tooltip-bottom" data-tip="github">
-                  <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinGitHubIcon /></a></li>
+                  <li>
+                    <details>
+                        <summary className="text-sm">
+                          <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200">
+                            <ThinGitHubIcon />
+                          </a>
+                        </summary>
+                        <ul className="ml-[-50%] absolute bg-zinc-900 p-2 z-[100] text-xs w-max rounded-lg">
+                            <li><a href="https://github.com/samantha-jimenez" target="_blank" rel="noopener noreferrer">Current Account</a></li>
+                            <li><a href="https://github.com/samanthabjimenez" target="_blank" rel="noopener noreferrer">Previous Account</a></li>
+                        </ul>
+                    </details>
+                  </li>
                 </div>
                 <div className="tooltip tooltip-bottom" data-tip="linkedin">
                   <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinLinkedInIcon /></a></li>

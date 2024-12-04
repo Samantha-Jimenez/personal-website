@@ -21,64 +21,78 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer bg-zinc-900 text-gray-200 items-center p-4">
+    <footer className="footer bg-zinc-900 text-gray-200 items-center p-2">
         {/* <aside className="grid-flow-col items-center">
             <p className="montserrat-mine font-light">Copyright © {new Date().getFullYear()} - All right reserved</p>
         </aside> */}
-        <nav className="grid-flow-col gap-6 justify-self-center min-[452px]:grid-rows-1 md:justify-self-end grid-rows-2">
-            <div className="tooltip tooltip-top" data-tip="instagram">
-                <div className="hover:scale-150 hover:bg-transparent transition-transform duration-200">
-                    <a><ThinInstagramIcon /></a>
+        <nav className="flex-none grid-flow-col gap-6 justify-self-center grid-rows-1 md:justify-self-end">
+            <ul className="menu menu-horizontal px-1 max-[560px]:grid max-[560px]:grid-flow-col max-[560px]:grid-cols-5 max-[560px]:grid-rows-2">
+                <div className="tooltip tooltip-top" data-tip="instagram">
+                    <li>
+                    <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinInstagramIcon /></a>
+                    </li>
                 </div>
-            </div>
-            <div className="tooltip tooltip-top" data-tip="threads">
-                <div className="hover:scale-150 hover:bg-transparent transition-transform duration-200">
-                    <a><ThinThreadsIcon /></a>
+                <div className="tooltip tooltip-top" data-tip="threads">
+                    <li>
+                    <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinThreadsIcon /></a>
+                    </li>
                 </div>
-            </div>
-            <div className="tooltip tooltip-top" data-tip="tiktok">
-                <div className="hover:scale-150 hover:bg-transparent transition-transform duration-200">
-                    <a><ThinTikTokIcon /></a>
+                <div className="tooltip tooltip-top" data-tip="tiktok">
+                    <li>
+                    <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinTikTokIcon /></a>
+                    </li>
                 </div>
-            </div>
-            <div className="tooltip tooltip-top" data-tip="youtube">
-                <div 
-                    className="hover:scale-150 hover:bg-transparent transition-transform duration-200 cursor-pointer"
-                    onClick={handleYoutubeClick}
-                >
-                    <ThinYoutubeIcon />
+                <div className="tooltip tooltip-top" data-tip="youtube">
+                    <li>
+                      <div 
+                        className="hover:scale-150 hover:bg-transparent transition-transform duration-200 cursor-pointer"
+                        onClick={handleYoutubeClick}
+                      >
+                        <ThinYoutubeIcon />
+                      </div>
+                    </li>
                 </div>
-            </div>
-            <div className="tooltip tooltip-top" data-tip="email">
-                <div className="hover:scale-150 hover:bg-transparent transition-transform duration-200">
-                    <a><ThinGoogleMailIcon /></a>
+                <div className="tooltip tooltip-top" data-tip="email">
+                    <li>
+                        <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinGoogleMailIcon /></a>
+                    </li>
                 </div>
-            </div>
-            <div className="tooltip tooltip-top" data-tip="github">
-                <div className="hover:scale-150 hover:bg-transparent transition-transform duration-200">
-                    <a><ThinGitHubIcon /></a>
+                <div className="tooltip tooltip-top" data-tip="github">
+                    <li>
+                        <details>
+                            <summary className="text-sm flex items-center">
+                                <div className="hover:scale-150 hover:bg-transparent transition-transform duration-200">
+                                    <a><ThinGitHubIcon /></a>
+                                </div>
+                            </summary>
+                            <ul className="ml-[-50%] absolute bg-zinc-900 p-2 pb-5 text-xs w-max rounded-lg top-[-225%] z-[900] border-none">
+                                <li><a href="https://github.com/samantha-jimenez" target="_blank" rel="noopener noreferrer">Current Account</a></li>
+                                <li><a href="https://github.com/samanthabjimenez" target="_blank" rel="noopener noreferrer">Previous Account</a></li>
+                            </ul>
+                        </details>
+                    </li>
                 </div>
-            </div>
-            <div className="tooltip tooltip-top" data-tip="linkedin">
-                <div className="hover:scale-150 hover:bg-transparent transition-transform duration-200">
-                    <a><ThinLinkedInIcon /></a>
+                <div className="tooltip tooltip-top" data-tip="linkedin">
+                    <li>
+                    <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinLinkedInIcon /></a>
+                    </li>
                 </div>
-            </div>
-            <div className="tooltip tooltip-top" data-tip="strava">
-                <div className="hover:scale-150 hover:bg-transparent transition-transform duration-200">
-                    <a><ThinStravaIcon /></a>
+                <div className="tooltip tooltip-top" data-tip="strava">
+                    <li>
+                      <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinStravaIcon /></a>
+                    </li>
                 </div>
-            </div>
-            <div className="tooltip tooltip-top" data-tip="goodreads">
-                <div className="hover:scale-150 hover:bg-transparent transition-transform duration-200">
-                    <a><GoodReadsIcon /></a>
+                <div className="tooltip tooltip-top" data-tip="goodreads">
+                    <li>
+                      <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><GoodReadsIcon /></a>
+                    </li>
                 </div>
-            </div>
-            <div className="tooltip tooltip-top" data-tip="portfolio">
-                <div className="hover:scale-150 hover:bg-transparent transition-transform duration-200">
-                    <a><ThinPorftolioIcon /></a>
+                <div className="tooltip tooltip-top" data-tip="portfolio">
+                    <li>
+                        <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinPorftolioIcon /></a>
+                    </li>
                 </div>
-            </div>
+            </ul>
         </nav>
     </footer>   
   )

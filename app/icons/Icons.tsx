@@ -35,7 +35,7 @@ export const ThinThreadsIcon = () => {
 
 export const ThinGitHubIcon = () => {
     return (
-        <a href="https://github.com/samantha-jimenez" target="_blank" rel="noopener noreferrer">
+        <a href="" target="" rel="">
             <span className={`icon-[arcticons--github] text-xl`}></span>
         </a>
     );

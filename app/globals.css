@@ -40,3 +40,26 @@ body {
   font-weight: 100;
   font-style: normal;
 }
+
+.menu :where(li > details > summary)::after {
+    content: '';
+    color: white;
+    opacity: 60%;
+    width: 6px;
+    height: 6px;
+}
+
+footer .menu :where(li > details > summary)::after {
+  color: white;
+  opacity: 60%;
+  transform: rotate(225deg);
+  margin-bottom: 0rem;
+}
+
+footer .menu :where(li > details[open] > summary)::after {
+  transform: rotate(45deg);
+}
+
+.menu :where(li ul):before {
+  display: none;
+}
