@@ -84,7 +84,7 @@ export const ThinSpotifyIcon = () => {
 export const ThinMvmntCollectivesIcon = () => {
     return (
         <a href="https://www.mvmntcollectives.com/" target="_blank" rel="noopener noreferrer">
-            <span className={`icon-[arcticons--runnerup] text-xl`}></span>
+            <span className={`icon-[arcticons--runnerup] text-2xl`}></span>
         </a>
     );
 }
