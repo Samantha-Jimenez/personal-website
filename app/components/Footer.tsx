@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { ThinInstagramIcon, ThinGitHubIcon, ThinLinkedInIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinTikTokIcon, ThinStravaIcon, GoodReadsIcon, ThinGoogleMailIcon, ThinPorftolioIcon } from '../icons/Icons'
+import { ThinInstagramIcon, ThinGitHubIcon, ThinLinkedInIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinTikTokIcon, ThinStravaIcon, GoodReadsIcon, ThinGoogleMailIcon, ThinPorftolioIcon, ThinSpotifyIcon, ThinMvmntCollectivesIcon } from '../icons/Icons'
 import toast from 'react-hot-toast';
 
 const Footer = () => {
@@ -27,7 +27,7 @@ const Footer = () => {
             <p className="montserrat-mine font-light">Copyright © {new Date().getFullYear()} - All right reserved</p>
         </aside> */}
         <nav className="flex-none w-full justify-end grid-flow-col gap-6 grid-rows-1 md:justify-self-end max-[500px]:justify-center">
-            <ul className="menu menu-horizontal px-1 grid-flow-row grid grid-rows-1 grid-cols-10 grid-flow-col max-[648px]:grid-cols-5 max-[648px]:grid-rows-2 max-[648px]:justify-self-end">
+            <ul className="menu menu-horizontal px-1 grid-flow-row grid grid-rows-1 grid-cols-12 max-[662px]:grid-cols-6 max-[662px]:grid-rows-2 max-[662px]:justify-self-end">
                 <div className="tooltip tooltip-top justify-items-center" data-tip="instagram">
                     <li>
                     <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinInstagramIcon /></a>
@@ -53,16 +53,6 @@ const Footer = () => {
                       </div>
                     </li>
                 </div>
-                <div className="tooltip tooltip-top justify-items-center" data-tip="email">
-                    <li>
-                        <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinGoogleMailIcon /></a>
-                    </li>
-                </div>
-                <div className="tooltip tooltip-top justify-items-center" data-tip="linkedin">
-                    <li>
-                    <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinLinkedInIcon /></a>
-                    </li>
-                </div>
                 <div className="tooltip tooltip-top justify-items-center" data-tip="github">
                     <li>
                         <details>
@@ -78,6 +68,16 @@ const Footer = () => {
                         </details>
                     </li>
                 </div>
+                <div className="tooltip tooltip-top justify-items-center" data-tip="email">
+                    <li>
+                        <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinGoogleMailIcon /></a>
+                    </li>
+                </div>
+                <div className="tooltip tooltip-top justify-items-center" data-tip="linkedin">
+                    <li>
+                    <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinLinkedInIcon /></a>
+                    </li>
+                </div>
                 <div className="tooltip tooltip-top justify-items-center" data-tip="strava">
                     <li>
                       <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinStravaIcon /></a>
@@ -87,6 +87,16 @@ const Footer = () => {
                     <li>
                       <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><GoodReadsIcon /></a>
                     </li>
+                </div>
+                <div className="tooltip tooltip-top justify-items-center" data-tip="spotify">
+                  <li>
+                    <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinSpotifyIcon /></a>
+                  </li>
+                </div>
+                <div className="tooltip tooltip-top justify-items-center" data-tip="mvmnt collectives">
+                  <li>
+                    <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinMvmntCollectivesIcon /></a>
+                  </li>
                 </div>
                 <div className="tooltip tooltip-top justify-items-center" data-tip="portfolio">
                     <li>

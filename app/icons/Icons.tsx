@@ -73,15 +73,23 @@ export const ThinPorftolioIcon = () => {
     );
 }
 
-// Regular Icons
-
-export const InstagramIcon = () => {
+export const ThinSpotifyIcon = () => {
     return (
-        <a href="https://www.instagram.com/aka.jimena" target="_blank" rel="noopener noreferrer">
-            <span className={`icon-[line-md--instagram] text-xl`}></span>
+        <a href="https://open.spotify.com/user/jimenamorenita?si=2fa3b2d8e7d147d1" target="_blank" rel="noopener noreferrer">
+            <span className={`icon-[arcticons--spotify-alt-1] text-xl`}></span>
         </a>
     );
 }
+
+export const ThinMvmntCollectivesIcon = () => {
+    return (
+        <a href="https://www.mvmntcollectives.com/" target="_blank" rel="noopener noreferrer">
+            <span className={`icon-[arcticons--runnerup] text-xl`}></span>
+        </a>
+    );
+}
+
+// Regular Icons
 
 export const GoodReadsIcon = () => {    
     return (

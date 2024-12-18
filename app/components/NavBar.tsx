@@ -1,6 +1,6 @@
 "use client";
 import React from 'react'
-import { ThinInstagramIcon, ThinTikTokIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinGitHubIcon, ThinLinkedInIcon, ThinGoogleMailIcon, InstagramIcon, ThinStravaIcon, GoodReadsIcon, ThinPorftolioIcon } from '../icons/Icons'
+import { ThinInstagramIcon, ThinTikTokIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinGitHubIcon, ThinLinkedInIcon, ThinGoogleMailIcon, ThinStravaIcon, GoodReadsIcon, ThinPorftolioIcon, ThinSpotifyIcon, ThinMvmntCollectivesIcon } from '../icons/Icons'
 import toast from 'react-hot-toast';
 
 const NavBar = () => {
@@ -22,12 +22,12 @@ const NavBar = () => {
   };
 
   return (
-    <div className="navbar bg-zinc-900 flex flex-col min-[715px]:flex-row min-[559px]:flex-col min-[530px]:flex-row justify-between text-gray-200">
-      <div className="self-stretch max-[714px]:pt-2">
+    <div className="navbar bg-zinc-900 flex flex-col min-[845px]:flex-row min-[662px]:flex-col min-[599px]:flex-row justify-between text-gray-200">
+      <div className="self-stretch max-[844px]:pt-2">
             <a className="px-5 btn-ghost text-xl bungee-hairline-bold hover:bg-transparent active:transform-none focus:transform-none text-white">aka.jimena</a>
         </div>
         <div className="flex-none self-start">
-            <ul className="menu menu-horizontal px-1 max-[558px]:grid max-[558px]:grid-flow-row max-[558px]:grid-cols-5 max-[558px]:grid-rows-2">
+            <ul className="menu menu-horizontal px-1 justify-items-center max-[662px]:grid max-[662px]:grid-flow-row max-[662px]:grid-cols-6 max-[662px]:grid-rows-2">
                 <div className="tooltip tooltip-bottom" data-tip="instagram">
                   <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinInstagramIcon /></a></li>
                 </div>
@@ -53,6 +53,15 @@ const NavBar = () => {
                 <div className="tooltip tooltip-bottom" data-tip="linkedin">
                   <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinLinkedInIcon /></a></li>
                 </div>
+                <div className="tooltip tooltip-bottom" data-tip="strava">
+                  <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinStravaIcon /></a></li>
+                </div>
+                <div className="tooltip tooltip-bottom" data-tip="goodreads">
+                  <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><GoodReadsIcon /></a></li>
+                </div>
+                <div className="tooltip tooltip-bottom" data-tip="spotify">
+                  <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinSpotifyIcon /></a></li>
+                </div>
                 <div className="tooltip tooltip-bottom" data-tip="github">
                   <li>
                     <details>
@@ -68,11 +77,8 @@ const NavBar = () => {
                     </details>
                   </li>
                 </div>
-                <div className="tooltip tooltip-bottom" data-tip="strava">
-                  <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinStravaIcon /></a></li>
-                </div>
-                <div className="tooltip tooltip-bottom" data-tip="goodreads">
-                  <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><GoodReadsIcon /></a></li>
+                <div className="tooltip tooltip-bottom" data-tip="mvmnt collectives">
+                  <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinMvmntCollectivesIcon /></a></li>
                 </div>
                 <div className="tooltip tooltip-bottom" data-tip="portfolio">
                   <li><a className="hover:scale-150 hover:bg-transparent transition-transform duration-200"><ThinPorftolioIcon /></a></li>
