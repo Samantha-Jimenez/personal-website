@@ -27,7 +27,7 @@ const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (form.current) {
-      emailjs.sendForm('service_7z8bwyp', 'template_gte2cwa', form.current, { publicKey: 'lYPDqWbwbsFTQDuJz'})
+      emailjs.sendForm('service_7z8bwyp', 'template_9vsibvk', form.current, { publicKey: 'lYPDqWbwbsFTQDuJz'})
           .then((result) => {
             console.log(result.text);
             notify();
