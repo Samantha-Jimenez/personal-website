@@ -63,6 +63,20 @@ const NavBar = () => {
               </div>
             </li>
           </div>
+          <div className="tooltip tooltip-bottom" data-tip="goodreads">
+            <li>
+              <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.goodreads.com/user/show/183397302-samantha" target="_blank" rel="noopener noreferrer">
+                <GoodReadsIcon />
+              </a>
+            </li>
+          </div>
+          <div className="tooltip tooltip-bottom" data-tip="spotify">
+            <li>
+              <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://open.spotify.com/user/jimenamorenita?si=2fa3b2d8e7d147d1" target="_blank" rel="noopener noreferrer">
+                <ThinSpotifyIcon />
+              </a>
+            </li>
+          </div>
           <div className="tooltip tooltip-bottom" data-tip="email">
             <li>
               <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="mailto:SamanthaB.Jimenez@gmail.com" target="_blank" rel="noopener noreferrer">
@@ -122,20 +136,6 @@ const NavBar = () => {
             <li>
               <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://strava.app.link/lxN0E2NT0Ob" target="_blank" rel="noopener noreferrer">
                 <ThinStravaIcon />
-              </a>
-            </li>
-          </div>
-          <div className="tooltip tooltip-bottom" data-tip="goodreads">
-            <li>
-              <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.goodreads.com/user/show/183397302-samantha" target="_blank" rel="noopener noreferrer">
-                <GoodReadsIcon />
-              </a>
-            </li>
-          </div>
-          <div className="tooltip tooltip-bottom" data-tip="spotify">
-            <li>
-              <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://open.spotify.com/user/jimenamorenita?si=2fa3b2d8e7d147d1" target="_blank" rel="noopener noreferrer">
-                <ThinSpotifyIcon />
               </a>
             </li>
           </div>
