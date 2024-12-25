@@ -1,4 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Summary
+
+This project is a Next.js application designed for building my personal website. It leverages modern web technologies to provide a fast and responsive user experience.
+
+## Features
+
+- **Server-side rendering** for improved SEO.
+- **Static site generation** for faster load times.
+- **API routes** for backend functionality.
+- **Customizable themes** for a personalized look.
 
 ## Getting Started
 
