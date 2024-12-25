@@ -2,24 +2,20 @@
 
 export const ThinInstagramIcon = () => {
     return (
-        <a href="https://www.instagram.com/aka.jimena" target="_blank" rel="noopener noreferrer">
-            <span className={`icon-[arcticons--instagram] text-xl`}></span>
-        </a>
+        <span className={`icon-[arcticons--instagram] text-xl`}></span>
     );
 }
 
 export const ThinTikTokIcon = () => {
     return (
-        <a href="https://www.tiktok.com/@aka.jimena" target="_blank" rel="noopener noreferrer">
-            <span className={`icon-[arcticons--tiktok] text-xl`}></span>
-        </a>
+        <span className={`icon-[arcticons--tiktok] text-xl`}></span>
     );
 }
 
 export const ThinYoutubeIcon = ({ onClick }: { onClick?: () => void }) => {
     return (
         <span 
-            className={`icon-[arcticons--youtube] text-xl cursor-pointer`} 
+            className={`icon-[arcticons--youtube] text-xl`} 
             onClick={onClick}
         ></span>
     );
@@ -27,65 +23,49 @@ export const ThinYoutubeIcon = ({ onClick }: { onClick?: () => void }) => {
 
 export const ThinThreadsIcon = () => {
     return (
-        <a href="https://www.threads.net/@aka.jimena" target="_blank" rel="noopener noreferrer">
-            <span className={`icon-[arcticons--instagram-threads] text-xl`}></span>
-        </a>
+        <span className={`icon-[arcticons--instagram-threads] text-xl`}></span>
     );
 }
 
 export const ThinGitHubIcon = () => {
     return (
-        // <a href="" target="" rel="">
-            <span className={`icon-[arcticons--github] text-xl`}></span>
-        // </a>
+        <span className={`icon-[arcticons--github] text-xl`}></span>
     );
 }
 
 export const ThinLinkedInIcon = () => {
     return (
-        <a href="https://www.linkedin.com/in/samanthabjimenez/" target="_blank" rel="noopener noreferrer">
-            <span className={`icon-[arcticons--linkedin] text-xl`}></span>
-        </a>
+        <span className={`icon-[arcticons--linkedin] text-xl`}></span>
     );
 }
 
 export const ThinStravaIcon = () => {
     return (
-        <a href="https://strava.app.link/lxN0E2NT0Ob" target="_blank" rel="noopener noreferrer">
-            <span className={`icon-[arcticons--strava] text-xl`}></span>
-        </a>
+        <span className={`icon-[arcticons--strava] text-xl`}></span>
     );
 }
 
 export const ThinGoogleMailIcon = () => {
     return (
-        <a href="mailto:SamanthaB.Jimenez@gmail.com" target="_blank" rel="noopener noreferrer">
-            <span className={`icon-[arcticons--google-mail] text-xl`}></span>
-        </a>
+        <span className={`icon-[arcticons--google-mail] text-xl`}></span>
     );
 }
 
 export const ThinPorftolioIcon = () => {
     return (
-        <a href="https://samantha-jimenez.netlify.app/" target="_blank" rel="noopener noreferrer">
-            <span className={`icon-[arcticons--emoji-web] text-xl`}></span>
-        </a>
+        <span className={`icon-[arcticons--emoji-web] text-xl`}></span>
     );
 }
 
 export const ThinSpotifyIcon = () => {
     return (
-        <a href="https://open.spotify.com/user/jimenamorenita?si=2fa3b2d8e7d147d1" target="_blank" rel="noopener noreferrer">
-            <span className={`icon-[arcticons--spotify-alt-1] text-xl`}></span>
-        </a>
+        <span className={`icon-[arcticons--spotify-alt-1] text-xl`}></span>
     );
 }
 
 export const ThinMvmntCollectivesIcon = () => {
     return (
-        <a href="https://www.mvmntcollectives.com/" target="_blank" rel="noopener noreferrer">
-            <span className={`icon-[arcticons--runnerup] text-xl`}></span>
-        </a>
+        <span className={`icon-[arcticons--runnerup] text-xl`}></span>
     );
 }
 
@@ -93,8 +73,6 @@ export const ThinMvmntCollectivesIcon = () => {
 
 export const GoodReadsIcon = () => {    
     return (
-        <a href="https://www.goodreads.com/user/show/183397302-samantha" target="_blank" rel="noopener noreferrer">
-            <span className={`icon-[mdi--goodreads] text-xl font-light opacity-70`}></span>
-        </a>
+        <span className={`icon-[mdi--goodreads] text-xl font-light opacity-70`}></span>
     );
 }   

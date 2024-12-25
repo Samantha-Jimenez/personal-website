@@ -72,3 +72,20 @@ footer .menu :where(li > details[open] > summary)::after {
 :where(.menu li:not(.menu-title, .disabled) > details > summary:not(.menu-title)):not(.active, .btn):hover {
   background-color: transparent;
 }
+
+.footer-icon-container {
+  position: relative;
+}
+
+.arrow-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(10px);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cursor-pointer:hover .arrow-icon {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
