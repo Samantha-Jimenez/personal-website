@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { ThinInstagramIcon, ThinTikTokIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinGitHubIcon, ThinLinkedInIcon, ThinGoogleMailIcon, ThinStravaIcon, GoodReadsIcon, ThinPorftolioIcon, ThinSpotifyIcon, ThinMvmntCollectivesIcon } from '../icons/Icons'
 import toast from 'react-hot-toast';
 import { openMenu } from '../hooks/openMenu';
@@ -7,6 +7,7 @@ const NavBar = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [openPortfolioMenu, setOpenPortfolioMenu] = useState<boolean>(false);
   const [openGithubMenu, setOpenGithubMenu] = useState<boolean>(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
 
   const notify = () => toast('check back for my youtube channel',
     {
@@ -25,8 +26,22 @@ const NavBar = () => {
     notify();
   };
 
+  const handleClickOutside = (event: MouseEvent) => {
+    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      setOpenPortfolioMenu(false);
+      setOpenGithubMenu(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="navbar bg-zinc-900 flex flex-col min-[845px]:flex-row min-[662px]:flex-col min-[599px]:flex-row justify-between text-gray-200">
+    <div ref={menuRef} className="navbar bg-zinc-900 flex flex-col min-[845px]:flex-row min-[662px]:flex-col min-[599px]:flex-row justify-between text-gray-200">
       <div className="self-stretch max-[844px]:pt-2">
         <a className="px-5 btn-ghost text-xl bungee-hairline-bold hover:bg-transparent active:transform-none focus:transform-none text-white">aka.jimena</a>
       </div>
@@ -94,14 +109,14 @@ const NavBar = () => {
           <div className="tooltip tooltip-bottom" data-tip="github">
             <li>
               <div 
-                className="hover:scale-150 hover:bg-transparent transition-transform duration-200 cursor-pointer hover:-translate-x-2" 
+                className={`hover:scale-150 hover:bg-transparent transition-transform duration-200 cursor-pointer w-[104%] z-[12] ${openGithubMenu ? 'scale-150 open-menu' : ''}`} 
                 onClick={() => openMenu('github', openPortfolioMenu, setOpenPortfolioMenu, openGithubMenu, setOpenGithubMenu, setActiveMenu)}
               >
                 <ThinGitHubIcon />
-                <span className="ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-downwards] left-[60%]"></span>
+                <span className={`ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-downwards] left-[60%]`}></span>
               </div>
               {openGithubMenu && (
-                <ul className="ml-[-80%] absolute bg-zinc-900 p-2 text-xs w-max rounded-lg top-[35px] z-[100] pt-5">
+                <ul className={`ml-[-80%] absolute bg-zinc-900 p-2 text-xs w-max rounded-lg top-[35px] z-[11] pt-5`}>
                     <li className="hover:bg-[var(--fallback-bc,oklch(var(--bc)/0.1))]"><a href="https://github.com/samantha-jimenez" target="_blank" rel="noopener noreferrer">Current Account</a></li>
                     <li className="hover:bg-[var(--fallback-bc,oklch(var(--bc)/0.1))]"><a href="https://github.com/samanthabjimenez" target="_blank" rel="noopener noreferrer">Previous Account</a></li>
                 </ul>
@@ -111,14 +126,14 @@ const NavBar = () => {
           <div className="tooltip tooltip-bottom" data-tip="portfolio">
             <li>
               <div 
-                className="hover:scale-150 hover:bg-transparent transition-transform duration-200 cursor-pointer hover:-translate-x-2" 
+                className={`hover:scale-150 hover:bg-transparent transition-transform duration-200 cursor-pointer w-[104%] z-[12] ${openPortfolioMenu ? 'scale-150 open-menu' : ''}`} 
                 onClick={() => openMenu('portfolio', openPortfolioMenu, setOpenPortfolioMenu, openGithubMenu, setOpenGithubMenu, setActiveMenu)}
               >
                 <ThinPorftolioIcon />
-                <span className="ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-downwards] left-[60%]"></span>
+                <span className={`ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-downwards] left-[60%]`}></span>
               </div>
               {openPortfolioMenu && (
-                <ul className="ml-[-80%] absolute bg-zinc-900 p-2 z-[100] text-xs w-max rounded-lg top-[35px] pt-5">
+                <ul className={`ml-[-80%] absolute bg-zinc-900 p-2 text-xs w-max rounded-lg top-[35px] z-[11] pt-5`}>
                   <li className="hover:bg-[var(--fallback-bc,oklch(var(--bc)/0.1))]"><a href="https://lucent-sundae-3d565b.netlify.app/" target="_blank" rel="noopener noreferrer">Current Portfolio</a></li>
                   <li className="hover:bg-[var(--fallback-bc,oklch(var(--bc)/0.1))]"><a href="https://samantha-jimenez.netlify.app/" target="_blank" rel="noopener noreferrer">Previous Portfolio</a></li>
                 </ul>

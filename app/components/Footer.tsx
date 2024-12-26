@@ -1,13 +1,14 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { ThinInstagramIcon, ThinGitHubIcon, ThinLinkedInIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinTikTokIcon, ThinStravaIcon, GoodReadsIcon, ThinGoogleMailIcon, ThinPorftolioIcon, ThinSpotifyIcon, ThinMvmntCollectivesIcon } from '../icons/Icons'
 import toast from 'react-hot-toast';
 import { openMenu } from '../hooks/openMenu';
 
 const Footer = () => {
-  const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [openPortfolioMenu, setOpenPortfolioMenu] = useState<boolean>(false);
   const [openGithubMenu, setOpenGithubMenu] = useState<boolean>(false);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const menuRef = useRef<HTMLDivElement | null>(null);
 
   const notify = () => toast('check back for my youtube channel',
     {
@@ -26,8 +27,22 @@ const Footer = () => {
     notify();
   };
 
+  const handleClickOutside = (event: MouseEvent) => {
+    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      setOpenPortfolioMenu(false);
+      setOpenGithubMenu(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <footer className="footer bg-zinc-900 text-gray-200 items-center p-2">
+    <footer ref={menuRef} className="footer bg-zinc-900 text-gray-200 items-center p-2">
         {/* <aside className="grid-flow-col items-center">
             <p className="montserrat-mine font-light">Copyright © {new Date().getFullYear()} - All right reserved</p>
         </aside> */}
@@ -56,14 +71,15 @@ const Footer = () => {
                 </div>
                 <div className="tooltip tooltip-top justify-items-center" data-tip="portfolio">
                     <li>
-                        <div onClick={() => openMenu('portfolio', openPortfolioMenu, setOpenPortfolioMenu, openGithubMenu, setOpenGithubMenu, setActiveMenu)} className="cursor-pointer hover:bg-transparent">
-                            <div className="hover:scale-150 hover:bg-transparent transition-transform duration-200 relative hover:-translate-x-2">
+                        <div 
+                          onClick={() => openMenu('portfolio', openPortfolioMenu, setOpenPortfolioMenu, openGithubMenu, setOpenGithubMenu, setActiveMenu)} 
+                          className={`cursor-pointer hover:bg-transparent hover:scale-150 hover:bg-transparent transition-transform duration-200 z-[12] relative ${openPortfolioMenu ? 'scale-150 open-menu' : ''}`}
+                        >
                                 <ThinPorftolioIcon />
-                                <span className="ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-upwards] left-[80%]"></span>
-                            </div>
+                                <span className="ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-upwards] left-[60%]"></span>
                         </div>
                         {openPortfolioMenu && (
-                            <ul className="ml-[-50%] absolute bg-zinc-900 p-2 pb-5 text-xs w-max rounded-lg top-[-225%] z-[900] border-none">
+                            <ul className="ml-[-65%] absolute bg-zinc-900 p-2 pb-5 text-xs w-max rounded-lg top-[-245%] z-[11] border-none">
                                 <li className="hover:bg-[var(--fallback-bc,oklch(var(--bc)/0.1))]"><a href="https://lucent-sundae-3d565b.netlify.app/" target="_blank" rel="noopener noreferrer">Current Portfolio</a></li>
                                 <li className="hover:bg-[var(--fallback-bc,oklch(var(--bc)/0.1))]"><a href="https://samantha-jimenez.netlify.app/" target="_blank" rel="noopener noreferrer">Previous Portfolio</a></li>
                             </ul>
@@ -72,14 +88,15 @@ const Footer = () => {
                 </div>
                 <div className="tooltip tooltip-top justify-items-center align-self" data-tip="github">
                     <li>
-                        <div onClick={() => openMenu('github', openPortfolioMenu, setOpenPortfolioMenu, openGithubMenu, setOpenGithubMenu, setActiveMenu)} className="cursor-pointer hover:bg-transparent">
-                            <div className="hover:scale-150 hover:bg-transparent transition-transform duration-200 relative hover:-translate-x-2">
-                                <ThinGitHubIcon />
-                                <span className="ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-upwards] left-[80%]"></span>
-                            </div>
+                        <div 
+                          onClick={() => openMenu('github', openPortfolioMenu, setOpenPortfolioMenu, openGithubMenu, setOpenGithubMenu, setActiveMenu)} 
+                          className={`cursor-pointer hover:bg-transparent hover:scale-150 hover:bg-transparent transition-transform duration-200 z-[12] relative ${openGithubMenu ? 'scale-150 open-menu' : ''}`}
+                        >
+                            <ThinGitHubIcon />
+                            <span className="ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-upwards] left-[60%]"></span>
                         </div>
                         {openGithubMenu && (
-                            <ul className="ml-[-50%] absolute bg-zinc-900 p-2 pb-5 text-xs w-max rounded-lg top-[-225%] z-[900] border-none">
+                            <ul className="ml-[-65%] absolute bg-zinc-900 p-2 pb-5 text-xs w-max rounded-lg top-[-245%] z-[11] border-none">
                                 <li className="hover:bg-[var(--fallback-bc,oklch(var(--bc)/0.1))]"><a href="https://github.com/samantha-jimenez" target="_blank" rel="noopener noreferrer">Current Account</a></li>
                                 <li className="hover:bg-[var(--fallback-bc,oklch(var(--bc)/0.1))]"><a href="https://github.com/samanthabjimenez" target="_blank" rel="noopener noreferrer">Previous Account</a></li>
                             </ul>
