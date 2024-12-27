@@ -109,7 +109,7 @@ const NavBar = () => {
           <div className="tooltip tooltip-bottom" data-tip="github">
             <li>
               <div 
-                className={`hover:scale-150 hover:bg-transparent transition-transform duration-200 cursor-pointer w-[104%] z-[12] ${openGithubMenu ? 'scale-150 open-menu' : ''}`} 
+                className={`hover:scale-150 hover:bg-transparent transition-transform duration-200 cursor-pointer w-[104%] hover:z-[12] ${openGithubMenu ? 'scale-150 open-menu' : ''}`} 
                 onClick={() => openMenu('github', openPortfolioMenu, setOpenPortfolioMenu, openGithubMenu, setOpenGithubMenu, setActiveMenu)}
               >
                 <ThinGitHubIcon />
@@ -126,7 +126,7 @@ const NavBar = () => {
           <div className="tooltip tooltip-bottom" data-tip="portfolio">
             <li>
               <div 
-                className={`hover:scale-150 hover:bg-transparent transition-transform duration-200 cursor-pointer w-[104%] z-[12] ${openPortfolioMenu ? 'scale-150 open-menu' : ''}`} 
+                className={`hover:scale-150 hover:bg-transparent transition-transform duration-200 cursor-pointer w-[104%] hover:z-[12] ${openPortfolioMenu ? 'scale-150 open-menu' : ''}`} 
                 onClick={() => openMenu('portfolio', openPortfolioMenu, setOpenPortfolioMenu, openGithubMenu, setOpenGithubMenu, setActiveMenu)}
               >
                 <ThinPorftolioIcon />

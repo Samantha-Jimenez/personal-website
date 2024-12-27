@@ -73,7 +73,7 @@ const Footer = () => {
                     <li>
                         <div 
                           onClick={() => openMenu('portfolio', openPortfolioMenu, setOpenPortfolioMenu, openGithubMenu, setOpenGithubMenu, setActiveMenu)} 
-                          className={`cursor-pointer hover:bg-transparent hover:scale-150 hover:bg-transparent transition-transform duration-200 z-[12] relative ${openPortfolioMenu ? 'scale-150 open-menu' : ''}`}
+                          className={`cursor-pointer hover:bg-transparent hover:scale-150 hover:bg-transparent transition-transform duration-200 hover:z-[12] relative ${openPortfolioMenu ? 'scale-150 open-menu' : ''}`}
                         >
                                 <ThinPorftolioIcon />
                                 <span className="ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-upwards] left-[60%]"></span>
@@ -90,7 +90,7 @@ const Footer = () => {
                     <li>
                         <div 
                           onClick={() => openMenu('github', openPortfolioMenu, setOpenPortfolioMenu, openGithubMenu, setOpenGithubMenu, setActiveMenu)} 
-                          className={`cursor-pointer hover:bg-transparent hover:scale-150 hover:bg-transparent transition-transform duration-200 z-[12] relative ${openGithubMenu ? 'scale-150 open-menu' : ''}`}
+                          className={`cursor-pointer hover:bg-transparent hover:scale-150 hover:bg-transparent transition-transform duration-200 hover:z-[12] relative ${openGithubMenu ? 'scale-150 open-menu' : ''}`}
                         >
                             <ThinGitHubIcon />
                             <span className="ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-upwards] left-[60%]"></span>
