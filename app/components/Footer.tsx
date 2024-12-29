@@ -80,7 +80,7 @@ const Footer = () => {
                         </div>
                         {openPortfolioMenu && (
                             <ul className="ml-[-65%] absolute bg-zinc-900 p-2 pb-5 text-xs w-max rounded-lg top-[-245%] z-[11] border-none">
-                                <li className="hover:bg-[var(--fallback-bc,oklch(var(--bc)/0.1))]"><a href="https://lucent-sundae-3d565b.netlify.app/" target="_blank" rel="noopener noreferrer">Current Portfolio</a></li>
+                                <li className="hover:bg-[var(--fallback-bc,oklch(var(--bc)/0.1))]"><a href="https://samantha-jimenez.com/" target="_blank" rel="noopener noreferrer">Current Portfolio</a></li>
                                 <li className="hover:bg-[var(--fallback-bc,oklch(var(--bc)/0.1))]"><a href="https://samantha-jimenez.netlify.app/" target="_blank" rel="noopener noreferrer">Previous Portfolio</a></li>
                             </ul>
                         )}
