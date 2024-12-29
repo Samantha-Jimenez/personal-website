@@ -39,17 +39,17 @@ const NavBar = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
-
+  // bg-neutral-200
   return (
-    <div ref={menuRef} className="navbar bg-zinc-900 flex flex-col min-[845px]:flex-row min-[662px]:flex-col min-[599px]:flex-row justify-between text-gray-200">
+    <div ref={menuRef} className="navbar bg-neutral-100 text-black dark:bg-zinc-900 flex flex-col min-[845px]:flex-row min-[662px]:flex-col min-[599px]:flex-row justify-between dark:text-gray-200">
       <div className="self-stretch max-[844px]:pt-2">
-        <a className="px-5 btn-ghost text-xl bungee-hairline-bold hover:bg-transparent active:transform-none focus:transform-none text-white">aka.jimena</a>
+        <a className="px-5 btn-ghost text-xl bungee-hairline-bold hover:bg-transparent active:transform-none focus:transform-none text-black dark:text-white">aka.jimena</a>
       </div>
       <div className="flex-none self-start">
         <ul className="menu menu-horizontal px-1 justify-items-center max-[662px]:grid max-[662px]:grid-flow-row max-[662px]:grid-cols-6 max-[662px]:grid-rows-2">
           <div className="tooltip tooltip-bottom" data-tip="instagram">
             <li>
-              <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.instagram.com/aka.jimena" target="_blank" rel="noopener noreferrer">
+              <a className="hover:scale-150 hover:bg-transparent active:bg-neutral-200 transition-transform duration-200" href="https://www.instagram.com/aka.jimena" target="_blank" rel="noopener noreferrer">
                 <ThinInstagramIcon />
               </a>
             </li>
@@ -116,7 +116,7 @@ const NavBar = () => {
                 <span className={`ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-downwards] left-[60%]`}></span>
               </div>
               {openGithubMenu && (
-                <ul className={`ml-[-80%] absolute bg-zinc-900 p-2 text-xs w-max rounded-lg top-[35px] z-[11] pt-5`}>
+                <ul className={`ml-[-80%] absolute dark:bg-zinc-900 bg-[#FAFAFA] p-2 text-xs w-max rounded-lg top-[35px] z-[11] pt-5`}>
                     <li className="hover:bg-[var(--fallback-bc,oklch(var(--bc)/0.1))]"><a href="https://github.com/samantha-jimenez" target="_blank" rel="noopener noreferrer">Current Account</a></li>
                     <li className="hover:bg-[var(--fallback-bc,oklch(var(--bc)/0.1))]"><a href="https://github.com/samanthabjimenez" target="_blank" rel="noopener noreferrer">Previous Account</a></li>
                 </ul>
@@ -133,7 +133,7 @@ const NavBar = () => {
                 <span className={`ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-downwards] left-[60%]`}></span>
               </div>
               {openPortfolioMenu && (
-                <ul className={`ml-[-80%] absolute bg-zinc-900 p-2 text-xs w-max rounded-lg top-[35px] z-[11] pt-5`}>
+                <ul className={`ml-[-80%] absolute dark:bg-zinc-900 bg-[#FAFAFA] p-2 text-xs w-max rounded-lg top-[35px] z-[11] pt-5`}>
                   <li className="hover:bg-[var(--fallback-bc,oklch(var(--bc)/0.1))]"><a href="https://samantha-jimenez.com/" target="_blank" rel="noopener noreferrer">Current Portfolio</a></li>
                   <li className="hover:bg-[var(--fallback-bc,oklch(var(--bc)/0.1))]"><a href="https://samantha-jimenez.netlify.app/" target="_blank" rel="noopener noreferrer">Previous Portfolio</a></li>
                 </ul>

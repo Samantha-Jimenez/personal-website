@@ -39,31 +39,31 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="py-4 w-[100%] text-gray-200">
-      <h2 className="text-xl font-bold mb-4 bungee-hairline-bold text-white">Contact me</h2>
+    <div className="py-4 w-[100%]">
+      <h2 className="text-xl font-bold mb-4 bungee-hairline-bold text-base dark:text-white">Contact me</h2>
       <form ref={form} onSubmit={handleSubmit}>
         <div className="flex flex-col sm:flex-row mb-4 w-full gap-4 text-gray-200">
           <div className="form-control w-full mr-4 sm:mr-0">
             <label className="label">
-              <span className="label-text text-white">Name</span>
+              <span className="label-text text-base dark:text-white">Name</span>
             </label>
-            <input type="text" className="input input-bordered" placeholder="Your Name" name="from_name" required />
+            <input type="text" className="input input-bordered dark:bg-[#1D232A] bg-neutral-100 dark:text-gray-200 placeholder-grey" placeholder="Your Name" name="from_name" required />
           </div>
           <div className="form-control w-full">
             <label className="label">
-              <span className="label-text text-white">Email</span>
+              <span className="label-text text-base dark:text-white">Email</span>
             </label>
-            <input type="email" name="reply_to" className="input input-bordered" placeholder="Your Email" required />
+            <input type="email" name="reply_to" className="input input-bordered dark:bg-[#1D232A] bg-neutral-100 dark:text-gray-200 placeholder-grey" placeholder="Your Email" required />
           </div>
         </div>
         <div className="form-control mb-4">
           <label className="label">
-            <span className="label-text text-white">Message</span>
+            <span className="label-text text-base dark:text-white">Message</span>
           </label>
-          <textarea className="textarea textarea-bordered text-[16px]" placeholder="Your Message" name="message" required></textarea>
+          <textarea className="textarea textarea-bordered text-[16px] dark:bg-[#1D232A] bg-neutral-100 dark:text-gray-200 placeholder-grey" placeholder="Your Message" name="message" required></textarea>
         </div>
         <div className="flex justify-center">
-          <button type="submit" className="btn bg-emerald-800 hover:bg-emerald-900 active:bg-emerald-950 text-white w-full my-5 bungee-hairline-bold text-lg">Send Message</button>
+          <button type="submit" className="btn bg-emerald-700 dark:bg-emerald-650 hover:dark:bg-emerald-800 hover:bg-emerald-600 active:bg-emerald-500 active:dark:bg-emerald-950 text-white w-full my-5 bungee-hairline-bold text-lg">Send Message</button>
         </div>
       </form>
     </div>

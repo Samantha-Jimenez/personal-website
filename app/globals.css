@@ -2,29 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-} */
+:root {
+  --foreground-rgb: 0, 0, 0; /* Light theme foreground */
+  --background-start-rgb: 255, 255, 255; /* Light theme background start */
+  --background-end-rgb: 255, 255, 255; /* Light theme background end */
+  --hover-color: #D1D5DA;
+}
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 255, 255, 255; /* Dark theme foreground */
+    --background-start-rgb: 0, 0, 0; /* Dark theme background start */
+    --background-end-rgb: 0, 0, 0; /* Dark theme background end */
+    --hover-color: #2B3440;
   }
-} */
+}
 
+/* Additional styles for dark theme */
 body {
+  background: rgb(var(--background-start-rgb));
   color: rgb(var(--foreground-rgb));
-  background: black;
-  /* background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
+}
+
+/* Dark theme styles */
+body.dark {
+  background: rgb(var(--background-start-rgb)); /* Dark theme background */
+  color: rgb(var(--foreground-rgb)); /* Dark theme text color */
+}
+
+/* Additional styles for dark theme */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: rgb(var(--background-start-rgb));
+    color: rgb(var(--foreground-rgb));
+  }
 }
 
 .bungee-hairline-thin {
@@ -93,4 +104,13 @@ footer .menu :where(li > details[open] > summary)::after {
 .cursor-pointer:hover .arrow-icon {
   opacity: 1;
   transform: translateY(-50%) translateX(0px);
+}
+
+.placeholder-grey::placeholder {
+  color: grey;
+}
+
+.menu li > *:not(ul, .menu-title, details, .btn):active {
+  background-color: var(--hover-color);
+  color: black;
 }
