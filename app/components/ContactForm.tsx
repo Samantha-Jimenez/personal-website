@@ -39,7 +39,7 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="p-4 w-[85vw] text-gray-200">
+    <div className="py-4 w-[100%] text-gray-200">
       <h2 className="text-xl font-bold mb-4 bungee-hairline-bold text-white">Contact me</h2>
       <form ref={form} onSubmit={handleSubmit}>
         <div className="flex flex-col sm:flex-row mb-4 w-full gap-4 text-gray-200">

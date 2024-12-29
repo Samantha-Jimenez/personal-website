@@ -22,7 +22,7 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="flex px-6 sm:px-24">
         <ContactForm />
       </div>
     </main>
