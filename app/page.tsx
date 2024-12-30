@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-max flex-col justify-self-center">
-      <label className="flex items-center py-2 pl-4 sticky top-0 z-[11] dark:bg-emerald-600 bg-emerald-800">
+      <label className="flex items-center py-2 pl-6 sticky top-0 z-[11] dark:bg-emerald-600 bg-emerald-800">
         <Toggle
           icons={{
             checked: <span className="icon-[arcticons--sunilpaulmathew-weather]"/>,
@@ -26,8 +26,9 @@ export default function Home() {
           }}
           checked={darkMode}
           onChange={toggleDarkMode}
+          className='custom-classname'
         />
-        <p className="text-sm pl-2"> {darkMode ? 'Light Mode' : 'Dark Mode'} </p>
+        <p className="text-sm pl-2 text-gray-200"> {darkMode ? 'Light Mode' : 'Dark Mode'} </p>
       </label>
       <div className="relative grid grid-rows-1 grid-cols-1">
         <div className="row-start-1 row-end-2 col-start-1 col-end-3 absolute inset-0 bg-zinc-600 opacity-70 dark:bg-zinc-800 dark:opacity-70"></div>

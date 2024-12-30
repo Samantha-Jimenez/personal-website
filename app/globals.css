@@ -119,3 +119,31 @@ footer .menu :where(li > details[open] > summary)::after {
 .react-toggle-track-check, .react-toggle-track-x {
   height: 15px !important;
 }
+
+.custom-classname.react-toggle--checked .react-toggle-track {
+  background-color: #4D4D4D;
+}
+
+.custom-classname.react-toggle {
+  color: rgb(125, 211, 252) !important;
+}
+
+.custom-classname.react-toggle--checked {
+  color: rgb(252, 211, 77) !important;
+}
+
+.custom-classname.react-toggle--checked:hover {
+  color: black !important;
+}
+
+.custom-classname.react-toggle:hover {
+  color: black !important;
+}
+
+.react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: rgb(2, 132, 199) !important;
+}
+
+.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: rgb(251, 191, 36) !important;
+}
