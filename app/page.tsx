@@ -1,15 +1,19 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ContactForm from "./components/ContactForm";
 import Toggle from 'react-toggle';
 import 'react-toggle/style.css';
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
-  
+  const [darkMode, setDarkMode] = useState(true);
+
+  useEffect(() => {
+    document.documentElement.classList.add('dark');
+  }, []);
+
   const toggleDarkMode = () => {
     setDarkMode(prevMode => !prevMode);
-    document.documentElement.classList.toggle('dark', !darkMode);
+    document.documentElement.classList.toggle('dark');
   };
 
   return (
