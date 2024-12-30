@@ -1,9 +1,30 @@
+'use client'
+import React, { useState } from 'react';
 import ContactForm from "./components/ContactForm";
+import Toggle from 'react-toggle';
+import 'react-toggle/style.css';
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState<boolean>(false);
+  
+  const toggleDarkMode = () => {
+    setDarkMode(prevMode => !prevMode);
+    document.documentElement.classList.toggle('dark', !darkMode);
+  };
 
   return (
-    <main className="flex min-h-max flex-col gap-4 justify-self-center">
+    <main className="flex min-h-max flex-col justify-self-center">
+      <label className="flex items-center py-2 pl-4 sticky top-0 z-[11] dark:bg-emerald-600 bg-emerald-800">
+        <Toggle
+          icons={{
+            checked: <span className="icon-[arcticons--sunilpaulmathew-weather]"/>,
+            unchecked: <span className="icon-[arcticons--moon]"/>,
+          }}
+          checked={darkMode}
+          onChange={toggleDarkMode}
+        />
+        <p className="text-sm pl-2"> {darkMode ? 'Light Mode' : 'Dark Mode'} </p>
+      </label>
       <div className="relative grid grid-rows-1 grid-cols-1">
         <div className="row-start-1 row-end-2 col-start-1 col-end-3 absolute inset-0 bg-zinc-600 opacity-70 dark:bg-zinc-800 dark:opacity-70"></div>
         <video
@@ -23,7 +44,7 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className="flex px-6 sm:px-24">
+      <div className="flex">
         <ContactForm />
       </div>
     </main>

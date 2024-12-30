@@ -42,7 +42,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer ref={menuRef} className="footer bg-neutral-100 text-black dark:bg-zinc-900 dark:text-gray-200 items-center p-2">
+    <footer ref={menuRef} className="footer bg-neutral-200 text-black dark:bg-zinc-900 dark:text-gray-200 items-center p-2">
         {/* <aside className="grid-flow-col items-center">
             <p className="montserrat-mine font-light">Copyright © {new Date().getFullYear()} - All right reserved</p>
         </aside> */}
@@ -79,9 +79,9 @@ const Footer = () => {
                                 <span className="ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-upwards] left-[60%]"></span>
                         </div>
                         {openPortfolioMenu && (
-                            <ul className="ml-[-65%] absolute dark:bg-zinc-900 bg-[#FAFAFA] p-2 pb-5 text-xs w-max rounded-lg top-[-245%] z-[11] border-none">
-                                <li className="hover:dark:bg-[var(--fallback-bc,oklch(var(--bc)/0.1))]"><a href="https://samantha-jimenez.com/" target="_blank" rel="noopener noreferrer">Current Portfolio</a></li>
-                                <li className="hover:dark:bg-[var(--fallback-bc,oklch(var(--bc)/0.1))]"><a href="https://samantha-jimenez.netlify.app/" target="_blank" rel="noopener noreferrer">Previous Portfolio</a></li>
+                            <ul className="ml-[-65%] absolute dark:bg-zinc-900 bg-neutral-200 p-2 pb-5 text-xs w-max rounded-lg top-[-245%] z-[11] border-none">
+                                <li className="hover:bg-gray-300 hover:dark:bg-[#2A323C] rounded"><a href="https://samantha-jimenez.com/" target="_blank" rel="noopener noreferrer">Current Portfolio</a></li>
+                                <li className="hover:bg-gray-300 hover:dark:bg-[#2A323C] rounded"><a href="https://samantha-jimenez.netlify.app/" target="_blank" rel="noopener noreferrer">Previous Portfolio</a></li>
                             </ul>
                         )}
                     </li>
@@ -96,9 +96,9 @@ const Footer = () => {
                             <span className="ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-upwards] left-[60%]"></span>
                         </div>
                         {openGithubMenu && (
-                            <ul className="ml-[-65%] absolute dark:bg-zinc-900 bg-[#FAFAFA] p-2 pb-5 text-xs w-max rounded-lg top-[-245%] z-[11] border-none">
-                                <li className="hover:bg-[var(--fallback-bc,oklch(var(--bc)/0.1))]"><a href="https://github.com/samantha-jimenez" target="_blank" rel="noopener noreferrer">Current Account</a></li>
-                                <li className="hover:bg-[var(--fallback-bc,oklch(var(--bc)/0.1))]"><a href="https://github.com/samanthabjimenez" target="_blank" rel="noopener noreferrer">Previous Account</a></li>
+                            <ul className="ml-[-65%] absolute dark:bg-zinc-900 bg-neutral-200 p-2 pb-5 text-xs w-max rounded-lg top-[-245%] z-[11] border-none">
+                                <li className="hover:bg-gray-300 hover:dark:bg-[#2A323C] rounded"><a href="https://github.com/samantha-jimenez" target="_blank" rel="noopener noreferrer">Current Account</a></li>
+                                <li className="hover:bg-gray-300 hover:dark:bg-[#2A323C] rounded"><a href="https://github.com/samanthabjimenez" target="_blank" rel="noopener noreferrer">Previous Account</a></li>
                             </ul>
                         )}
                     </li>

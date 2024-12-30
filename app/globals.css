@@ -30,12 +30,18 @@ body.dark {
   color: rgb(var(--foreground-rgb)); /* Dark theme text color */
 }
 
-/* Additional styles for dark theme */
+body.dark .menu li > *:not(ul, .menu-title, details, .btn):active {
+  background-color: #D1D5DA;
+  color: black;
+}
+
+/* Remove the redundant media query for dark theme */
 @media (prefers-color-scheme: dark) {
-  body {
+  /* body {
     background: rgb(var(--background-start-rgb));
     color: rgb(var(--foreground-rgb));
-  }
+  } */
+  /* Remove this block if not needed */
 }
 
 .bungee-hairline-thin {
@@ -110,7 +116,6 @@ footer .menu :where(li > details[open] > summary)::after {
   color: grey;
 }
 
-.menu li > *:not(ul, .menu-title, details, .btn):active {
-  background-color: var(--hover-color);
-  color: black;
+.react-toggle-track-check, .react-toggle-track-x {
+  height: 15px !important;
 }
