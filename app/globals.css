@@ -112,10 +112,6 @@ footer .menu :where(li > details[open] > summary)::after {
   transform: translateY(-50%) translateX(0px);
 }
 
-.placeholder-grey::placeholder {
-  color: grey;
-}
-
 .react-toggle-track-check, .react-toggle-track-x {
   height: 15px !important;
 }
@@ -146,4 +142,33 @@ footer .menu :where(li > details[open] > summary)::after {
 
 .react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
   background-color: rgb(251, 191, 36) !important;
+}
+
+.input:focus, .input:focus-within, .textarea:focus {
+  outline-color: #90EE8F;
+  border-color: #90EE8F;
+}
+
+.react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb {
+  box-shadow: 0px 0px 5px 5px rgb(125, 211, 252) !important;
+}
+
+.react-toggle--focus .react-toggle-thumb {
+  box-shadow: 0px 0px 5px 5px rgb(125, 211, 252) !important;
+}
+
+.react-toggle--checked.react-toggle--focus .react-toggle-thumb {
+  box-shadow: 0px 0px 5px 5px rgb(253, 230, 138) !important;
+}
+
+.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-thumb {
+  box-shadow: 0px 0px 5px 5px rgb(253, 230, 138) !important;
+}
+
+.react-toggle:hover:not(.react-toggle--disabled) .react-toggle-thumb {
+  box-shadow: 0px 0px 5px 5px rgb(125, 211, 252);
+}
+
+.react-toggle--checked .react-toggle-thumb {
+  border-color: #4D4D4D !important;
 }
