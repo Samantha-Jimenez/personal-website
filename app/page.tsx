@@ -8,7 +8,10 @@ export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
-    document.documentElement.classList.add('dark');
+    // Check user's preferred color scheme
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setDarkMode(prefersDarkMode);
+    document.documentElement.classList.toggle('dark', prefersDarkMode);
   }, []);
 
   const toggleDarkMode = () => {
