@@ -36,7 +36,7 @@ export default function Home() {
       <div className="relative grid grid-rows-1 grid-cols-1">
         <div className="row-start-1 row-end-2 col-start-1 col-end-3 absolute inset-0 bg-zinc-600 opacity-70 dark:bg-zinc-800 dark:opacity-70"></div>
         <video
-          className="row-start-1 row-end-2 col-start-1 col-end-3 h-full rounded-lg object-cover object-center"
+          className="row-start-1 row-end-2 col-start-1 col-end-3 h-full object-cover object-center"
           src="https://videos.pexels.com/video-files/946146/946146-hd_1920_1080_30fps.mp4"
           autoPlay
           loop
