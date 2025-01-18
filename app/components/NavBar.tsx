@@ -100,6 +100,13 @@ const NavBar = () => {
               </a>
             </li>
           </div>
+          <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="linkedin">
+            <li>
+              <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.linkedin.com/in/samanthabjimenez/" target="_blank" rel="noopener noreferrer">
+                <ThinLinkedInIcon />
+              </a>
+            </li>
+          </div>
           <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="github">
             <li>
               <div 
@@ -145,13 +152,6 @@ const NavBar = () => {
             <li>
               <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://strava.app.link/lxN0E2NT0Ob" target="_blank" rel="noopener noreferrer">
                 <ThinStravaIcon />
-              </a>
-            </li>
-          </div>
-          <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="linkedin">
-            <li>
-              <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.linkedin.com/in/samanthabjimenez/" target="_blank" rel="noopener noreferrer">
-                <ThinLinkedInIcon />
               </a>
             </li>
           </div>
