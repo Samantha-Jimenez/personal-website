@@ -47,7 +47,7 @@ const NavBar = () => {
         <a className="px-5 btn-ghost text-xl bungee-hairline-bold hover:bg-transparent active:transform-none focus:transform-none text-black dark:text-white">aka.jimena</a>
       </div>
       <div className="flex-none self-start">
-        <ul className="menu menu-horizontal px-1 justify-items-center max-[662px]:grid max-[662px]:grid-flow-row max-[662px]:grid-cols-5 max-[662px]:grid-rows-2">
+        <ul className="menu menu-horizontal px-1 justify-items-center max-[662px]:grid max-[662px]:grid-flow-row max-[662px]:grid-cols-6 max-[662px]:grid-rows-2">
           <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="instagram">
             <li>
               <a className="hover:scale-150 hover:bg-transparent active:bg-white active:dark:bg-neutral-200 transition-transform duration-200" href="https://www.instagram.com/aka.jimena" target="_blank" rel="noopener noreferrer">
@@ -62,13 +62,13 @@ const NavBar = () => {
               </a>
             </li>
           </div>
-          {/* <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="tiktok">
+          <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="tiktok">
             <li>
               <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.tiktok.com/@aka.jimena" target="_blank" rel="noopener noreferrer">
                 <ThinTikTokIcon />
               </a>
             </li>
-          </div> */}
+          </div>
           <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="youtube">
             <li>
               <div 
@@ -77,20 +77,6 @@ const NavBar = () => {
               >
                   <ThinYoutubeIcon />
               </div>
-            </li>
-          </div>
-          {/* <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="goodreads">
-            <li>
-              <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.goodreads.com/user/show/183397302-samantha" target="_blank" rel="noopener noreferrer">
-                <GoodReadsIcon />
-              </a>
-            </li>
-          </div> */}
-          <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="spotify">
-            <li>
-              <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://open.spotify.com/user/jimenamorenita?si=2fa3b2d8e7d147d1" target="_blank" rel="noopener noreferrer">
-                <ThinSpotifyIcon />
-              </a>
             </li>
           </div>
           <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="email">
@@ -104,6 +90,13 @@ const NavBar = () => {
             <li>
               <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.linkedin.com/in/samanthabjimenez/" target="_blank" rel="noopener noreferrer">
                 <ThinLinkedInIcon />
+              </a>
+            </li>
+          </div>
+          <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="mvmnt collectives">
+            <li>
+              <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.mvmntcollectives.com/" target="_blank" rel="noopener noreferrer">
+                <ThinMvmntCollectivesIcon />
               </a>
             </li>
           </div>
@@ -141,17 +134,24 @@ const NavBar = () => {
               )}
             </li>
           </div>
-          <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="mvmnt collectives">
-            <li>
-              <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.mvmntcollectives.com/" target="_blank" rel="noopener noreferrer">
-                <ThinMvmntCollectivesIcon />
-              </a>
-            </li>
-          </div>
           <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="strava">
             <li>
               <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://strava.app.link/lxN0E2NT0Ob" target="_blank" rel="noopener noreferrer">
                 <ThinStravaIcon />
+              </a>
+            </li>
+          </div>
+          <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="spotify">
+            <li>
+              <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://open.spotify.com/user/jimenamorenita?si=2fa3b2d8e7d147d1" target="_blank" rel="noopener noreferrer">
+                <ThinSpotifyIcon />
+              </a>
+            </li>
+          </div>
+          <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="goodreads">
+            <li>
+              <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.goodreads.com/user/show/183397302-samantha" target="_blank" rel="noopener noreferrer">
+                <GoodReadsIcon />
               </a>
             </li>
           </div>
