@@ -1,9 +1,13 @@
-"use client";
-import React from 'react'
+import React, { FC } from 'react'
 import { ThinInstagramIcon, ThinTikTokIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinPorftolioIcon, ThinMvmntCollectivesIcon } from '../icons/Icons'
 import toast from 'react-hot-toast';
 
-const NavBar = () => {
+interface NavBarProps {
+  onPortfolioClick: () => void;
+  onMvmntClick: () => void;
+}
+
+const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMvmntClick }) => {
   const notify = () => toast('check back for my youtube channel',
     {
       position: 'top-right',
@@ -51,14 +55,14 @@ const NavBar = () => {
           </div>
           <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="portfolio">
             <li>
-              <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://samantha-jimenez.com/" target="_blank" rel="noopener noreferrer">
+              <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" onClick={onPortfolioClick}>
                 <ThinPorftolioIcon />
               </a>
             </li>
           </div>
           <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="mvmnt collectives">
             <li>
-              <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.mvmntcollectives.com/" target="_blank" rel="noopener noreferrer">
+              <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" onClick={onMvmntClick}>
                 <ThinMvmntCollectivesIcon />
               </a>
             </li>
