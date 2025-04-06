@@ -77,6 +77,13 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMvmntClick }) => {
               </div>
             </li>
           </div>
+          <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="blog">
+            <li>
+              <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="/blog">
+                Blog
+              </a>
+            </li>
+          </div>
         </ul>
       </div>
     </div>
