@@ -19,6 +19,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [daisyui, addDynamicIconSelectors()],
+  plugins: [daisyui, addDynamicIconSelectors(), require('@tailwindcss/typography')],
 }
 export default config
