@@ -2,10 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 import { getAllPosts } from '@/app/blog/utils/getAllPosts';
 import { formatDate } from '@/app/blog/utils/formatDate';
+import Image from 'next/image';
 
 const BlogPage = async () => {
   const posts = await getAllPosts();
-
+  
   return (
     <div className="bg-white text-gray-900 min-h-screen font-sans">
       <header className="bg-cover bg-center h-64 flex items-center justify-center" style={{ backgroundImage: 'url(/blog-images/blog-hero2.jpg)' }}>
@@ -37,8 +38,10 @@ const BlogPage = async () => {
               <Link key={post.slug} href={`/blog/${post.slug}`} className="block group">
                 <div className="border-b pb-6">
                   {post.coverImage && (
-                    <img
-                      src={post.coverImage}
+                    <Image
+                      width={1000}
+                      height={1000}
+                      src={post.coverImage.startsWith('/') ? post.coverImage : `/${post.coverImage}`}
                       alt={post.title}
                       className="w-full h-64 object-cover rounded mb-4 transition group-hover:opacity-90"
                     />
