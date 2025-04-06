@@ -1,6 +1,6 @@
 ---
 title: "The AI Boom: Why Software Engineers Need to Keep Up"
-date: "2023-10-02"
+date: "2025-04-06"
 excerpt: "AI is moving fast—really fast. But that doesn’t mean we’re obsolete. It means we need to level up, adapt, and grow with it."
 coverImage: "blog-images/ai-boom.png"
 ---
