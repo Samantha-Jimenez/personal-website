@@ -1,0 +1,42 @@
+---
+title: "Reigniting My Love for Coding Through Personal Projects"
+date: "2025-04-05"
+excerpt: "After a period of burnout, I'm rediscovering the joy of building things just for me."
+coverImage: "blog-images/reinvigorating-coding.png"
+---
+
+# Reigniting My Love for Coding Through Personal Projects
+
+For a while, I felt burnt out.
+
+What used to excite me about software—solving problems, building creative tools, experimenting with new ideas—started to feel like a chore. Deadlines, meetings, and high expectations took over the parts of coding that once felt like play.
+
+But this year, I made a promise to myself: **build more for me.**
+
+## Remembering the Why
+
+I started coding because I loved making things from scratch. Whether it was a tiny animation, a silly website, or a helpful app, that spark came from seeing something I built come to life. Somewhere along the way, I lost that. So I’m getting it back—by focusing on:
+
+- Passion projects over perfection
+- Tools that help *me* in my daily life
+- Websites and apps that reflect my personality and values
+
+## Projects I'm Excited About
+
+Here are a few personal projects I’ve kicked off recently:
+
+- A digital garden-style blog built with Next.js
+- A moodboard app to organize and visualize creative inspiration
+- A photo-sharing site for my family with location filtering and private uploads
+
+Nothing fancy, nothing overengineered. Just fun.
+
+## Lessons Learned
+
+What surprised me most? How quickly joy returned once the pressure was gone.
+
+By giving myself space to explore and letting go of “best practices” for a moment, I’ve reconnected with the curious beginner I used to be. It’s refreshing.
+
+If you’re feeling stuck or uninspired, I highly recommend going back to basics: build something weird, useful, or totally pointless—but make it yours.
+
+Here’s to creating with joy again.

@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { ThinInstagramIcon, ThinTikTokIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinPorftolioIcon, ThinMvmntCollectivesIcon } from '../icons/Icons'
 import toast from 'react-hot-toast';
+import Link from 'next/link';
 
 interface NavBarProps {
   onPortfolioClick: () => void;
@@ -77,6 +78,13 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMvmntClick }) => {
               </div>
             </li>
           </div>
+          {/* <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="blog">
+            <li>
+              <Link href="/blog">
+                Blog
+              </Link>
+            </li>
+          </div> */}
         </ul>
       </div>
     </div>
