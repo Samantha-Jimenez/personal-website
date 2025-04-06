@@ -1,51 +1,38 @@
 import React from 'react';
-import { getAllPosts } from '@/app/blog/utils/getAllPosts'; // Update the path
-import Link from 'next/link'; // Import Link for navigation
+import Link from 'next/link';
+import { getAllPosts } from '@/app/blog/utils/getAllPosts';
 
-const BlogPage: React.FC = async () => {
-  const posts = await getAllPosts(); // Fetch all posts
-
-  if (posts.length === 0) {
-    return <div className="p-8">No blog posts available.</div>; // Display a message if no posts are found
-  }
+const BlogPage = async () => {
+  const posts = await getAllPosts();
 
   return (
-    <div className="min-h-screen bg-base-200">
-      <header className="bg-base-100 shadow">
-        <div className="container mx-auto p-6">
-          <nav className="breadcrumbs">
-            <ul>
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/blog">Blog</Link></li>
-            </ul>
-          </nav>
-          <h1 className="text-4xl font-bold text-center">My Blog</h1>
-          <p className="text-center text-gray-600">Welcome to my blog! Here you will find my latest posts.</p>
+    <div className="bg-white text-gray-900 min-h-screen">
+      <header className="bg-cover bg-center h-64 flex items-center justify-center" style={{ backgroundImage: 'url(/blog-images/blog-hero.png)' }}>
+        <div className="text-center bg-white bg-opacity-70 p-6 rounded">
+          <h1 className="text-5xl font-bold mb-2">My Journal</h1>
+          <p className="text-lg text-gray-700">Sharing my stories, tips & adventures</p>
         </div>
       </header>
 
-      <main className="container mx-auto p-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {posts.map((post) => (
-            <div key={post.slug} className="card bg-base-100 shadow-xl transition-transform transform hover:scale-105">
-              <div className="card-body">
-                <h2 className="card-title">
-                  <Link href={`/blog/${post.slug}`} className="text-primary hover:underline">
-                    {post.title}
-                  </Link>
-                </h2>
-                <p className="text-gray-600">{post.excerpt}</p>
-                <div className="card-actions justify-end">
-                  <Link href={`/blog/${post.slug}`} className="btn btn-primary">Read More</Link>
+      <main className="max-w-5xl mx-auto px-4 py-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {posts.reverse().map((post) => (
+            <Link key={post.slug} href={`/blog/${post.slug}`}>
+              <div className="block rounded-lg overflow-hidden shadow hover:shadow-xl transition-shadow duration-300">
+                <img src={post.coverImage || '/images/placeholder.jpg'} alt={post.title} className="w-full h-48 object-cover" />
+                <div className="p-6">
+                  <h2 className="text-xl font-bold mb-2 text-gray-900">{post.title}</h2>
+                  <p className="text-sm text-gray-500 mb-4">{post.date}</p>
+                  <p className="text-gray-700">{post.excerpt}</p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </main>
 
-      <footer className="bg-base-100 text-center p-4 mt-6">
-        <p className="text-gray-600">© {new Date().getFullYear()} My Blog. All rights reserved.</p>
+      <footer className="py-8 text-center text-gray-500">
+        © {new Date().getFullYear()} My Journal. All rights reserved.
       </footer>
     </div>
   );
