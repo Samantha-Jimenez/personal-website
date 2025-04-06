@@ -16,7 +16,9 @@ export function getAllPosts() {
     return {
       slug,
       title: data.title,
-      excerpt: data.excerpt, // Ensure you have an excerpt in your Markdown files
+      date: data.date,
+      excerpt: data.excerpt,
+      coverImage: data.coverImage,
     };
   });
 

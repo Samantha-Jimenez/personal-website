@@ -13,5 +13,6 @@ export function getPostBySlug(slug: string) {
     title: data.title,
     date: data.date,
     content: content,
+    coverImage: data.coverImage,
   };
 } 
