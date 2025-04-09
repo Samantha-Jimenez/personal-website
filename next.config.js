@@ -1,4 +1,16 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+import withMDX from '@next/mdx'
+import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 
-module.exports = nextConfig
+const mdxOptions = {
+  extension: /\.mdx?$/,
+  remarkPlugins: [remarkGfm],
+  rehypePlugins: [rehypeRaw],
+}
+
+export default withMDX({
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  mdxOptions,
+  // other Next.js configurations
+})

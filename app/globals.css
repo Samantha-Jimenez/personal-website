@@ -172,3 +172,11 @@ footer .menu :where(li > details[open] > summary)::after {
 .react-toggle--checked .react-toggle-thumb {
   border-color: #4D4D4D !important;
 }
+
+img[alt="Make Time"] { width: 200px; }
+
+img[alt="The Artist's Way"] { width: 200px; }
+
+img[alt="The Great Divide"] { width: 200px; }
+
+
