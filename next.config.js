@@ -9,8 +9,13 @@ const mdxOptions = {
   rehypePlugins: [rehypeRaw],
 }
 
-export default withMDX({
+const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  reactStrictMode: true,
+}
+
+export default withMDX({
+  ...nextConfig,
   mdxOptions,
   // other Next.js configurations
 })

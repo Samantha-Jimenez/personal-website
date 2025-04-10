@@ -1,14 +1,13 @@
 import type {Config} from 'tailwindcss'
 import {addDynamicIconSelectors} from '@iconify/tailwind'
 
-import daisyui from 'daisyui'
-
 const config: Config = {
   darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './public/index.html',
   ],
   theme: {
     extend: {
@@ -19,6 +18,10 @@ const config: Config = {
       },
     },
   },
-  plugins: [daisyui, addDynamicIconSelectors(), require('@tailwindcss/typography')],
+  plugins: [
+    require('daisyui'),
+    addDynamicIconSelectors(),
+    require('@tailwindcss/typography'),
+  ],
 }
 export default config
