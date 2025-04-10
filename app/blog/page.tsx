@@ -32,6 +32,7 @@ const BlogPage: React.FC<PageProps> = async ({ searchParams }) => {
       <header className="bg-cover bg-center h-64 flex items-center justify-center" style={{ backgroundImage: 'url(/blog-images/blog-hero2.jpg)' }}>
         <div className="text-center bg-white bg-opacity-80 p-6 rounded-md shadow-sm">
           <h1 className="text-4xl font-semibold mb-2 tracking-tight">Tabs Open</h1>
+          <p className="text-base text-gray-600">Tech, lifestyle, and thoughts I forgot to close.</p>
           {tag && <p className="text-base text-gray-600">Filtering by tag: {tag}</p>}
         </div>
       </header>
