@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { getAllPosts } from '@/app/blog/utils/getAllPosts';
 import { formatDate } from '@/app/blog/utils/formatDate';
+import { formatTags } from '@/app/blog/utils/formatTags';
 import Image from 'next/image';
 
 interface SearchParams {
@@ -33,7 +34,7 @@ const BlogPage: React.FC<PageProps> = async ({ searchParams }) => {
         <div className="text-center bg-white bg-opacity-80 p-6 rounded-md shadow-sm">
           <h1 className="text-4xl font-semibold mb-2 tracking-tight">Tabs Open</h1>
           <p className="text-base text-gray-600">Tech, lifestyle, and thoughts I forgot to close.</p>
-          {tag && <p className="text-base text-gray-600">Filtering by tag: {tag}</p>}
+          {/* {tag && <p className="text-base text-gray-600">Filtering by tag: {tag}</p>} */}
         </div>
       </header>
 
@@ -91,6 +92,7 @@ const BlogPage: React.FC<PageProps> = async ({ searchParams }) => {
                   <div>
                     <h2 className="text-2xl font-medium mb-1 group-hover:underline">{post.title}</h2>
                     <p className="text-sm text-gray-500 mb-2">{formatDate(post.date)}</p>
+                    <p>{formatTags(post.tags)}</p>
                     <p className="text-gray-700 leading-relaxed">{post.excerpt}</p>
                   </div>
                 </div>
