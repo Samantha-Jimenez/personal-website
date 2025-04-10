@@ -192,3 +192,51 @@ img[alt="The Great Divide"] { width: 200px; }
       color: gray !important;
   }
 }
+
+@media (max-width: 455px) {
+  .tabs-lift > .tab {
+    padding: 14px !important;
+  }
+}
+
+@media (max-width: 426px) {
+  .tabs-lift > .tab {
+    padding: 13px !important;
+  }
+}
+
+@media (max-width: 410px) {
+  .tabs-lift > .tab {
+    padding: 12px !important;
+  }
+}
+
+@media (max-width: 394px) {
+  .tabs-lift > .tab {
+    padding: 11px !important;
+  }
+}
+
+@media (max-width: 378px) {
+  .tabs-lift > .tab {
+    padding: 10px !important;
+  }
+}
+
+@media (max-width: 362px) {
+  .tabs-lift > .tab {
+    padding: 9px !important;
+  }
+}
+
+@media (max-width: 345px) {
+  .tabs-lift > .tab {
+    padding: 8px !important;
+  }
+}
+
+@media (max-width: 330px) {
+  .tabs-lift > .tab {
+    padding: 7px !important;
+  }
+}

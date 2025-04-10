@@ -4,6 +4,7 @@ import { getAllPosts } from '@/app/blog/utils/getAllPosts';
 import { formatDate } from '@/app/blog/utils/formatDate';
 import { formatTags } from '@/app/blog/utils/formatTags';
 import Image from 'next/image';
+import { BeautyTabIcon, FitnessTabIcon, FoodTabIcon, LifestyleTabIcon, MusicTabIcon, TechTabIcon, TechTabIconTwo, TravelTabIcon, AllTabIcon} from '@/app/icons/BlogIcons';
 
 interface SearchParams {
   tag?: string; // Define the expected structure for searchParams
@@ -50,21 +51,31 @@ const BlogPage: React.FC<PageProps> = async ({ searchParams }) => {
 
       {/* Tags Tabs */}
       <div className="max-w-3xl mx-auto px-4 pt-4">
-        <div className="tabs tabs-lift flex space-x-2">
-          {["Lifestyle", "Tech", "Fitness", "Beauty", "Food", "Music", "Travel"].map(tagName => (
+        <div className="tabs tabs-lift space-x-2 whitespace-nowrap">
+          {[
+            { name: "Lifestyle", icon: <LifestyleTabIcon /> },
+            { name: "Tech", icon: <TechTabIconTwo /> },
+            { name: "Fitness", icon: <FitnessTabIcon /> },
+            { name: "Beauty", icon: <BeautyTabIcon /> },
+            { name: "Food", icon: <FoodTabIcon /> },
+            { name: "Music", icon: <MusicTabIcon /> },
+            { name: "Travel", icon: <TravelTabIcon /> },
+          ].map(({ name, icon }) => (
             <Link 
-              key={tagName} 
-              href={`?tag=${tagName}`} 
-              className={`tab rounded-t-lg ${tag === tagName ? 'tab-active bg-white' : ''}`}
+              key={name} 
+              href={`?tag=${name}`} 
+              className={`tab rounded-t-lg ${tag === name ? 'tab-active bg-white' : ''}`}
             >
-              {tagName}
+              <span className="hidden min-[602px]:inline max-[640px]:text-xs">{name}</span>
+              <span className="min-[602px]:hidden">{icon}</span>
             </Link>
           ))}
           <Link 
             href="/blog"
             className={`tab rounded-t-lg ${!tag ? 'tab-active' : ''}`}
           >
-            All
+            <span className="hidden min-[602px]:inline max-[640px]:text-xs">All</span>
+            <span className="min-[602px]:hidden"><AllTabIcon /></span>
           </Link>
         </div>
       </div>
