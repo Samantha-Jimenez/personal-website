@@ -51,7 +51,7 @@ const BlogPage: React.FC<PageProps> = async ({ searchParams }) => {
 
       {/* Tags Tabs */}
       <div className="max-w-3xl mx-auto px-4 pt-4">
-        <div className="tabs tabs-lift space-x-2 whitespace-nowrap">
+        <div className="tabs tabs-lift space-x-2 whitespace-nowrap max-[660px]:place-content-between">
           {[
             { name: "Lifestyle", icon: <LifestyleTabIcon /> },
             { name: "Tech", icon: <TechTabIconTwo /> },
@@ -78,6 +78,8 @@ const BlogPage: React.FC<PageProps> = async ({ searchParams }) => {
             <span className="min-[602px]:hidden"><AllTabIcon /></span>
           </Link>
         </div>
+        {tag ? <p className="min-[602px]:hidden text-4xl font-extralight mt-6 text-black">{tag}</p> : <div className="min-[602px]:hidden text-4xl font-extralight mt-6 text-black">All Posts</div>}
+        <div className="divider divider-neutral min-[602px]:hidden mt-4 mx-4"></div>
       </div>
 
       <main className="max-w-4xl mx-auto px-4 py-12">
