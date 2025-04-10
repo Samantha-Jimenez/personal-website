@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { formatDate } from '@/app/blog/utils/formatDate';
 import { parseMarkdown } from '@/app/blog/utils/parseMarkdown';
-import Image from 'next/image';
 
 interface Params {
   postId: string;
@@ -28,19 +27,10 @@ export default async function BlogPost({ params }: PageProps) {
         </nav>
 
         <article className="flex items-start">
-          {post.data.coverImage && (
-            <Image
-              width={100}
-              height={150}
-              src={post.data.coverImage.startsWith('/') ? post.data.coverImage : `/${post.data.coverImage}`}
-              alt={post.data.title}
-              className="w-24 h-32 object-cover rounded mr-4"
-            />
-          )}
           <div>
             <h1 className="text-4xl font-bold mb-4">{post.data.title}</h1>
             <p className="text-sm text-gray-500 mb-6">{formatDate(post.data.date)}</p>
-            <div className="prose prose-p:text-gray-500 prose-headings:text-gray-600 prose-strong:text-gray-700 prose-li:text-gray-600 max-w-none" dangerouslySetInnerHTML={{ __html: content }} />
+            <div className="prose prose-p:text-gray-600 prose-headings:text-gray-700 prose-strong:text-gray-700 prose-li:text-gray-700 max-w-none" dangerouslySetInnerHTML={{ __html: content }} />
           </div>
         </article>
       </div>
