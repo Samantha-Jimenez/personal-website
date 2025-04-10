@@ -51,7 +51,7 @@ const BlogPage: React.FC<PageProps> = async ({ searchParams }) => {
       {/* Tags Tabs */}
       <div className="max-w-3xl mx-auto px-4 pt-4">
         <div className="tabs tabs-lift flex space-x-2">
-          {["Lifestyle", "Hair & Beauty", "Fitness", "Tech", "Food", "Music", "Travel"].map(tagName => (
+          {["Lifestyle", "Tech", "Fitness", "Beauty", "Food", "Music", "Travel"].map(tagName => (
             <Link 
               key={tagName} 
               href={`?tag=${tagName}`} 

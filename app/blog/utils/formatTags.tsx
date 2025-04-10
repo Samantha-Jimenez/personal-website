@@ -2,7 +2,7 @@ import React from 'react';
 
 const tagColors: { [key: string]: string } = {
   Lifestyle: 'bg-[#F1FCF5] text-[#00D290]',
-  'Hair & Beauty': 'bg-[#FFF0F6] text-[#F42F98]',
+  Beauty: 'bg-[#FFF0F6] text-[#F42F98]',
   Fitness: 'bg-[#F0FAFF] text-[#00BAFE]',
   Tech: 'bg-[#ECF0FE] text-[#412AD5]',
   Food: 'bg-[#FFF3F4] text-[#FF627E]',
