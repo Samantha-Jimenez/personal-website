@@ -4,6 +4,15 @@ import matter from 'gray-matter';
 
 const postsDirectory = path.join(process.cwd(), 'app/blog/posts');
 
+export interface Post {
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  coverImage: string;
+  tags: string[];
+}
+
 export function getAllPosts() {
   const fileNames = fs.readdirSync(postsDirectory);
   const allPosts = fileNames.map((fileName) => {
@@ -19,6 +28,7 @@ export function getAllPosts() {
       date: data.date,
       excerpt: data.excerpt,
       coverImage: data.coverImage,
+      tags: data.tags,
     };
   });
 

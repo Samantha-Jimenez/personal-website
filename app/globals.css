@@ -179,4 +179,16 @@ img[alt="The Artist's Way"] { width: 200px; }
 
 img[alt="The Great Divide"] { width: 200px; }
 
+.tabs-lift > .tab:is(.tab-active, [aria-selected="true"]):not(.tab-disabled, [disabled]), .tabs-lift > .tab:is(input:checked, label:has(:checked)) {
+  background-color: transparent !important;
+}
 
+.tab:not(:checked, label:has(:checked), :hover, .tab-active, [aria-selected="true"]) {
+  color: black !important;
+}
+
+@media (hover: hover) {
+  .tab:hover {
+      color: gray !important;
+  }
+}
