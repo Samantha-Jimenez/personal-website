@@ -4,12 +4,18 @@ import { getAllPosts } from '@/app/blog/utils/getAllPosts';
 import { formatDate } from '@/app/blog/utils/formatDate';
 import Image from 'next/image';
 
-const BlogPage = async ({ searchParams }: { searchParams: { tag?: string } }) => {
-  const posts = await getAllPosts();
-  const tag = await searchParams.tag; // Await the searchParams
+interface SearchParams {
+  tag?: string; // Define the expected structure for searchParams
+}
 
-  // Tags array
-  const tags = ["Lifestyle", "Hair & Beauty", "Fitness", "Tech", "Food", "Music", "Travel"];
+interface PageProps {
+  searchParams: Promise<SearchParams>; // Change to Promise
+}
+
+const BlogPage: React.FC<PageProps> = async ({ searchParams }) => {
+  const posts = await getAllPosts(); // Fetch posts directly in the component
+  const resolvedSearchParams = await searchParams; // Await the searchParams
+  const tag = resolvedSearchParams.tag; // Access the tag
 
   // Filter posts based on selected tag
   const filteredPosts = tag 
@@ -26,7 +32,7 @@ const BlogPage = async ({ searchParams }: { searchParams: { tag?: string } }) =>
       <header className="bg-cover bg-center h-64 flex items-center justify-center" style={{ backgroundImage: 'url(/blog-images/blog-hero2.jpg)' }}>
         <div className="text-center bg-white bg-opacity-80 p-6 rounded-md shadow-sm">
           <h1 className="text-4xl font-semibold mb-2 tracking-tight">Tabs Open</h1>
-          <p className="text-base text-gray-600">Tech, lifestyle, and thoughts I forgot to close.</p>
+          {tag && <p className="text-base text-gray-600">Filtering by tag: {tag}</p>}
         </div>
       </header>
 
@@ -43,7 +49,7 @@ const BlogPage = async ({ searchParams }: { searchParams: { tag?: string } }) =>
       {/* Tags Tabs */}
       <div className="max-w-3xl mx-auto px-4 pt-4">
         <div className="tabs tabs-lift flex space-x-2">
-          {tags.map(tagName => (
+          {["Lifestyle", "Hair & Beauty", "Fitness", "Tech", "Food", "Music", "Travel"].map(tagName => (
             <Link 
               key={tagName} 
               href={`?tag=${tagName}`} 
