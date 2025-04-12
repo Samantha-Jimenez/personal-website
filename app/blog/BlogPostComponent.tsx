@@ -20,7 +20,7 @@ const BlogPostComponent = ({ post, content }: { post: any, content: string }) =>
           <div>
             <h1 className="text-4xl font-bold mb-4">{post.data.title}</h1>
             <p className="text-sm text-gray-500 mb-6">{formatDate(post.data.date)}</p>
-            <div className="prose prose-p:text-gray-900 prose-headings:text-gray-800 prose-strong:text-gray-900 prose-li:text-gray-800 prose-li:marker:text-gray-500 prose-ul:list-[circle] max-w-none" dangerouslySetInnerHTML={{ __html: content }} />
+            <div className="prose prose-p:text-black prose-headings:text-gray-800 prose-strong:text-gray-900 prose-li:text-gray-800 prose-li:marker:text-gray-500 prose-ul:list-[circle] prose-a:text-gray-600 max-w-none" dangerouslySetInnerHTML={{ __html: content }} />
           </div>
         </article>
       </div>
