@@ -5,7 +5,7 @@ import { formatDate } from '@/app/blog/utils/formatDate';
 import { formatTags } from '@/app/blog/utils/formatTags';
 import Image from 'next/image';
 import { BeautyTabIcon, FitnessTabIcon, FoodTabIcon, LifestyleTabIcon, MusicTabIcon, TechTabIcon, TechTabIconTwo, TravelTabIcon, AllTabIcon} from '@/app/icons/BlogIcons';
-
+import Footer from '@/app/components/Footer';
 interface SearchParams {
   tag?: string; // Define the expected structure for searchParams
 }
@@ -115,8 +115,8 @@ const BlogPage: React.FC<PageProps> = async ({ searchParams }) => {
         )}
       </main>
 
-      <footer className="py-8 text-center text-sm text-gray-400">
-        © {new Date().getFullYear()} My Journal
+      <footer className="border-t">
+        <Footer />
       </footer>
     </div>
   );

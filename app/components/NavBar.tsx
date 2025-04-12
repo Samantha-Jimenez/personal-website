@@ -28,7 +28,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMvmntClick }) => {
 
   return (
     <div className="navbar bg-neutral-200 text-black dark:bg-zinc-900 flex flex-col min-[515px]:flex-row justify-between dark:text-gray-200">
-      <div className="self-stretch max-[844px]:pt-2">
+      <div className="self-stretch max-[844px]:pt-2 content-center">
         <a className="px-5 btn-ghost text-xl bungee-hairline-bold hover:bg-transparent active:transform-none focus:transform-none text-black dark:text-white">aka.jimena</a>
       </div>
       <div className="flex-none self-start">
