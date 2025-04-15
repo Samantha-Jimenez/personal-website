@@ -6,6 +6,8 @@ import { formatTags } from '@/app/blog/utils/formatTags';
 import Image from 'next/image';
 import { BeautyTabIcon, FitnessTabIcon, FoodTabIcon, LifestyleTabIcon, MusicTabIcon, TechTabIcon, TechTabIconTwo, TravelTabIcon, AllTabIcon} from '@/app/icons/BlogIcons';
 import Footer from '@/app/components/Footer';
+import TypewriterText from '@/app/components/TyprewriterText';
+
 interface SearchParams {
   tag?: string; // Define the expected structure for searchParams
 }
@@ -32,9 +34,8 @@ const BlogPage: React.FC<PageProps> = async ({ searchParams }) => {
   return (
     <div className="bg-white text-gray-900 min-h-screen font-sans">
       <header className="bg-cover bg-center h-64 flex items-center justify-center" style={{ backgroundImage: 'url(/blog-images/blog-hero2.jpg)' }}>
-        <div className="text-center bg-white bg-opacity-80 p-6 rounded-md shadow-sm">
-          <h1 className="text-4xl font-semibold mb-2 tracking-tight">Tabs Open</h1>
-          <p className="text-base text-gray-600">Tech, lifestyle, and thoughts I forgot to close.</p>
+        <div className="text-center bg-gray-900 bg-opacity-55 p-6 w-full h-full content-center">
+          <TypewriterText />
           {/* {tag && <p className="text-base text-gray-600">Filtering by tag: {tag}</p>} */}
         </div>
       </header>
