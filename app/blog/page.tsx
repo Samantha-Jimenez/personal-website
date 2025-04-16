@@ -100,7 +100,7 @@ const BlogPage: React.FC<PageProps> = async ({ searchParams }) => {
                       height={100}
                       src={post.coverImage.startsWith('/') ? post.coverImage : `/${post.coverImage}`}
                       alt={post.title}
-                      className="w-24 h-32 object-cover rounded mr-4 object-left"
+                      className="w-[5.33rem] h-32 object-cover rounded mr-4 object-left"
                     />
                   )}
                   <div>
