@@ -49,7 +49,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
 
   return (
     <div>
-        <div className="border-b">
+        <div className="">
             <NavBar onPortfolioClick={handlePortfolioClick} onMvmntClick={handleMvmntClick} />
         </div>
       <header className="bg-cover bg-center h-64 flex items-center justify-center" style={{ backgroundImage: 'url(/blog-images/blog-hero2.jpg)' }}>

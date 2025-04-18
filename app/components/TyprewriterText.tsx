@@ -22,7 +22,7 @@ const TyprewriterText = () => {
 
   return (
     <div>
-        <h1 className="text-5xl font-medium mb-2 tracking-tight text-white">
+        <h1 className="text-5xl font-medium mb-2 tracking-tight text-white montserrat-mine">
             <Typewriter
                 words={['Tabs Open']}
                 cursor={showFirstCursor}
@@ -33,7 +33,7 @@ const TyprewriterText = () => {
                 onType={handleType}
             />
         </h1>
-        <p className="text-2xl font-extralight text-gray-300">
+        <p className="text-2xl font-extralight text-gray-200 montserrat-mine">
             {startSecondTypewriter && (
                 <Typewriter
                     words={['Tech, Lifestyle, and Thoughts I Forgot to Close']}

@@ -27,14 +27,14 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMvmntClick }) => {
   };
 
   return (
-    <div className="navbar text-black dark:bg-zinc-900 flex flex-col min-[515px]:flex-row justify-between dark:text-gray-200">
-      <div className="self-stretch max-[844px]:pt-2 content-center">
+    <div className="navbar text-black dark:bg-zinc-900 flex flex-col min-[585px]:flex-row justify-between dark:text-gray-200">
+      <div className="self-stretch pt-2 content-center">
         <Link href="/" className="px-5 btn-ghost text-xl bungee-hairline-bold hover:bg-transparent active:transform-none focus:transform-none text-black dark:text-white">
           aka.jimena
         </Link>
       </div>
       <div className="flex-none self-start">
-        <ul className="menu menu-horizontal px-1 justify-items-center max-[662px]:grid max-[662px]:grid-flow-row max-[662px]:grid-cols-6">
+        <ul className="menu menu-horizontal px-1 justify-items-center grid grid-flow-row grid-cols-7">
           <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="instagram">
             <li>
               <a className="hover:scale-150 hover:bg-transparent active:bg-white active:dark:bg-neutral-200 transition-transform duration-200" href="https://www.instagram.com/aka.jimena" target="_blank" rel="noopener noreferrer">
@@ -80,13 +80,13 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMvmntClick }) => {
               </div>
             </li>
           </div>
-          {/* <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="blog">
+          <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="blog">
             <li>
-              <Link href="/blog">
+              <Link href="/blog" className="montserrat-mine">
                 Blog
               </Link>
             </li>
-          </div> */}
+          </div>
         </ul>
       </div>
     </div>
