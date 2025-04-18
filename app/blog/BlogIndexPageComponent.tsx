@@ -29,7 +29,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
       </header>
 
       {/* Back to Home Button */}
-      <div className="max-w-3xl mx-auto px-4 pt-10">
+      <div className="max-w-2xl mx-auto px-4 pt-10">
         <Link
           href="/"
           className="inline-block border border-gray-800 text-gray-800 px-3 py-1 rounded hover:bg-gray-100 transition text-sm"
@@ -39,8 +39,8 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
       </div>
 
       {/* Tags Tabs */}
-      <div className="max-w-3xl mx-auto px-4 pt-4">
-        <div className="tabs tabs-lift space-x-2 whitespace-nowrap max-[660px]:place-content-between">
+      <div className="max-w-2xl mx-auto px-4 pt-4">
+        <div className="tabs tabs-lift space-x-2 whitespace-nowrap place-content-between">
           {[
             { name: "Lifestyle", icon: <LifestyleTabIcon /> },
             { name: "Tech", icon: <TechTabIconTwo /> },
@@ -48,12 +48,12 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
             { name: "Beauty", icon: <BeautyTabIcon /> },
             { name: "Food", icon: <FoodTabIcon /> },
             { name: "Music", icon: <MusicTabIcon /> },
-            { name: "Travel", icon: <TravelTabIcon /> },
+            // { name: "Travel", icon: <TravelTabIcon /> },
           ].map(({ name, icon }) => (
             <Link 
               key={name} 
               href={`?tag=${name}`} 
-              className={`tab rounded-t-lg ${tag === name ? 'tab-active bg-white' : ''}`}
+              className={`tab rounded-t-lg !px-6 ${tag === name ? 'tab-active bg-white' : ''}`}
             >
               <span className="hidden min-[602px]:inline max-[640px]:text-xs">{name}</span>
               <span className="min-[602px]:hidden">{icon}</span>
