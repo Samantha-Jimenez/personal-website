@@ -33,7 +33,7 @@ const Footer = () => {
       setOpenGithubMenu(false);
     }
   };
-
+  
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
@@ -42,7 +42,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer ref={menuRef} className="footer bg-neutral-200 text-black dark:bg-zinc-900 dark:text-gray-200 items-center p-2">
+    <footer ref={menuRef} className="footer text-black dark:bg-zinc-900 dark:text-gray-200 items-center p-2">
         {/* <aside className="grid-flow-col items-center">
             <p className="montserrat-mine font-light">Copyright © {new Date().getFullYear()} - All right reserved</p>
         </aside> */}

@@ -20,7 +20,7 @@
 
 /* Additional styles for dark theme */
 body {
-  background: rgb(var(--background-start-rgb));
+  background: rgb(243, 244, 246);
   color: rgb(var(--foreground-rgb));
 }
 
@@ -33,6 +33,10 @@ body.dark {
 body.dark .menu li > *:not(ul, .menu-title, details, .btn):active {
   background-color: #D1D5DA;
   color: black;
+}
+
+.input, .textarea {
+  background-color: #E4E7EB;
 }
 
 /* Remove the redundant media query for dark theme */
