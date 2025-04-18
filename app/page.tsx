@@ -5,6 +5,8 @@ import NavBar from "./components/NavBar";
 import Footer from './components/Footer';
 import Toggle from 'react-toggle';
 import 'react-toggle/style.css';
+import PortfolioModal from './components/PortfolioModal';
+import MvmntModal from './components/MvmntModal';
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
@@ -88,35 +90,17 @@ export default function Home() {
           <ContactForm />
         </div>
 
-        {isPortfolioModalOpen && (
-          <dialog className="modal modal-open" onClick={handleClosePortfolioModal}>
-            <div className="modal-box" onClick={(e) => e.stopPropagation()}>
-              <form method="dialog">
-                <button onClick={handleClosePortfolioModal} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-              </form>
-              <h2 className="font-bold text-lg">Heads up,</h2>
-              <p>You are leaving this site to go to my portfolio. Do you want to continue?</p>
-              <div className="modal-action">
-                <button onClick={handleConfirmPortfolioRedirect} className="btn">Yup!</button>
-              </div>
-            </div>
-          </dialog>
-        )}
+        <PortfolioModal 
+          isOpen={isPortfolioModalOpen} 
+          onClose={handleClosePortfolioModal} 
+          onConfirm={handleConfirmPortfolioRedirect} 
+        />
 
-        {isMvmntModalOpen && (
-          <dialog className="modal modal-open" onClick={handleCloseMvmntModal}>
-            <div className="modal-box" onClick={(e) => e.stopPropagation()}>
-              <form method="dialog">
-                <button onClick={handleCloseMvmntModal} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-              </form>
-              <h2 className="font-bold text-lg">Heads up,</h2>
-              <p>You are leaving this site to go to Mvmnt Collectives -- A fitness related web app I&apos;m currently building. <br/> Do you want to continue?</p>
-              <div className="modal-action">
-                <button onClick={handleConfirmMvmntRedirect} className="btn">Yup!</button>
-              </div>
-            </div>
-          </dialog>
-        )}
+        <MvmntModal 
+          isOpen={isMvmntModalOpen} 
+          onClose={handleCloseMvmntModal} 
+          onConfirm={handleConfirmMvmntRedirect} 
+        />
       </main>
       <Footer />
     </>
