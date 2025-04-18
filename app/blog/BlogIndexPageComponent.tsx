@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 import Link from 'next/link'
@@ -8,10 +8,41 @@ import { formatDate } from './utils/formatDate'
 import TypewriterText from '../components/TyprewriterText'
 import { LifestyleTabIcon, TechTabIconTwo, FitnessTabIcon, BeautyTabIcon, FoodTabIcon, MusicTabIcon, TravelTabIcon, AllTabIcon } from '../icons/BlogIcons'
 import Image from 'next/image'
+import PortfolioModal from '../components/PortfolioModal'
+import MvmntModal from '../components/MvmntModal'
 
 const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => {
-  
-    // Filter posts based on selected tag
+    const [isPortfolioModalOpen, setIsPortfolioModalOpen] = useState(false);
+    const [isMvmntModalOpen, setIsMvmntModalOpen] = useState(false);
+
+    const handlePortfolioClick = () => {
+        console.log("Portfolio button clicked");
+        setIsPortfolioModalOpen(true);
+    };
+    
+    const handleClosePortfolioModal = () => {
+        setIsPortfolioModalOpen(false);
+    };
+    
+    const handleConfirmPortfolioRedirect = () => {
+        window.open("https://samantha-jimenez.com/", "_blank");
+        setIsPortfolioModalOpen(false);
+    };
+    
+    const handleMvmntClick = () => {
+        console.log("Mvmnt button clicked");
+        setIsMvmntModalOpen(true);
+    };
+    
+    const handleCloseMvmntModal = () => {
+        setIsMvmntModalOpen(false);
+    };
+    
+    const handleConfirmMvmntRedirect = () => {
+        window.open("https://www.mvmntcollectives.com/", "_blank");
+        setIsMvmntModalOpen(false);
+    };
+
   const filteredPosts = tag 
   ? posts.filter((post: any) => post.tags.includes(tag)) 
   : posts;
@@ -19,7 +50,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
   return (
     <div>
         <div className="border-b">
-            <NavBar onPortfolioClick={() => {}} onMvmntClick={() => {}} />
+            <NavBar onPortfolioClick={handlePortfolioClick} onMvmntClick={handleMvmntClick} />
         </div>
       <header className="bg-cover bg-center h-64 flex items-center justify-center" style={{ backgroundImage: 'url(/blog-images/blog-hero2.jpg)' }}>
         <div className="text-center bg-gray-900 bg-opacity-55 p-6 w-full h-full content-center">
@@ -103,7 +134,16 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
           </div>
         )}
       </main>
-
+      <PortfolioModal 
+          isOpen={isPortfolioModalOpen} 
+          onClose={handleClosePortfolioModal} 
+          onConfirm={handleConfirmPortfolioRedirect} 
+      />
+      <MvmntModal 
+          isOpen={isMvmntModalOpen} 
+          onClose={handleCloseMvmntModal} 
+          onConfirm={handleConfirmMvmntRedirect} 
+      />
       <footer className="border-t">
         <Footer />
       </footer>
