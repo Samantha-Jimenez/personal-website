@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { formatTags } from './utils/formatTags'
 import { formatDate } from './utils/formatDate'
 import TypewriterText from '../components/TyprewriterText'
-import { LifestyleTabIcon, TechTabIconTwo, FitnessTabIcon, BeautyTabIcon, FoodTabIcon, MusicTabIcon, TravelTabIcon, AllTabIcon } from '../icons/BlogIcons'
+import { LifestyleTabIcon, TechTabIcon, FitnessTabIcon, BeautyTabIcon, FoodTabIcon, MusicTabIcon, TravelTabIcon, AllTabIcon } from '../icons/BlogIcons'
 import Image from 'next/image'
 import PortfolioModal from '../components/PortfolioModal'
 import MvmntModal from '../components/MvmntModal'
@@ -74,7 +74,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
         <div className="tabs tabs-lift space-x-2 whitespace-nowrap place-content-between">
           {[
             { name: "Lifestyle", icon: <LifestyleTabIcon /> },
-            { name: "Tech", icon: <TechTabIconTwo /> },
+            { name: "Tech", icon: <TechTabIcon /> },
             { name: "Fitness", icon: <FitnessTabIcon /> },
             { name: "Beauty", icon: <BeautyTabIcon /> },
             { name: "Food", icon: <FoodTabIcon /> },
@@ -84,22 +84,22 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
             <Link 
               key={name} 
               href={`?tag=${name}`} 
-              className={`tab rounded-t-lg !px-6 ${tag === name ? 'tab-active bg-white' : ''}`}
+              className={`tab rounded-t-lg min-[655px]:!px-6 ${tag === name ? 'tab-active bg-white' : ''}`}
             >
-              <span className="hidden min-[602px]:inline max-[640px]:text-xs">{name}</span>
-              <span className="min-[602px]:hidden">{icon}</span>
+              <span className="hidden min-[528px]:inline max-[640px]:text-xs">{name}</span>
+              <span className="min-[528px]:hidden">{icon}</span>
             </Link>
           ))}
           <Link 
             href="/blog"
             className={`tab rounded-t-lg ${!tag ? 'tab-active' : ''}`}
           >
-            <span className="hidden min-[602px]:inline max-[640px]:text-xs">All</span>
-            <span className="min-[602px]:hidden"><AllTabIcon /></span>
+            <span className="hidden min-[528px]:inline max-[640px]:text-xs">All</span>
+            <span className="min-[528px]:hidden"><AllTabIcon /></span>
           </Link>
         </div>
-        {tag ? <p className="min-[602px]:hidden text-4xl font-extralight mt-6 text-black">{tag}</p> : <div className="min-[602px]:hidden text-4xl font-extralight mt-6 text-black">All Posts</div>}
-        <div className="divider divider-neutral min-[602px]:hidden mt-4 mx-4"></div>
+        {tag ? <p className="min-[528px]:hidden text-4xl font-extralight mt-6 text-black">{tag}</p> : <div className="min-[528px]:hidden text-4xl font-extralight mt-6 text-black">All Posts</div>}
+        <div className="divider divider-neutral min-[528px]:hidden mt-4 mx-4"></div>
       </div>
 
       <main className="max-w-4xl mx-auto px-4 py-12">
