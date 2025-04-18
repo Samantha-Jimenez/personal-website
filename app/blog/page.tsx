@@ -3,7 +3,7 @@ import { getAllPosts } from '@/app/blog/utils/getAllPosts';
 import BlogIndexPageComponent from './BlogIndexPageComponent';
 
 interface SearchParams {
-  tag?: string; // Define the expected structure for searchParams
+  tag: string; // Define the expected structure for searchParams
 }
 
 interface PageProps {
