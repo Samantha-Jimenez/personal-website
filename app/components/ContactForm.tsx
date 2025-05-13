@@ -47,13 +47,13 @@ const ContactForm = () => {
             <label className="label">
               <span className="label-text text-black dark:text-white mb-2">Name</span>
             </label>
-            <input type="text" className="input dark:bg-[#1D232A] placeholder:text-black dark:placeholder:text-white w-full" placeholder="Your Name" name="from_name" required />
+            <input type="text" className="input text-[16px] dark:bg-[#1D232A] placeholder:text-black dark:placeholder:text-white w-full" placeholder="Your Name" name="from_name" required />
           </div>
           <div className="form-control w-full">
             <label className="label">
               <span className="label-text text-black dark:text-white mb-2">Email</span>
             </label>
-            <input type="email" name="reply_to" className="input dark:bg-[#1D232A] placeholder:text-black dark:placeholder:text-white w-full" placeholder="Your Email" required />
+            <input type="email" name="reply_to" className="input text-[16px] dark:bg-[#1D232A] placeholder:text-black dark:placeholder:text-white w-full" placeholder="Your Email" required />
           </div>
         </div>
         <div className="form-control mb-4">
