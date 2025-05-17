@@ -27,7 +27,7 @@ const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (form.current) {
-      emailjs.sendForm('service_7z8bwyp', 'template_9vsibvk', form.current, { publicKey: 'lYPDqWbwbsFTQDuJz'})
+      emailjs.sendForm('service_7z8bwyp', 'template_57acheq', form.current, { publicKey: 'lYPDqWbwbsFTQDuJz'})
           .then((result) => {
             console.log(result.text);
             notify();
@@ -47,20 +47,26 @@ const ContactForm = () => {
             <label className="label">
               <span className="label-text text-black dark:text-white mb-2">Name</span>
             </label>
-            <input type="text" className="input text-[16px] dark:bg-[#1D232A] placeholder:text-black dark:placeholder:text-white w-full" placeholder="Your Name" name="from_name" required />
+            <input type="text" className="input text-[16px] dark:bg-[#1D232A] placeholder:text-black dark:placeholder:text-gray-400 w-full" placeholder="Your Name" name="from_name" required />
           </div>
           <div className="form-control w-full">
             <label className="label">
               <span className="label-text text-black dark:text-white mb-2">Email</span>
             </label>
-            <input type="email" name="reply_to" className="input text-[16px] dark:bg-[#1D232A] placeholder:text-black dark:placeholder:text-white w-full" placeholder="Your Email" required />
+            <input type="email" name="reply_to" className="input text-[16px] dark:bg-[#1D232A] placeholder:text-black dark:placeholder:text-gray-400 w-full" placeholder="Your Email" required />
           </div>
+        </div>
+        <div className="form-control w-full mr-4 sm:mr-0 hidden">
+          <label className="label">
+            <span className="label-text text-black dark:text-white mb-2">Site Name</span>
+          </label>
+          <input type="text" value="Personal Website" className="input text-[16px] dark:bg-[#1D232A] placeholder:text-black dark:placeholder:text-gray-400 w-full" placeholder="Site Name" name="site_name" required />
         </div>
         <div className="form-control mb-4">
           <label className="label">
             <span className="label-text text-black dark:text-white mb-2">Message</span>
           </label>
-          <textarea className="textarea text-[16px] dark:bg-[#1D232A] placeholder:text-black dark:placeholder:text-white w-full" placeholder="Your Message" name="message" required></textarea>
+          <textarea className="textarea text-[16px] dark:bg-[#1D232A] placeholder:text-black dark:placeholder:text-gray-400 w-full" placeholder="Your Message" name="message" required></textarea>
         </div>
         <div className="flex justify-center">
           <button type="submit" className="btn bg-emerald-700 dark:bg-emerald-600 hover:dark:bg-emerald-800 hover:bg-emerald-600 active:bg-emerald-500 active:dark:bg-emerald-950 text-white w-full my-5 bungee-hairline-bold text-lg border-none">Send Message</button>
