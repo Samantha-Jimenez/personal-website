@@ -1,26 +1,19 @@
 import { getPostBySlug } from '@/app/blog/utils/getPostBySlug';
 import { notFound } from 'next/navigation';
-import { parseMarkdown } from '@/app/blog/utils/parseMarkdown';
 import BlogPostComponent from '@/app/blog/BlogPostComponent';
+import { serialize } from 'next-mdx-remote/serialize';
 
-interface Params {
-  postId: string;
-}
+export default async function BlogPost({ params }: { params: Promise<{ postId: string }> }) {
+  const resolvedParams = await params;
+  const post = await getPostBySlug(resolvedParams.postId);
+  if (!post) return notFound();
 
-type PageProps = {
-  params: Promise<Params>; // Ensure params is a Promise
-};
-
-export default async function BlogPost({ params }: PageProps) {
-  const resolvedParams = await params; // Await the params
-  const post = await getPostBySlug(resolvedParams.postId); // Fetch post data directly
-  if (!post) return notFound(); // Handle not found
-
-  const content = parseMarkdown(post.content);
+  // Serialize the MDX content
+  const mdxSource = await serialize(post.content);
 
   return (
     <div className="bg-white text-gray-900 min-h-screen">
-      <BlogPostComponent post={post} content={content} />
+      <BlogPostComponent post={post} mdxSource={mdxSource} />
     </div>
   );
 }
