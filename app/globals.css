@@ -244,3 +244,55 @@ img[alt="The Great Divide"] { width: 200px; }
     padding: 7px !important;
   }
 }
+
+/* Blog post styles */
+
+.make-time-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  /* margin-bottom: 2rem; */
+}
+
+.make-time-grid img {
+  margin-top: 0px;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 490px) {
+  .make-time-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .make-time-grid img {
+    margin-bottom: 1rem;
+    padding: 0 3rem;
+    margin-top: 2rem;
+  }
+}
+
+.great-divide-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  /* margin-bottom: 2rem; */
+}
+
+.great-divide-grid img {
+  margin-top: 0px;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 490px) {
+  .great-divide-grid {
+    grid-template-columns: 1fr;
+    /* gap: 0; */
+  }
+  .great-divide-grid img {
+    margin-bottom: 1rem;
+    padding: 0 3rem;
+    margin-top: 2rem;
+  }
+}
