@@ -26,6 +26,9 @@ export default function RootLayout({
         <style>
           @import url(&quot;https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&quot;);
         </style>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Nothing+You+Could+Do&display=swap');
+        </style>
       </head>
       <body className={`${inter.className} montserrat-mine`}>
         <Toaster 

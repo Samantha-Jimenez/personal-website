@@ -19,7 +19,7 @@ export function useMDXComponents(components: MDXComponents = {}): MDXComponents 
       </a>
     ),
     p: ({ children }) => (
-      <p style={{ color: 'black', fontSize: '16px', fontWeight: '200', marginTop: '0px' }}>{children}</p>
+      <p style={{ fontWeight: '200', marginTop: '0px' }}>{children}</p>
     ),
     img: (props) => {
       const { alt, width, height, src, ...rest } = props;
@@ -48,6 +48,11 @@ export function useMDXComponents(components: MDXComponents = {}): MDXComponents 
       );
     },
     Image,
+    Signature: ({ children }) => (
+      <div className="nothing-you-could-do-regular text-3xl !text-zinc-600">
+        {children}
+      </div>
+    ),
     ...components,
   }
 }

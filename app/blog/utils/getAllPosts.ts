@@ -11,6 +11,7 @@ export interface Post {
   excerpt: string;
   coverImage: string;
   tags: string[];
+  draft?: boolean;
 }
 
 export function getAllPosts() {
@@ -29,8 +30,10 @@ export function getAllPosts() {
       excerpt: data.excerpt,
       coverImage: data.coverImage,
       tags: data.tags,
+      draft: data.draft || false,
     };
   });
 
-  return allPosts;
+  // Filter out draft posts
+  return allPosts.filter(post => !post.draft);
 } 

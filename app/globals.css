@@ -67,6 +67,30 @@ body.dark .menu li > *:not(ul, .menu-title, details, .btn):active {
   font-style: normal;
 }
 
+.kalam-light {
+  font-family: "Kalam", cursive;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.kalam-regular {
+  font-family: "Kalam", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kalam-bold {
+  font-family: "Kalam", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.nothing-you-could-do-regular {
+  font-family: "Nothing You Could Do", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .menu :where(li > details > summary)::after {
     content: '';
     color: white;
