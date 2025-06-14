@@ -80,13 +80,13 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMvmntClick }) => {
               </div>
             </li>
           </div>
-          {/* <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="blog">
+          <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="blog">
             <li>
               <Link href="/blog" className="montserrat-mine">
                 Blog
               </Link>
             </li>
-          </div> */}
+          </div>
         </ul>
       </div>
     </div>
