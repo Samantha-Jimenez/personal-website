@@ -19,7 +19,7 @@ export function useMDXComponents(components: MDXComponents = {}): MDXComponents 
       </a>
     ),
     p: ({ children }) => (
-      <p style={{ fontWeight: '200', marginTop: '0px' }}>{children}</p>
+      <p style={{ fontWeight: '200', marginTop: '0px', marginBottom: '.75rem' }}>{children}</p>
     ),
     img: (props) => {
       const { alt, width, height, src, ...rest } = props;

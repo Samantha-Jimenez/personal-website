@@ -110,7 +110,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
           </div>
         ) : (
           <div className="space-y-12">
-            {filteredPosts.reverse().map((post: any) => (
+            {filteredPosts.map((post: any) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="block group">
                 <div className="border-b pb-6 flex items-start">
                   {post.coverImage && (
@@ -119,7 +119,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
                       height={100}
                       src={post.coverImage.startsWith('/') ? post.coverImage : `/${post.coverImage}`}
                       alt={post.title}
-                      className="w-[5.33rem] h-32 object-cover rounded mr-4 object-left"
+                      className="object-cover rounded mr-4 object-left"
                     />
                   )}
                   <div>

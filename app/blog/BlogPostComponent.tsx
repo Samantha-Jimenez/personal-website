@@ -21,7 +21,7 @@ const BlogPostComponent = ({
       <div className="border-b">
         <NavBar onPortfolioClick={() => {}} onMvmntClick={() => {}} />
       </div>
-      <div className="max-w-3xl mx-auto px-4 pt-8 pb-12">
+      <div className="max-w-4xl mx-auto px-4 pt-8 pb-12">
         <nav className="text-base mb-6 text-gray-900">
           <Link href="/">Home</Link> / <Link href="/blog">Blog</Link> / <span>{post.data.title}</span>
         </nav>
