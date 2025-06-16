@@ -72,12 +72,15 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMvmntClick }) => {
           </div>
           <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="youtube">
             <li>
-              <div 
+              <a 
                   className="hover:scale-150 hover:bg-transparent transition-transform duration-200 cursor-pointer" 
-                  onClick={handleYoutubeClick}
+                  // onClick={handleYoutubeClick}
+                  href="https://www.youtube.com/@aka.jimena"
+                  target="_blank"
+                  rel="noopener noreferrer"
               >
                   <ThinYoutubeIcon />
-              </div>
+              </a>
             </li>
           </div>
           <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="blog">
