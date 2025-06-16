@@ -133,12 +133,15 @@ const Footer = () => {
                 </div>
                 <div className="tooltip tooltip-top justify-items-center" data-tip="youtube">
                     <li>
-                      <div 
+                      <a 
                         className="hover:scale-150 hover:bg-transparent transition-transform duration-200"
-                        onClick={handleYoutubeClick}
+                        // onClick={handleYoutubeClick}
+                        href="https://www.youtube.com/@aka.jimena"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <ThinYoutubeIcon />
-                      </div>
+                      </a>
                     </li>
                 </div>
                 <div className="tooltip tooltip-top justify-items-center" data-tip="spotify">
