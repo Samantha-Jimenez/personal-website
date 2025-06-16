@@ -37,9 +37,6 @@ const BlogPostComponent = ({
         </article>
       </div>
 
-      {/* <footer className="py-8 text-center text-gray-500 border-t mt-12">
-        © {new Date().getFullYear()} My Journal. All rights reserved.
-      </footer> */}
       <div className="border-t">
         <Footer />
       </div>
