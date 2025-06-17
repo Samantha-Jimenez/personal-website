@@ -16,8 +16,8 @@ const InstagramEmbed = () => {
   }, [])
 
   return (
-    <div className="bg-gray-100 dark:bg-zinc-900 p-6 rounded-lg shadow-sm">
-      <h2 className="text-xl font-bold mb-4 bungee-hairline-bold text-black dark:text-white">Instagram</h2>
+    <div className="bg-gray-100 dark:bg-zinc-900 p-4 md:p-6 rounded-lg shadow-sm">
+      <h2 className="text-lg md:text-xl font-bold mb-4 bungee-hairline-bold text-black dark:text-white">Instagram</h2>
       <div className="elfsight-app-6f0168ba-0968-45db-8ace-62d8f60cc949" data-elfsight-app-lazy></div>
     </div>
   )

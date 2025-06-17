@@ -57,7 +57,7 @@ export default function Home() {
   return (
     <>
       <NavBar onPortfolioClick={handlePortfolioClick} onMvmntClick={handleMvmntClick} />
-      <main className="flex min-h-max flex-col justify-self-center">
+      <main className="flex min-h-max flex-col justify-self-center overflow-x-hidden">
         <label className="flex items-center py-2 pl-6 sticky top-0 z-[11] dark:bg-emerald-600 bg-emerald-800">
           <Toggle
             icons={{
@@ -71,17 +71,17 @@ export default function Home() {
           <p className="text-sm pl-2 text-gray-200"> {darkMode ? 'Light Mode' : 'Dark Mode'} </p>
         </label>
         <div className="grid grid-cols-1">
-          <div className="relative grid">
+          <div className="relative grid w-full">
             <div className="row-start-1 row-end-2 col-start-1 col-end-3 absolute inset-0 opacity-70 bg-zinc-950 dark:opacity-80"></div>
             <video
-              className="row-start-1 row-end-2 col-start-1 col-end-3 h-full object-cover object-center"
+              className="row-start-1 row-end-2 col-start-1 col-end-3 h-full w-full object-cover object-center"
               src="/bg-video.mp4"
               autoPlay
               loop
               muted
               playsInline
             />
-            <div className="row-start-1 col-start-1 inset-0 flex flex-col z-10 px-24 py-16 h-full">
+            <div className="row-start-1 col-start-1 inset-0 flex flex-col z-10 md:px-24 px-4 py-16 h-full w-full">
               <p className="row-start-1 col-start-1 col-span-1 bungee-hairline-thin text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl whitespace-nowrap max-[540px]:place-self-center min-[540px]:place-self-start text-white overflow-visible">Samantha</p>
               <p className="row-start-2 col-start-1 col-span-1 bungee-hairline-thin text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl whitespace-nowrap max-[540px]:place-self-center min-[540px]:place-self-end text-white">Jimenez</p>
               <p className="row-start-3 col-start-1 col-span-1 montserrat-mine text-xl justify-center mt-32 dark:text-gray-200 text-white">Hi, I&apos;m Sam, a full-stack software engineer with a passion for exploring, creating, and staying active. After years of focusing on my career, I&apos;m rediscovering the hobbies and interests that bring me joy—fitness, food, travel, and creative projects.
@@ -91,7 +91,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-8 bg-gray-100 dark:bg-zinc-900">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-8 px-4 md:px-24 bg-gray-100 dark:bg-zinc-900">
           <div className="md:border-r border-gray-400 dark:border-gray-700">
             <InstagramEmbed />
           </div>
@@ -99,7 +99,7 @@ export default function Home() {
             <TikTokEmbed />
           </div>
         </div>
-        <div className="px-24 bg-gray-100 dark:bg-zinc-900">
+        <div className="px-4 md:px-24 py-8 bg-gray-100 dark:bg-zinc-900">
           <YouTubeEmbed />
         </div>
         <div className="flex">
