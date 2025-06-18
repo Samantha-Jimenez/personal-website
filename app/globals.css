@@ -39,6 +39,29 @@ body.dark .menu li > *:not(ul, .menu-title, details, .btn):active {
   background-color: #E4E7EB;
 }
 
+.yottie-widget-header-subscribe-button iframe {
+  border-radius: 4px !important;
+}
+
+.yottie-widget-inner {
+  border-radius: 8px !important;
+}
+
+.eapps-instagram-feed-header {
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+}
+
+.eapps-instagram-feed-posts-container {
+  border-bottom-right-radius: 8px !important;
+  border-bottom-left-radius: 8px !important;
+}
+
+.eapps-instagram-feed-posts {
+  border-bottom-right-radius: 8px !important;
+  border-bottom-left-radius: 8px !important;
+}
+
 /* Remove the redundant media query for dark theme */
 @media (prefers-color-scheme: dark) {
   /* body {

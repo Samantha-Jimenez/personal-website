@@ -71,7 +71,7 @@ export default function Home() {
           <p className="text-sm pl-2 text-gray-200"> {darkMode ? 'Light Mode' : 'Dark Mode'} </p>
         </label>
       </div>
-      <main className="flex min-h-max flex-col overflow-x-hidden">
+      <main className="flex min-h-max flex-col overflow-x-hidden bg-gray-100 dark:bg-zinc-900">
         <div className="grid grid-cols-1">
           <div className="relative grid w-full bg-gray-100 dark:bg-zinc-900">
             <div className="row-start-1 row-end-2 col-start-1 col-end-3 absolute inset-0 opacity-70 bg-zinc-950 dark:opacity-80"></div>
@@ -93,14 +93,17 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-8 px-4 md:px-24 bg-gray-100 dark:bg-zinc-900">
-          <div className="md:border-r border-gray-400 dark:border-gray-700">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 py-8 px-4 md:px-24 bg-gray-100 dark:bg-zinc-900">
+          <div className="">
             <InstagramEmbed />
           </div>
+          <div className="divider divider-horizontal hidden md:flex"></div>
+          <div className="divider md:hidden flex"></div>
           <div className="">
             <TikTokEmbed />
           </div>
         </div>
+        <div className="divider md:hidden flex"></div>
         <div className="px-4 md:px-24 py-8 bg-gray-100 dark:bg-zinc-900">
           <YouTubeEmbed />
         </div>
