@@ -13,7 +13,7 @@ const MvmntModal: React.FC<MvmntModalProps> = ({ isOpen, onClose, onConfirm }) =
     <dialog className="modal modal-open" onClick={onClose}>
       <div className="modal-box" onClick={(e) => e.stopPropagation()}>
         <form method="dialog">
-          <button onClick={onClose} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
+          <button onClick={onClose} className="btn btn-circle btn-ghost absolute right-[0.1rem] top-[0.1rem] text-white">✕</button>
         </form>
         <h2 className="font-bold text-lg text-white">Heads up,</h2>
         <p className="text-white">You are leaving this site to go to Mvmnt Collectives -- A fitness related web app I&apos;m currently building. <br/> Do you want to continue?</p>
