@@ -83,10 +83,10 @@ export default function Home() {
               muted
               playsInline
             />
-            <div className="row-start-1 col-start-1 inset-0 flex flex-col z-10 px-4 md:px-24 py-8 md:py-16 h-full w-full">
-              <p className="row-start-1 col-start-1 col-span-1 bungee-hairline-thin text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl whitespace-nowrap max-[540px]:place-self-center min-[540px]:place-self-start text-white overflow-visible">Samantha</p>
-              <p className="row-start-2 col-start-1 col-span-1 bungee-hairline-thin text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl whitespace-nowrap max-[540px]:place-self-center min-[540px]:place-self-end text-white">Jimenez</p>
-              <p className="row-start-3 col-start-1 col-span-1 montserrat-mine text-base sm:text-lg md:text-xl justify-center mt-16 md:mt-32 dark:text-gray-200 text-white">Hi, I&apos;m Sam, a full-stack software engineer with a passion for exploring, creating, and staying active. After years of focusing on my career, I&apos;m rediscovering the hobbies and interests that bring me joy—fitness, food, travel, and creative projects.
+            <div className="row-start-1 col-start-1 inset-0 flex flex-col z-10 px-4 md:px-24 pt-16 pb-8 h-full w-full">
+              <p className="row-start-1 col-start-1 col-span-1 bungee-hairline-thin text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl whitespace-nowrap max-[540px]:place-self-center min-[540px]:place-self-start text-white overflow-visible">Samantha</p>
+              <p className="row-start-2 col-start-1 col-span-1 bungee-hairline-thin text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl whitespace-nowrap max-[540px]:place-self-center min-[540px]:place-self-end text-white">Jimenez</p>
+              <p className="row-start-3 col-start-1 col-span-1 montserrat-mine text-xl justify-center mt-16 md:mt-32 dark:text-gray-200 text-white">Hi, I&apos;m Sam, a full-stack software engineer with a passion for exploring, creating, and staying active. After years of focusing on my career, I&apos;m rediscovering the hobbies and interests that bring me joy—fitness, food, travel, and creative projects.
                 <br/><br/> This website is my space to document that journey, share insights, and connect with others. From blog posts and tech projects to reflections on life and adventure, I&apos;m excited to bring you along as I embrace my passions.
                 <br/><br/> Currently, I&apos;m building an app with a group of engineers from my time at Pursuit Coding Fellowship in 2019, and I can&apos;t wait to share what&apos;s next..
               </p>
