@@ -47,6 +47,10 @@ body.dark .menu li > *:not(ul, .menu-title, details, .btn):active {
   border-radius: 8px !important;
 }
 
+.yottie-mw-180 .yottie-widget-video-preview-play {
+  border-width: 0 !important;
+}
+
 .eapps-instagram-feed-header {
   border-top-left-radius: 8px !important;
   border-top-right-radius: 8px !important;

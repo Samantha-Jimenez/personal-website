@@ -103,7 +103,7 @@ export default function Home() {
             <TikTokEmbed />
           </div>
         </div>
-        <div className="divider md:hidden flex"></div>
+        <div className="divider md:hidden flex px-4"></div>
         <div className="px-4 md:px-24 py-8 bg-gray-100 dark:bg-zinc-900">
           <YouTubeEmbed />
         </div>
