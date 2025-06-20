@@ -100,14 +100,14 @@ export default function Home() {
           <div className="">
             <InstagramEmbed />
           </div>
-          <div className="divider divider-horizontal hidden md:flex"></div>
-          <div className="divider md:hidden flex"></div>
+          <div className="divider divider-horizontal hidden md:flex before:bg-gray-400 after:bg-gray-400 dark:before:bg-gray-500 dark:after:bg-gray-500"></div>
+          <div className="divider md:hidden flex before:bg-gray-400 after:bg-gray-400 dark:before:bg-gray-500 dark:after:bg-gray-500"></div>
           <div className="">
             <TikTokEmbed />
           </div>
         </div>
-        <div className="divider md:hidden flex px-4"></div>
-        <div className="px-4 md:px-24 py-8 bg-gray-100 dark:bg-zinc-900">
+        <div className="divider md:hidden flex px-4 before:bg-gray-400 after:bg-gray-400 dark:before:bg-gray-500 dark:after:bg-gray-500"></div>
+        <div className="px-4 md:px-24 py-8 ">
           <YouTubeEmbed />
         </div>
         <div className="flex w-full">
