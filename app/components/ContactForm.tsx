@@ -40,7 +40,7 @@ const ContactForm = () => {
 
   return (
     <div className="py-8 px-6 sm:px-24 w-[100%] bg-white dark:bg-black">
-      <h2 className="text-xl font-bold mb-4 bungee-hairline-bold text-black dark:text-white">Contact me</h2>
+      <h2 className="text-2xl font-bold mb-4 bungee-hairline-bold text-black dark:text-white">Contact me</h2>
       <form ref={form} onSubmit={handleSubmit}>
         <div className="flex flex-col sm:flex-row mb-4 w-full gap-4 text-gray-200">
           <div className="form-control w-full mr-4 sm:mr-0">
@@ -69,7 +69,7 @@ const ContactForm = () => {
           <textarea className="textarea text-[16px] dark:bg-[#1D232A] placeholder:text-black dark:placeholder:text-gray-400 w-full" placeholder="Your Message" name="message" required></textarea>
         </div>
         <div className="flex justify-center">
-          <button type="submit" className="btn bg-emerald-700 dark:bg-emerald-600 hover:dark:bg-emerald-800 hover:bg-emerald-600 active:bg-emerald-500 active:dark:bg-emerald-950 text-white w-full my-5 bungee-hairline-bold text-lg border-none">Send Message</button>
+          <button type="submit" className="btn bg-emerald-700 dark:bg-emerald-600 hover:dark:bg-emerald-800 hover:bg-emerald-600 active:bg-emerald-500 active:dark:bg-emerald-950 text-white w-full my-5 bungee-hairline-bold text-xl border-none">Send Message</button>
         </div>
       </form>
     </div>

@@ -17,7 +17,7 @@ const YouTubeEmbed = () => {
 
   return (
     <div className="bg-gray-100 dark:bg-zinc-900 p-4 md:p-6 rounded-lg shadow-sm">
-      <h2 className="text-lg md:text-xl font-bold mb-4 bungee-hairline-bold text-black dark:text-white">YouTube</h2>
+      <h2 className="text-2xl font-bold mb-4 bungee-hairline-bold text-black dark:text-white">YouTube</h2>
       <div className="elfsight-app-41aba568-0912-4964-9969-dbb9981fd2e8" data-elfsight-app-lazy></div>
     </div>
   )
