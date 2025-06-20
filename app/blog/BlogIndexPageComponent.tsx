@@ -63,7 +63,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
       <div className="max-w-2xl mx-auto px-4 pt-10">
         <Link
           href="/"
-          className="inline-block border border-gray-800 text-gray-800 px-3 py-1 rounded hover:bg-gray-100 transition text-sm"
+          className="inline-block border border-gray-800 text-gray-800 px-3 py-1 rounded hover:bg-amber-300/10 transition text-sm"
         >
           ← Back to Home
         </Link>
