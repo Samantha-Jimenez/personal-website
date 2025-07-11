@@ -31,10 +31,10 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMvmntClick }) => {
 
   return (
     <div className="navbar text-black dark:bg-zinc-900 flex flex-col min-[675px]:flex-row justify-between dark:text-gray-200">
-      <div className="self-stretch pt-2 content-center">
+      <div className="grid grid-cols-[1fr_auto_1fr] pt-2">
         <Link 
           href="/" 
-          className={`hover:text-3xl transition-all duration-300 ease-in-out px-4 btn-ghost text-2xl bungee-hairline-bold hover:bg-transparent active:transform-none focus:transform-none ${
+          className={`hover:scale-110 transition-all duration-300 ease-in-out px-4 btn-ghost text-2xl bungee-hairline-bold hover:bg-transparent active:transform-none focus:transform-none transform-gpu ${
             pathname === '/' 
               ? 'text-emerald-700 dark:text-emerald-200' 
               : 'text-black dark:text-white'
@@ -45,7 +45,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMvmntClick }) => {
         <span className="text-2xl">•</span>
         <Link 
           href="/blog" 
-          className={`hover:text-3xl transition-all duration-300 ease-in-out bungee-hairline-bold text-2xl px-4 ${
+          className={`hover:scale-110 transition-all duration-300 ease-in-out bungee-hairline-bold text-2xl px-4 transform-gpu ${
             pathname.startsWith('/blog') 
               ? 'text-emerald-700 dark:text-emerald-200' 
               : 'text-black dark:text-white'
