@@ -76,7 +76,7 @@ const Footer = () => {
                           className={`cursor-pointer hover:bg-transparent hover:scale-150 hover:bg-transparent transition-transform duration-200 hover:z-[12] relative ${openPortfolioMenu ? 'scale-150 open-menu' : ''}`}
                         >
                                 <ThinPorftolioIcon />
-                                <span className="ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-upwards] left-[60%]"></span>
+                                <span className="ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-upwards] left-[62%]"></span>
                         </div>
                         {openPortfolioMenu && (
                             <ul className="ml-[-65%] absolute dark:bg-zinc-900 bg-neutral-200 p-2 pb-5 text-xs w-max rounded-lg top-[-245%] z-[11] border-none">
@@ -93,7 +93,7 @@ const Footer = () => {
                           className={`cursor-pointer hover:bg-transparent hover:scale-150 hover:bg-transparent transition-transform duration-200 hover:z-[12] relative ${openGithubMenu ? 'scale-150 open-menu' : ''}`}
                         >
                             <ThinGitHubIcon />
-                            <span className="ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-upwards] left-[60%]"></span>
+                            <span className="ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-upwards] left-[64%]"></span>
                         </div>
                         {openGithubMenu && (
                             <ul className="ml-[-65%] absolute dark:bg-zinc-900 bg-neutral-200 p-2 pb-5 text-xs w-max rounded-lg top-[-245%] z-[11] border-none">
