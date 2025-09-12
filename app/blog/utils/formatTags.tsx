@@ -12,7 +12,7 @@ const tagColors: { [key: string]: string } = {
 
 export const formatTags = (tags: string[]) => {
   return (
-    <span className="flex space-x-2">
+    <span className="flex flex-wrap gap-1 mb-1">
       {tags.map(tag => (
         <span key={tag} className={`badge border-none text-xs rounded-full ${tagColors[tag] || ''}`}>
           {tag.charAt(0).toUpperCase() + tag.slice(1)}
