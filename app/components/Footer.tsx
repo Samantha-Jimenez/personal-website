@@ -119,7 +119,7 @@ const Footer = () => {
                 </div>
                 <div className="tooltip tooltip-top justify-items-center" data-tip="mvmnt collectives">
                   <li>
-                    <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.mvmntcollectives.com/" target="_blank" rel="noopener noreferrer">
+                    <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://mvmntcollectives.com/" target="_blank" rel="noopener noreferrer">
                         <ThinMvmntCollectivesIcon />
                     </a>
                   </li>

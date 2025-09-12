@@ -39,7 +39,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
     };
     
     const handleConfirmMvmntRedirect = () => {
-        window.open("https://www.mvmntcollectives.com/", "_blank");
+        window.open("https://mvmntcollectives.com/", "_blank");
         setIsMvmntModalOpen(false);
     };
 
