@@ -84,7 +84,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMvmntClick }) => {
               </a>
             </li>
           </div>
-          <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="mvmnt collectives">
+          <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="motevis">
             <li>
               <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" onClick={onMvmntClick}>
                 <ThinMvmntCollectivesIcon />
