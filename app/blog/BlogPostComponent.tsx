@@ -19,7 +19,7 @@ const BlogPostComponent = ({
   return (
     <div>
       <div className="border-b">
-        <NavBar onPortfolioClick={() => {}} onMvmntClick={() => {}} />
+        <NavBar onPortfolioClick={() => {}} onMotevisClick={() => {}} />
       </div>
       <div className="max-w-4xl mx-auto px-4 pt-8 pb-12">
         <nav className="text-base mb-6 text-gray-900">

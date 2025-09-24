@@ -63,7 +63,7 @@ export const ThinSpotifyIcon = () => {
     );
 }
 
-export const ThinMvmntCollectivesIcon = () => {
+export const ThinMotevisIcon = () => {
     return (
         <span className={`icon-[arcticons--runnerup] text-[1.7rem] leading-9`}></span>
     );

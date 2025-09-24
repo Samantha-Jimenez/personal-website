@@ -9,7 +9,7 @@ const PortfolioModal = ({ isOpen, onClose, onConfirm }: { isOpen: boolean, onClo
         <form method="dialog">
           <button onClick={onClose} className="btn btn-circle btn-ghost absolute right-[0.1rem] top-[0.1rem] text-white">✕</button>
         </form>
-        <h2 className="font-bold text-lg text-white">Heads up,</h2>
+        <h2 className="font-bold text-lg text-white pb-2">Heads up,</h2>
         <p className="text-white">You are leaving this site to go to my professional portfolio. Do you want to continue?</p>
         <div className="modal-action">
           <button onClick={onConfirm} className="btn">Yup!</button>

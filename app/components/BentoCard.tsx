@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 /**
  * Bento-style media card
@@ -28,16 +29,20 @@ export default function BentoCard() {
         <div className="md:col-span-1 col-start-1 col-end-2 row-start-3 row-end-5 grid justify-self-center mt-4">
         {/* <div className="grid-rows-[30px_30px_30px] grid gap-3 md:gap-4"> */}
           <button className="aspect-square rounded-full overflow-hidden bg-white shadow ring-1 ring-black/5 hover:ring-black/10 transition h-20 w-20 z-20">
-            <img
+            <Image
               alt="thumb 1"
               src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=400&auto=format&fit=crop"
+              width={80}
+              height={80}
               className="h-full w-full object-cover relative"
             />
           </button>
           <button className="aspect-square rounded-full overflow-hidden bg-white shadow ring-1 ring-black/5 hover:ring-black/10 transition h-20 w-20">
-            <img
+            <Image
               alt="thumb 2"
               src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=400&auto=format&fit=crop"
+              width={80}
+              height={80}
               className="h-full w-full object-cover"
             />
           </button>

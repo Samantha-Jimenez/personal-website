@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react'
-import { ThinInstagramIcon, ThinGitHubIcon, ThinLinkedInIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinTikTokIcon, ThinStravaIcon, GoodReadsIcon, ThinGoogleMailIcon, ThinPorftolioIcon, ThinSpotifyIcon, ThinMvmntCollectivesIcon } from '../icons/Icons'
+import { ThinInstagramIcon, ThinGitHubIcon, ThinLinkedInIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinTikTokIcon, ThinStravaIcon, GoodReadsIcon, ThinGoogleMailIcon, ThinPorftolioIcon, ThinSpotifyIcon, ThinMotevisIcon } from '../icons/Icons'
 import toast from 'react-hot-toast';
 import { openMenu } from '../hooks/openMenu';
 
@@ -120,7 +120,7 @@ const Footer = () => {
                 <div className="tooltip tooltip-top justify-items-center" data-tip="motevis">
                   <li>
                     <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://mvmntcollectives.com/" target="_blank" rel="noopener noreferrer">
-                        <ThinMvmntCollectivesIcon />
+                        <ThinMotevisIcon />
                     </a>
                   </li>
                 </div>

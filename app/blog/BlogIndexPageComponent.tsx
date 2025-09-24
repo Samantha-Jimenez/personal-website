@@ -9,11 +9,11 @@ import TypewriterText from '../components/TyprewriterText'
 import { LifestyleTabIcon, TechTabIcon, FitnessTabIcon, BeautyTabIcon, FoodTabIcon, MusicTabIcon, TravelTabIcon, AllTabIcon } from '../icons/BlogIcons'
 import Image from 'next/image'
 import PortfolioModal from '../components/PortfolioModal'
-import MvmntModal from '../components/MvmntModal'
+import MotevisModal from '../components/MotevisModal'
 
 const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => {
     const [isPortfolioModalOpen, setIsPortfolioModalOpen] = useState(false);
-    const [isMvmntModalOpen, setIsMvmntModalOpen] = useState(false);
+    const [isMotevisModalOpen, setIsMotevisModalOpen] = useState(false);
 
     const handlePortfolioClick = () => {
         console.log("Portfolio button clicked");
@@ -29,18 +29,18 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
         setIsPortfolioModalOpen(false);
     };
     
-    const handleMvmntClick = () => {
-        console.log("Mvmnt button clicked");
-        setIsMvmntModalOpen(true);
+    const handleMotevisClick = () => {
+        console.log("Motevis button clicked");
+        setIsMotevisModalOpen(true);
     };
     
-    const handleCloseMvmntModal = () => {
-        setIsMvmntModalOpen(false);
+    const handleCloseMotevisModal = () => {
+        setIsMotevisModalOpen(false);
     };
     
-    const handleConfirmMvmntRedirect = () => {
+    const handleConfirmMotevisRedirect = () => {
         window.open("https://mvmntcollectives.com/", "_blank");
-        setIsMvmntModalOpen(false);
+        setIsMotevisModalOpen(false);
     };
 
   const filteredPosts = tag 
@@ -50,7 +50,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
   return (
     <div>
         <div className="">
-            <NavBar onPortfolioClick={handlePortfolioClick} onMvmntClick={handleMvmntClick} />
+            <NavBar onPortfolioClick={handlePortfolioClick} onMotevisClick={handleMotevisClick} />
         </div>
       <header className="bg-cover bg-center h-64 flex items-center justify-center" style={{ backgroundImage: 'url(/blog-images/blog-hero2.jpg)' }}>
         <div className="text-center bg-gray-900 bg-opacity-55 p-6 w-full h-full content-center">
@@ -139,10 +139,10 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
           onClose={handleClosePortfolioModal} 
           onConfirm={handleConfirmPortfolioRedirect} 
       />
-      <MvmntModal 
-          isOpen={isMvmntModalOpen} 
-          onClose={handleCloseMvmntModal} 
-          onConfirm={handleConfirmMvmntRedirect} 
+      <MotevisModal 
+          isOpen={isMotevisModalOpen} 
+          onClose={handleCloseMotevisModal} 
+          onConfirm={handleConfirmMotevisRedirect} 
       />
       <footer className="border-t">
         <Footer />

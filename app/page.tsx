@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import Toggle from 'react-toggle';
 import 'react-toggle/style.css';
 import PortfolioModal from './components/PortfolioModal';
-import MvmntModal from './components/MvmntModal';
+import MotevisModal from './components/MotevisModal';
 import InstagramEmbed from './components/InstagramEmbed';
 import YouTubeEmbed from './components/YouTubeEmbed';
 import TikTokEmbed from './components/TikTokEmbed';
@@ -14,7 +14,7 @@ import TikTokEmbed from './components/TikTokEmbed';
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
   const [isPortfolioModalOpen, setIsPortfolioModalOpen] = useState(false);
-  const [isMvmntModalOpen, setIsMvmntModalOpen] = useState(false);
+  const [isMotevisModalOpen, setIsMotevisModalOpen] = useState(false);
 
   useEffect(() => {
     // Check user's preferred color scheme
@@ -41,22 +41,22 @@ export default function Home() {
     setIsPortfolioModalOpen(false);
   };
 
-  const handleMvmntClick = () => {
-    setIsMvmntModalOpen(true);
+  const handleMotevisClick = () => {
+    setIsMotevisModalOpen(true);
   };
 
-  const handleCloseMvmntModal = () => {
-    setIsMvmntModalOpen(false);
+  const handleCloseMotevisModal = () => {
+    setIsMotevisModalOpen(false);
   };
 
-  const handleConfirmMvmntRedirect = () => {
+  const handleConfirmMotevisRedirect = () => {
     window.open("https://mvmntcollectives.com/", "_blank");
-    setIsMvmntModalOpen(false);
+    setIsMotevisModalOpen(false);
   };
 
   return (
     <>
-      <NavBar onPortfolioClick={handlePortfolioClick} onMvmntClick={handleMvmntClick} />
+      <NavBar onPortfolioClick={handlePortfolioClick} onMotevisClick={handleMotevisClick} />
       <div className="sticky top-0 z-[11] dark:bg-emerald-600 bg-emerald-800">
         <label className="flex items-center py-2 pl-6">
           <Toggle
@@ -120,10 +120,10 @@ export default function Home() {
           onConfirm={handleConfirmPortfolioRedirect} 
         />
 
-        <MvmntModal 
-          isOpen={isMvmntModalOpen} 
-          onClose={handleCloseMvmntModal} 
-          onConfirm={handleConfirmMvmntRedirect} 
+        <MotevisModal 
+          isOpen={isMotevisModalOpen} 
+          onClose={handleCloseMotevisModal} 
+          onConfirm={handleConfirmMotevisRedirect} 
         />
       </main>
       <Footer />

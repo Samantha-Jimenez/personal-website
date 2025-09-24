@@ -1,12 +1,12 @@
 import React from 'react';
 
-interface MvmntModalProps {
+interface MotevisModalProps {
   isOpen: boolean;
   onClose: () => void;
   onConfirm: () => void;
 }
 
-const MvmntModal: React.FC<MvmntModalProps> = ({ isOpen, onClose, onConfirm }) => {
+const MotevisModal: React.FC<MotevisModalProps> = ({ isOpen, onClose, onConfirm }) => {
   if (!isOpen) return null;
 
   return (
@@ -15,8 +15,8 @@ const MvmntModal: React.FC<MvmntModalProps> = ({ isOpen, onClose, onConfirm }) =
         <form method="dialog">
           <button onClick={onClose} className="btn btn-circle btn-ghost absolute right-[0.1rem] top-[0.1rem] text-white">✕</button>
         </form>
-        <h2 className="font-bold text-lg text-white">Heads up,</h2>
-        <p className="text-white">You are leaving this site to go to Mvmnt Collectives -- A fitness related web app I&apos;m currently building. <br/> Do you want to continue?</p>
+        <h2 className="font-bold text-lg text-white pb-2">Heads up,</h2>
+        <p className="text-white">You are leaving this site to go to <strong>Motevis</strong> — a fitness web app I&apos;m currently building. It&apos;s designed to help users find local run clubs, weekly runs, and races in New York City. <br/> Do you want to continue?</p>
         <div className="modal-action">
           <button onClick={onConfirm} className="btn">Yup!</button>
         </div>
@@ -25,4 +25,4 @@ const MvmntModal: React.FC<MvmntModalProps> = ({ isOpen, onClose, onConfirm }) =
   );
 };
 
-export default MvmntModal; 
+export default MotevisModal; 

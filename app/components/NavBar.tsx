@@ -1,15 +1,15 @@
 import React, { FC } from 'react'
-import { ThinInstagramIcon, ThinTikTokIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinPorftolioIcon, ThinMvmntCollectivesIcon } from '../icons/Icons'
+import { ThinInstagramIcon, ThinTikTokIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinPorftolioIcon, ThinMotevisIcon } from '../icons/Icons'
 import toast from 'react-hot-toast';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 interface NavBarProps {
   onPortfolioClick: () => void;
-  onMvmntClick: () => void;
+  onMotevisClick: () => void;
 }
 
-const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMvmntClick }) => {
+const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
   const pathname = usePathname();
   
   const notify = () => toast('check back for my youtube channel',
@@ -86,8 +86,8 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMvmntClick }) => {
           </div>
           <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="motevis">
             <li>
-              <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" onClick={onMvmntClick}>
-                <ThinMvmntCollectivesIcon />
+              <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" onClick={onMotevisClick}>
+                <ThinMotevisIcon />
               </a>
             </li>
           </div>
