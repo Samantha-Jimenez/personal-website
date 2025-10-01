@@ -39,7 +39,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
     };
     
     const handleConfirmMotevisRedirect = () => {
-        window.open("https://mvmntcollectives.com/", "_blank");
+        window.open("https://motevis.com/", "_blank");
         setIsMotevisModalOpen(false);
     };
 

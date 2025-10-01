@@ -50,7 +50,7 @@ export default function Home() {
   };
 
   const handleConfirmMotevisRedirect = () => {
-    window.open("https://mvmntcollectives.com/", "_blank");
+    window.open("https://motevis.com/", "_blank");
     setIsMotevisModalOpen(false);
   };
 
@@ -91,7 +91,7 @@ export default function Home() {
                 <br /><br />
                 This website is my space to document that journey, share insights, and connect with others. From blog posts and dev projects to life reflections and creative experiments — It&apos;s part portfolio, part digital journal.
                 <br /><br />
-                Right now, I&apos;m working with fellow engineers from the Pursuit Coding Fellowship on a fitness-focused app, <a href="https://mvmntcollectives.com/" target="_blank" rel="noopener noreferrer" className="dark:text-emerald-200 text-emerald-300 hover:text-emerald-400 dark:hover:text-emerald-300 transition-colors"><em>Motevis</em></a>, which helps runners find local run clubs, weekly runs, and races in New York City. I&apos;m also sharing my <a href="https://www.youtube.com/@aka.jimena" target="_blank" rel="noopener noreferrer" className="dark:text-emerald-200 text-emerald-300 hover:text-emerald-400 dark:hover:text-emerald-300 transition-colors"><em>&ldquo;6 Months to Change My Life&rdquo;</em></a> journey on YouTube — feel free to follow along and see how it unfolds.
+                Right now, I&apos;m working with fellow engineers from the Pursuit Coding Fellowship on a fitness-focused app, <a href="https://motevis.com/" target="_blank" rel="noopener noreferrer" className="dark:text-emerald-200 text-emerald-300 hover:text-emerald-400 dark:hover:text-emerald-300 transition-colors"><em>Motevis</em></a>, which helps runners find local run clubs, weekly runs, and races in New York City. I&apos;m also sharing my <a href="https://www.youtube.com/@aka.jimena" target="_blank" rel="noopener noreferrer" className="dark:text-emerald-200 text-emerald-300 hover:text-emerald-400 dark:hover:text-emerald-300 transition-colors"><em>&ldquo;6 Months to Change My Life&rdquo;</em></a> journey on YouTube — feel free to follow along and see how it unfolds.
               </p>
             </div>
           </div>
