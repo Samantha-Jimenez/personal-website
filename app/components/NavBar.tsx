@@ -34,7 +34,8 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
       <div className="grid grid-cols-[1fr_auto_1fr] pt-2">
         <Link 
           href="/" 
-          className={`hover:scale-110 transition-all duration-300 ease-in-out px-4 btn-ghost text-2xl bungee-hairline-bold hover:bg-transparent active:transform-none focus:transform-none transform-gpu ${
+          // className={`hover:scale-110 transition-all duration-300 ease-in-out px-4 btn-ghost text-2xl bungee-hairline-bold hover:bg-transparent active:transform-none focus:transform-none transform-gpu ${
+          className={`px-4 btn-ghost text-2xl bungee-hairline-bold hover:bg-transparent active:transform-none focus:transform-none transform-gpu cursor-default ${
             pathname === '/' 
               ? 'text-emerald-700 dark:text-emerald-200' 
               : 'text-black dark:text-white'
@@ -42,7 +43,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
         >
           aka.jimena
         </Link>
-        <span className="text-2xl">•</span>
+        {/* <span className="text-2xl">•</span>
         <Link 
           href="/blog" 
           className={`hover:scale-110 transition-all duration-300 ease-in-out bungee-hairline-bold text-2xl px-4 transform-gpu ${
@@ -52,7 +53,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
           }`}
         >
           Blog
-        </Link> 
+        </Link>  */}
       </div>
       <div className="flex-none self-start">
         <ul className="menu menu-horizontal px-1 justify-items-center grid grid-flow-row grid-cols-6">
