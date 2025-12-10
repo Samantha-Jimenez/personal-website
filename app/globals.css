@@ -66,6 +66,22 @@ body.dark .menu li > *:not(ul, .menu-title, details, .btn):active {
   border-bottom-left-radius: 8px !important;
 }
 
+/* Buy Me a Coffee widget - make smaller & left aligned */
+#bmc-wbtn {
+  transform: scale(0.75) !important;
+  transform-origin: bottom left !important;
+  transition: transform 0.3s ease !important;
+}
+
+#bmc-wbtn:hover {
+  transform: scale(0.9) !important;
+}
+
+#bmc-iframe {
+  transform-origin: left bottom !important;
+}
+
+
 /* Remove the redundant media query for dark theme */
 @media (prefers-color-scheme: dark) {
   /* body {
