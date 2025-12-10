@@ -60,7 +60,7 @@ const ContactForm = () => {
           <label className="label">
             <span className="label-text text-black dark:text-white mb-2">Site Name</span>
           </label>
-          <input type="text" value="Personal Website" className="input text-[16px] dark:bg-[#1D232A] placeholder:text-black dark:placeholder:text-gray-400 w-full" placeholder="Site Name" name="site_name" required />
+          <input type="text" value="Personal Website" readOnly className="input text-[16px] dark:bg-[#1D232A] placeholder:text-black dark:placeholder:text-gray-400 w-full" placeholder="Site Name" name="site_name" required />
         </div>
         <div className="form-control mb-4">
           <label className="label">

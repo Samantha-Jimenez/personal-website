@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
+import BuyMeACoffeeAnimation from './components/BuyMeACoffeeAnimation'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -44,6 +45,7 @@ export default function RootLayout({
         </style>
       </head>
       <body className={`${inter.className} montserrat-mine`}>
+        <BuyMeACoffeeAnimation />
         <Toaster 
           toastOptions={{
             className: 'montserrat-mine',

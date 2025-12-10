@@ -67,16 +67,7 @@ body.dark .menu li > *:not(ul, .menu-title, details, .btn):active {
 }
 
 /* Buy Me a Coffee widget - make smaller & left aligned */
-#bmc-wbtn {
-  transform: scale(0.75) !important;
-  transform-origin: bottom left !important;
-  transition: transform 0.3s ease !important;
-}
-
-#bmc-wbtn:hover {
-  transform: scale(0.9) !important;
-}
-
+/* Note: Animation is handled by BuyMeACoffeeAnimation.tsx component */
 #bmc-iframe {
   transform-origin: left bottom !important;
 }
