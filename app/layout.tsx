@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import { Toaster } from 'react-hot-toast'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -23,18 +24,6 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png" />
         <link rel="manifest" href="/favicon_io/site.webmanifest" />
-        <script 
-          data-name="BMC-Widget" 
-          data-cfasync="false" 
-          src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" 
-          data-id="samanthabj8" 
-          data-description="Support me on Buy me a coffee!" 
-          data-message="" 
-          data-color="#40DCA5" 
-          data-position="left" 
-          data-x_margin="15" 
-          data-y_margin="15">
-        </script>
         <style>
           @import url(&quot;https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&quot;);
         </style>
@@ -47,6 +36,20 @@ export default function RootLayout({
           toastOptions={{
             className: 'montserrat-mine',
           }}
+        />
+        <Script
+          id="bmc-widget"
+          strategy="afterInteractive"
+          data-name="BMC-Widget"
+          data-cfasync="false"
+          src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+          data-id="samanthabj8"
+          data-description="Support me on Buy me a coffee!"
+          data-message=""
+          data-color="#40DCA5"
+          data-position="left"
+          data-x_margin="15"
+          data-y_margin="15"
         />
         {children}
       </body>
