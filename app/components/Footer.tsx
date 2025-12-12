@@ -46,7 +46,7 @@ const Footer = () => {
         {/* <aside className="grid-flow-col items-center">
             <p className="montserrat-mine font-light">Copyright © {new Date().getFullYear()} - All right reserved</p>
         </aside> */}
-        <nav className="flex-none w-full justify-end grid-flow-col gap-6 grid-rows-1 md:justify-self-end max-[500px]:justify-center">
+        <nav className="flex-none w-full justify-end grid-flow-col gap-6 grid-rows-1 justify-self-end">
             <ul className="menu menu-horizontal px-1 grid-flow-row grid grid-rows-1 grid-cols-12 max-[662px]:grid-cols-6 max-[662px]:grid-rows-2 max-[662px]:justify-self-end">
                 <div className="tooltip tooltip-top justify-items-center" data-tip="instagram">
                     <li>
