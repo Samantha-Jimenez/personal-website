@@ -1,6 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "@tailwindcss/typography";
+@plugin "@iconify/tailwind4";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --foreground-rgb: 0, 0, 0; /* Light theme foreground */
@@ -33,10 +36,6 @@ body.dark {
 body.dark .menu li > *:not(ul, .menu-title, details, .btn):active {
   background-color: #D1D5DA;
   color: black;
-}
-
-.input, .textarea {
-  background-color: #E4E7EB;
 }
 
 .yottie-widget-header-subscribe-button iframe {
