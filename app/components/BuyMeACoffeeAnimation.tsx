@@ -21,19 +21,17 @@ const BuyMeACoffeeAnimation = () => {
       if (isHovering) return
       
       const shakeSteps = [
-        { x: -12, y: -12, rotate: -7 },
-        { x: 12, y: 12, rotate: 7 },
-        { x: -12, y: 12, rotate: -7 },
-        { x: 12, y: -12, rotate: 7 },
-        { x: -10, y: -10, rotate: -5 },
-        { x: 10, y: 10, rotate: 5 },
-        { x: -6, y: -6, rotate: -3 },
-        { x: 6, y: 6, rotate: 3 },
+        { x: -8, y: -8, rotate: -5 },
+        { x: 8, y: 8, rotate: 5 },
+        { x: -8, y: 8, rotate: -5 },
+        { x: 8, y: -8, rotate: 5 },
+        { x: -4, y: -4, rotate: -2 },
+        { x: 4, y: 4, rotate: 2 },
         { x: 0, y: 0, rotate: 0 }
       ]
       
       let stepIndex = 0
-      const shakeDuration = 500 // milliseconds (longer duration for more dramatic shake)
+      const shakeDuration = 400 // milliseconds (subtle shake duration)
       const stepDuration = shakeDuration / shakeSteps.length
       
       const animate = () => {
