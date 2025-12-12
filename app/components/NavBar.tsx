@@ -35,11 +35,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
         <Link 
           href="/" 
           // className={`hover:scale-110 transition-all duration-300 ease-in-out px-4 btn-ghost text-2xl bungee-hairline-bold hover:bg-transparent active:transform-none focus:transform-none transform-gpu ${
-          className={`px-4 btn-ghost text-2xl bungee-hairline-bold hover:bg-transparent active:transform-none focus:transform-none transform-gpu cursor-default ${
-            pathname === '/' 
-              ? 'text-emerald-700 dark:text-emerald-200' 
-              : 'text-black dark:text-white'
-          }`}
+          className={`px-4 btn-ghost text-2xl bungee-hairline-bold hover:bg-transparent active:transform-none focus:transform-none transform-gpu cursor-default text-black dark:text-white`}
         >
           aka.jimena
         </Link>
