@@ -20,14 +20,19 @@ const ContactForm = () => {
 
   useEffect(() => {
     emailjs.init({
-      publicKey: "lYPDqWbwbsFTQDuJz",
+      publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "",
     });
   }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (form.current) {
-      emailjs.sendForm('service_7z8bwyp', 'template_57acheq', form.current, { publicKey: 'lYPDqWbwbsFTQDuJz'})
+      emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+        form.current,
+        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "" }
+      )
           .then((result) => {
             console.log(result.text);
             notify();
@@ -47,13 +52,13 @@ const ContactForm = () => {
             <label className="label">
               <span className="label-text text-black dark:text-white mb-2">Name</span>
             </label>
-            <input type="text" className="input text-[16px] dark:bg-[#1D232A] placeholder:text-black dark:placeholder:text-gray-400 w-full" placeholder="Your Name" name="from_name" required />
+            <input type="text" className="input text-[16px] dark:bg-[#1D232A] placeholder:text-black dark:placeholder:text-gray-400 w-full" placeholder="Your Name" name="from_name" autoComplete='name' required />
           </div>
           <div className="form-control w-full">
             <label className="label">
               <span className="label-text text-black dark:text-white mb-2">Email</span>
             </label>
-            <input type="email" name="reply_to" className="input text-[16px] dark:bg-[#1D232A] placeholder:text-black dark:placeholder:text-gray-400 w-full" placeholder="Your Email" required />
+            <input type="email" name="reply_to" className="input text-[16px] dark:bg-[#1D232A] placeholder:text-black dark:placeholder:text-gray-400 w-full" placeholder="Your Email" autoComplete='email' required />
           </div>
         </div>
         <div className="form-control w-full mr-4 sm:mr-0 hidden">
