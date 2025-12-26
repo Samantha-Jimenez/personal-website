@@ -81,6 +81,12 @@ body.dark .menu li > *:not(ul, .menu-title, details, .btn):active {
   /* Remove this block if not needed */
 }
 
+.chango-regular {
+  font-family: "Chango", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .bungee-hairline-thin {
   font-family: "Bungee Hairline", sans-serif;
   font-weight: 400;
@@ -206,7 +212,9 @@ footer .menu :where(li > details[open] > summary)::after {
 }
 
 .input:focus, .input:focus-within, .textarea:focus {
-  outline-color: #90EE8F;
+  /* outline-color: #90EE8F; */
+  outline-color: rgb(214 211 209 / var(--tw-bg-opacity, 1));
+  outline-width: 1px;
   border-color: #90EE8F;
 }
 
@@ -352,4 +360,177 @@ img[alt="The Great Divide"] { width: 200px; }
     padding: 0 3rem;
     margin-top: 2rem;
   }
+}
+
+/* TEXT EFFECTS */
+/* Inner shadow effect for text - creates a recessed/inset appearance using gradient */
+.text-shadow-inner {
+  background: linear-gradient(to bottom, 
+    #E6390F 0%,
+    #CC1E00 40%,
+    #8F1500 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-shadow-inner-subtle {
+  background: linear-gradient(to bottom, 
+    #E6390F 0%,
+    #CC1E00 45%,
+    #A91A00 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Text Effects Collection */
+
+/* Glow effects */
+.text-glow {
+  text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+}
+
+.text-glow-subtle {
+  text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+}
+
+.text-glow-strong {
+  text-shadow: 0 0 15px currentColor, 0 0 30px currentColor, 0 0 45px currentColor;
+}
+
+/* Text outline/stroke */
+.text-outline {
+  -webkit-text-stroke: 1px currentColor;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-outline-thick {
+  -webkit-text-stroke: 2px currentColor;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 3D text effect */
+.text-3d {
+  text-shadow: 
+    1px 1px 0 rgba(0, 0, 0, 0.2),
+    2px 2px 0 rgba(0, 0, 0, 0.2),
+    3px 3px 0 rgba(0, 0, 0, 0.2),
+    4px 4px 0 rgba(0, 0, 0, 0.2),
+    5px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.text-3d-subtle {
+  text-shadow: 
+    1px 1px 0 rgba(0, 0, 0, 0.3),
+    2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Gradient text (colorful) */
+.text-gradient {
+  background: linear-gradient(to right, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-rainbow {
+  background: linear-gradient(to right, #f093fb 0%, #f5576c 25%, #4facfe 50%, #00f2fe 75%, #43e97b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-warm {
+  background: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cool {
+  background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animated gradient text */
+.text-gradient-animated {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 3s linear infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Embossed/raised text */
+.text-embossed {
+  text-shadow: 
+    0 1px 0 rgba(255, 255, 255, 0.5),
+    0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.text-embossed-strong {
+  text-shadow: 
+    0 2px 0 rgba(255, 255, 255, 0.6),
+    0 -2px 0 rgba(0, 0, 0, 0.4),
+    0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* Soft shadow */
+.text-shadow-soft {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow-medium {
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.text-shadow-strong {
+  text-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Neon text effect */
+.text-neon {
+  text-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor,
+    0 0 20px currentColor;
+}
+
+.text-neon-subtle {
+  text-shadow: 
+    0 0 3px currentColor,
+    0 0 6px currentColor;
+}
+
+.text-neon-very-subtle {
+  text-shadow: 
+    0 0 2px currentColor,
+    0 0 2px currentColor;
+}
+
+/* Letter spacing effects */
+.text-spaced {
+  letter-spacing: 0.1em;
+}
+
+.text-spaced-wide {
+  letter-spacing: 0.2em;
+}
+
+.text-spaced-extra-wide {
+  letter-spacing: 0.3em;
 }
