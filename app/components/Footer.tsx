@@ -42,7 +42,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer ref={menuRef} className="footer text-black dark:bg-zinc-900 dark:text-gray-200 items-center p-2">
+    <footer ref={menuRef} className="footer text-black dark:bg-[#130E0A] dark:text-gray-200 items-center p-2 bg-[#F5F1EC]">
         {/* <aside className="grid-flow-col items-center">
             <p className="montserrat-mine font-light">Copyright © {new Date().getFullYear()} - All right reserved</p>
         </aside> */}

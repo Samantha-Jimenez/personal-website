@@ -30,12 +30,12 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
   };
 
   return (
-    <div className="navbar text-black dark:bg-zinc-900 flex flex-col min-[675px]:flex-row justify-between dark:text-gray-200">
+    <div className="navbar text-black dark:bg-[#130E0A] bg-[#ECEAE6] flex flex-col min-[675px]:flex-row justify-between dark:text-gray-200">
       <div className="grid grid-cols-[1fr_auto_1fr] pt-2">
         <Link 
           href="/" 
           // className={`hover:scale-110 transition-all duration-300 ease-in-out px-4 btn-ghost text-2xl bungee-hairline-bold hover:bg-transparent active:transform-none focus:transform-none transform-gpu ${
-          className={`px-4 btn-ghost text-2xl bungee-hairline-bold hover:bg-transparent active:transform-none focus:transform-none transform-gpu cursor-default text-black dark:text-white`}
+          className={`px-4 btn-ghost text-2xl chango-regular uppercase hover:bg-transparent active:transform-none focus:transform-none transform-gpu cursor-default text-[#CC1E00] dark:text-[#F1CC00]`}
         >
           aka.jimena
         </Link>
