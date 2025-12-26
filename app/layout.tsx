@@ -43,6 +43,9 @@ export default function RootLayout({
         <style>
           @import url(&quot;https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Nothing+You+Could+Do&display=swap&quot;);
         </style>
+        <style>
+          @import url(&quot;https://fonts.googleapis.com/css2?family=Bungee&family=Chango&family=League+Gothic&family=Notable&family=Sigmar+One&display=swap&quot;);
+        </style>
       </head>
       <body className={`${inter.className} montserrat-mine`}>
         <BuyMeACoffeeAnimation />
