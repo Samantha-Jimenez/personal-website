@@ -38,20 +38,14 @@ export default function RootLayout({
           data-y_margin="15">
         </script>
         <style>
-          @import url(&quot;https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&quot;);
-        </style>
-        <style>
-          @import url(&quot;https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Nothing+You+Could+Do&display=swap&quot;);
-        </style>
-        <style>
-          @import url(&quot;https://fonts.googleapis.com/css2?family=Bungee&family=Chango&family=League+Gothic&family=Notable&family=Sigmar+One&display=swap&quot;);
+          @import url(&quot;https://fonts.googleapis.com/css2?family=Chango&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap&quot;);
         </style>
       </head>
-      <body className={`${inter.className} montserrat-mine`}>
+      <body className={`${inter.className} roboto-mine`}>
         <BuyMeACoffeeAnimation />
         <Toaster 
           toastOptions={{
-            className: 'montserrat-mine',
+            className: 'roboto-mine',
           }}
         />
         {children}
