@@ -18,7 +18,7 @@ const AnnouncementBar = () => {
         const distanceFromCenter = viewportHeight / 2 - elementCenter
         
         // Parallax speed: lower value = slower scroll (0.3 = 30% of normal scroll speed)
-        const parallaxSpeed = 0.3
+        const parallaxSpeed = 0.12
         const parallaxOffset = distanceFromCenter * parallaxSpeed
         
         setTransform(parallaxOffset)
