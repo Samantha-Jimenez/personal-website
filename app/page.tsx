@@ -69,13 +69,13 @@ export default function Home() {
             onChange={toggleDarkMode}
             className='custom-classname'
           />
-          <p className="text-base pl-2 text-gray-200"> {darkMode ? 'Light Mode' : 'Dark Mode'} </p>
+          <p className="text-base pl-2 text-gray-200 tracking-wider roboto-mine"> {darkMode ? 'Light Mode' : 'Dark Mode'} </p>
         </label>
       </div>
       <main className="flex min-h-max flex-col overflow-x-hidden bg-white dark:bg-[#130E0A]">
         <div className="grid grid-cols-1">
           <div className="relative grid w-full bg-gray-100 dark:bg-zinc-900">
-            <div className="row-start-1 row-end-2 col-start-1 col-end-3 absolute inset-0 opacity-70 bg-[#140F0B] dark:opacity-80"></div>
+            <div className="row-start-1 row-end-2 col-start-1 col-end-3 absolute inset-0 opacity-70 bg-[#130E09] dark:opacity-80"></div>
             <video
               className="row-start-1 row-end-2 col-start-1 col-end-3 h-full w-full object-cover object-center"
               src="/bg-video.mp4"
@@ -87,12 +87,12 @@ export default function Home() {
             <div className="row-start-1 col-start-1 inset-0 flex flex-col z-10 px-4 md:px-24 pt-16 pb-8 h-full w-full">
               <p className="row-start-1 col-start-1 col-span-1 chango-regular max-[415px]:text-4xl max-[540px]:text-5xl text-6xl md:text-7xl lg:text-8xl xl:text-9xl whitespace-nowrap place-self-start dark:text-[#F1CC00] text-[#CC1E00] uppercase overflow-visible text-neon-very-subtle">Samantha</p>
               <p className="row-start-2 col-start-1 col-span-1 chango-regular max-[415px]:text-4xl max-[540px]:text-5xl text-6xl md:text-7xl lg:text-8xl xl:text-9xl whitespace-nowrap place-self-end dark:text-[#F1CC00] text-[#CC1E00] uppercase text-neon-very-subtle">Jimenez</p>
-              <p className="row-start-3 col-start-1 col-span-1 montserrat-mine text-xl justify-center mt-16 md:mt-32 text-white">
-                Hey, I&apos;m Sam, a full-stack software engineer with a creative soul and a love for movement, good food, and meaningful projects. After years of pouring into my career, I&apos;m reconnecting with the things that light me up: fitness, food, storytelling, and self-expression.
+              <p className="row-start-3 col-start-1 col-span-1 tracking-wider roboto-mine text-xl justify-center mt-16 md:mt-32 text-white">
+                  Hey, I&apos;m Sam, a full-stack software engineer with a creative soul and a love for movement, good food, and meaningful projects. After years of pouring into my career, I&apos;m reconnecting with the things that light me up: fitness, food, storytelling, and self-expression.
                 <br /><br />
-                This website is my space to document that journey, share insights, and connect with others. From blog posts and dev projects to life reflections and creative experiments — It&apos;s part portfolio, part digital journal.
+                  This website is my space to document that journey, share insights, and connect with others. From blog posts and dev projects to life reflections and creative experiments — It&apos;s part portfolio, part digital journal.
                 <br /><br />
-                Right now, I&apos;m working with fellow engineers from the Pursuit Coding Fellowship on a fitness-focused app, <a href="https://motevis.com/" target="_blank" rel="noopener noreferrer" className="dark:text-emerald-200 text-emerald-300 hover:text-emerald-400 dark:hover:text-emerald-300 transition-colors"><em>Motevis</em></a>, which helps runners find local run clubs, weekly runs, and races in New York City. I&apos;m also sharing my <a href="https://www.youtube.com/@aka.jimena" target="_blank" rel="noopener noreferrer" className="dark:text-emerald-200 text-emerald-300 hover:text-emerald-400 dark:hover:text-emerald-300 transition-colors"><em>&ldquo;6 Months to Change My Life&rdquo;</em></a> journey on YouTube — feel free to follow along and see how it unfolds.
+                  Right now, I&apos;m working with fellow engineers from the Pursuit Coding Fellowship on a fitness-focused app, <a href="https://motevis.com/" target="_blank" rel="noopener noreferrer" className="dark:text-emerald-200 text-emerald-300 hover:text-emerald-400 dark:hover:text-emerald-300 transition-colors"><em>Motevis</em></a>, which helps runners find local run clubs, weekly runs, and races in New York City. I&apos;m also sharing my <a href="https://www.youtube.com/@aka.jimena" target="_blank" rel="noopener noreferrer" className="dark:text-emerald-200 text-emerald-300 hover:text-emerald-400 dark:hover:text-emerald-300 transition-colors"><em>&ldquo;6 Months to Change My Life&rdquo;</em></a> journey on YouTube — feel free to follow along and see how it unfolds.
               </p>
             </div>
           </div>
