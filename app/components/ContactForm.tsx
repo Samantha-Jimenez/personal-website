@@ -2,16 +2,21 @@
 import React, { useRef, useEffect, FormEvent } from 'react'
 import emailjs from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
+import { Icon } from '@iconify/react';
 
 const ContactForm = () => {
-  const notify = () => toast('message sent',
+  const notify = () => toast('Message Sent!',
     {
       position: 'bottom-center',
-      icon: '✅',
+      icon: <Icon icon="line-md:email-check-twotone" className="ml-[4px] h-[20px] w-[20px]" />,
       style: {
         borderRadius: '10px',
         background: '#065f46',
         color: '#fff',
+        // fontFamily: 'Chango, sans-serif',
+        fontFamily: 'Roboto, sans-serif',
+        letterSpacing: '0.05em',
+        // textTransform: 'uppercase',
       },
     }
   );
@@ -46,7 +51,7 @@ const ContactForm = () => {
   return (
     <div className="pt-10 pb-8 px-6 sm:px-24 w-[100%] bg-white dark:bg-[#151210] shadow-xl">
       <h2 className="text-2xl font-bold mb-4 chango-regular uppercase text-[#CC1E00] dark:text-[#F1CC00]">Contact me</h2>
-      <form ref={form} onSubmit={handleSubmit}>
+      <form ref={form} onSubmit={handleSubmit} className="tracking-wider roboto-mine">
         <div className="flex flex-col sm:flex-row mb-4 w-full gap-4 text-gray-200">
           <div className="form-control w-full mr-4 sm:mr-0">
             <label className="label">
@@ -74,7 +79,7 @@ const ContactForm = () => {
           <textarea className="textarea text-[16px] bg-[#F5F1EC] dark:bg-[#1C1B1B] placeholder:text-black dark:placeholder:text-gray-400 w-full" placeholder="Your Message" name="message" required></textarea>
         </div>
         <div className="flex justify-center">
-          <button type="submit" className="btn bg-emerald-700 dark:bg-emerald-600 hover:dark:bg-emerald-800 hover:bg-emerald-600 active:bg-emerald-500 active:dark:bg-emerald-950 text-white w-full my-5 bungee-hairline-bold text-xl border-none">Send Message</button>
+          <button type="submit" className="btn bg-emerald-700 dark:bg-emerald-600 hover:dark:bg-emerald-800 hover:bg-emerald-600 active:bg-emerald-500 active:dark:bg-emerald-950 text-white w-full my-5 text-base border-none tracking-wider font-thin">Send Message</button>
         </div>
       </form>
     </div>
