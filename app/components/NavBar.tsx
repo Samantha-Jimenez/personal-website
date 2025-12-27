@@ -34,7 +34,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
       <div className="grid grid-cols-[1fr_auto_1fr] pt-2">
         <Link 
           href="/" 
-          // className={`hover:scale-110 transition-all duration-300 ease-in-out px-4 btn-ghost text-2xl bungee-hairline-bold hover:bg-transparent active:transform-none focus:transform-none transform-gpu ${
+          // className={`hover:scale-110 transition-all duration-300 ease-in-out px-4 btn-ghost text-2xl hover:bg-transparent active:transform-none focus:transform-none transform-gpu ${
           className={`px-4 btn-ghost text-2xl chango-regular uppercase hover:bg-transparent active:transform-none focus:transform-none transform-gpu cursor-default text-[#CC1E00] dark:text-[#F1CC00]`}
         >
           aka.jimena
@@ -42,7 +42,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
         {/* <span className="text-2xl">•</span>
         <Link 
           href="/blog" 
-          className={`hover:scale-110 transition-all duration-300 ease-in-out bungee-hairline-bold text-2xl px-4 transform-gpu ${
+          className={`hover:scale-110 transition-all duration-300 ease-in-out text-2xl px-4 transform-gpu ${
             pathname.startsWith('/blog') 
               ? 'text-emerald-700 dark:text-emerald-200' 
               : 'text-black dark:text-white'
@@ -52,43 +52,43 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
         </Link>  */}
       </div>
       <div className="flex-none self-start">
-        <ul className="menu menu-horizontal px-1 justify-items-center grid grid-flow-row grid-cols-6">
-          <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="instagram">
+        <ul className="menu menu-horizontal px-1 justify-items-center grid grid-flow-row grid-cols-6 tracking-wider roboto-mine">
+          <div className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-[#292929]" data-tip="instagram">
             <li>
               <a className="hover:scale-150 hover:bg-transparent active:bg-white active:dark:bg-neutral-200 transition-transform duration-200" href="https://www.instagram.com/aka.jimena" target="_blank" rel="noopener noreferrer">
                 <ThinInstagramIcon />
               </a>
             </li>
           </div>
-          <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="threads">
+          <div className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-[#292929]" data-tip="threads">
             <li>
               <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.threads.net/@aka.jimena" target="_blank" rel="noopener noreferrer">
                 <ThinThreadsIcon />
               </a>
             </li>
           </div>
-          <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="tiktok">
+          <div className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-[#292929]" data-tip="tiktok">
             <li>
               <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.tiktok.com/@aka.jimena" target="_blank" rel="noopener noreferrer">
                 <ThinTikTokIcon />
               </a>
             </li>
           </div>
-          <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="portfolio">
+          <div className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-[#292929]" data-tip="portfolio">
             <li>
               <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" onClick={onPortfolioClick}>
                 <ThinPorftolioIcon />
               </a>
             </li>
           </div>
-          <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="motevis">
+          <div className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-[#292929]" data-tip="motevis">
             <li>
               <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" onClick={onMotevisClick}>
                 <ThinMotevisIcon />
               </a>
             </li>
           </div>
-          <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="youtube">
+          <div className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-[#292929]" data-tip="youtube">
             <li>
               <a 
                   className="hover:scale-150 hover:bg-transparent transition-transform duration-200 cursor-pointer" 

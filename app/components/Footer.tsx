@@ -44,32 +44,32 @@ const Footer = () => {
   return (
     <footer ref={menuRef} className="footer text-black dark:bg-[#130E0A] dark:text-gray-200 items-center p-2 bg-[#F5F1EC]">
         {/* <aside className="grid-flow-col items-center">
-            <p className="montserrat-mine font-light">Copyright © {new Date().getFullYear()} - All right reserved</p>
+            <p className="font-light">Copyright © {new Date().getFullYear()} - All right reserved</p>
         </aside> */}
         <nav className="flex-none w-full justify-end grid-flow-col gap-6 grid-rows-1 justify-self-end">
-            <ul className="menu menu-horizontal px-1 grid-flow-row grid grid-rows-1 grid-cols-12 max-[662px]:grid-cols-6 max-[662px]:grid-rows-2 max-[662px]:justify-self-end">
-                <div className="tooltip tooltip-top justify-items-center" data-tip="instagram">
+            <ul className="menu menu-horizontal px-1 grid-flow-row grid grid-rows-1 grid-cols-12 max-[662px]:grid-cols-6 max-[662px]:grid-rows-2 max-[662px]:justify-self-end tracking-wider roboto-mine">
+                <div className="tooltip tooltip-top justify-items-center dark:before:bg-[#292929]" data-tip="instagram">
                     <li>
                     <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.instagram.com/aka.jimena" target="_blank" rel="noopener noreferrer">
                         <ThinInstagramIcon />
                     </a>
                     </li>
                 </div>
-                <div className="tooltip tooltip-top justify-items-center" data-tip="threads">
+                <div className="tooltip tooltip-top justify-items-center dark:before:bg-[#292929]" data-tip="threads">
                     <li>
                     <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.threads.net/@aka.jimena" target="_blank" rel="noopener noreferrer">
                         <ThinThreadsIcon />
                     </a>
                     </li>
                 </div>
-                <div className="tooltip tooltip-top justify-items-center" data-tip="tiktok">
+                <div className="tooltip tooltip-top justify-items-center dark:before:bg-[#292929]" data-tip="tiktok">
                     <li>
                       <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.tiktok.com/@aka.jimena" target="_blank" rel="noopener noreferrer">
                         <ThinTikTokIcon />
                       </a>
                     </li>
                 </div>
-                <div className="tooltip tooltip-top justify-items-center" data-tip="portfolio">
+                <div className="tooltip tooltip-top justify-items-center dark:before:bg-[#292929]" data-tip="portfolio">
                     <li>
                         <div 
                           onClick={() => openMenu('portfolio', openPortfolioMenu, setOpenPortfolioMenu, openGithubMenu, setOpenGithubMenu, setActiveMenu)} 
@@ -79,14 +79,14 @@ const Footer = () => {
                                 <span className="ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-upwards] left-[62%]"></span>
                         </div>
                         {openPortfolioMenu && (
-                            <ul className="ml-[-65%] absolute dark:bg-zinc-900 bg-neutral-200 p-2 pb-5 text-xs w-max rounded-lg top-[-245%] z-[11] border-none">
-                                <li className="hover:bg-gray-300 hover:dark:bg-[#2A323C] rounded"><a href="https://samantha-jimenez.com/" target="_blank" rel="noopener noreferrer">Current Portfolio</a></li>
-                                <li className="hover:bg-gray-300 hover:dark:bg-[#2A323C] rounded"><a href="https://samantha-jimenez.netlify.app/" target="_blank" rel="noopener noreferrer">Previous Portfolio</a></li>
+                            <ul className="ml-[-65%] absolute dark:bg-[#1C1B1B] bg-[#F5F1EC] p-2 pb-5 text-xs w-max rounded-lg top-[-245%] z-[11] border-none shadow-lg">
+                                <li className="hover:bg-emerald-700/20 hover:bg-emerald-600/20 rounded"><a href="https://samantha-jimenez.com/" target="_blank" rel="noopener noreferrer">Current Portfolio</a></li>
+                                <li className="hover:bg-emerald-700/20 hover:bg-emerald-600/20 rounded"><a href="https://samantha-jimenez.netlify.app/" target="_blank" rel="noopener noreferrer">Previous Portfolio</a></li>
                             </ul>
                         )}
                     </li>
                 </div>
-                <div className="tooltip tooltip-top justify-items-center align-self" data-tip="github">
+                <div className="tooltip tooltip-top justify-items-center align-self dark:before:bg-[#292929]" data-tip="github">
                     <li>
                         <div 
                           onClick={() => openMenu('github', openPortfolioMenu, setOpenPortfolioMenu, openGithubMenu, setOpenGithubMenu, setActiveMenu)} 
@@ -96,42 +96,42 @@ const Footer = () => {
                             <span className="ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-upwards] left-[64%]"></span>
                         </div>
                         {openGithubMenu && (
-                            <ul className="ml-[-65%] absolute dark:bg-zinc-900 bg-neutral-200 p-2 pb-5 text-xs w-max rounded-lg top-[-245%] z-[11] border-none">
-                                <li className="hover:bg-gray-300 hover:dark:bg-[#2A323C] rounded"><a href="https://github.com/samantha-jimenez" target="_blank" rel="noopener noreferrer">Current Account</a></li>
-                                <li className="hover:bg-gray-300 hover:dark:bg-[#2A323C] rounded"><a href="https://github.com/samanthabjimenez" target="_blank" rel="noopener noreferrer">Previous Account</a></li>
+                            <ul className="ml-[-65%] absolute dark:bg-[#1C1B1B] bg-[#F5F1EC] p-2 pb-5 text-xs w-max rounded-lg top-[-245%] z-[11] border-none shadow-lg">
+                                <li className="hover:bg-emerald-700/20 hover:bg-emerald-600/20 rounded"><a href="https://github.com/samantha-jimenez" target="_blank" rel="noopener noreferrer">Current Account</a></li>
+                                <li className="hover:bg-emerald-700/20 hover:bg-emerald-600/20 rounded"><a href="https://github.com/samanthabjimenez" target="_blank" rel="noopener noreferrer">Previous Account</a></li>
                             </ul>
                         )}
                     </li>
                 </div>
-                <div className="tooltip tooltip-top justify-items-center" data-tip="email">
+                <div className="tooltip tooltip-top justify-items-center dark:before:bg-[#292929]" data-tip="email">
                     <li>
                         <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="mailto:SamanthaB.Jimenez@gmail.com" target="_blank" rel="noopener noreferrer">
                             <ThinGoogleMailIcon />
                         </a>
                     </li>
                 </div>
-                <div className="tooltip tooltip-top justify-items-center" data-tip="linkedin">
+                <div className="tooltip tooltip-top justify-items-center dark:before:bg-[#292929]" data-tip="linkedin">
                     <li>
                     <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.linkedin.com/in/samanthabjimenez/" target="_blank" rel="noopener noreferrer">
                         <ThinLinkedInIcon />
                     </a>
                     </li>
                 </div>
-                <div className="tooltip tooltip-top justify-items-center" data-tip="motevis">
+                <div className="tooltip tooltip-top justify-items-center dark:before:bg-[#292929]" data-tip="motevis">
                   <li>
                     <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://motevis.com/" target="_blank" rel="noopener noreferrer">
                         <ThinMotevisIcon />
                     </a>
                   </li>
                 </div>
-                <div className="tooltip tooltip-top justify-items-center" data-tip="strava">
+                <div className="tooltip tooltip-top justify-items-center dark:before:bg-[#292929]" data-tip="strava">
                     <li>
                       <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://strava.app.link/lxN0E2NT0Ob" target="_blank" rel="noopener noreferrer">
                         <ThinStravaIcon />
                       </a>
                     </li>
                 </div>
-                <div className="tooltip tooltip-top justify-items-center" data-tip="youtube">
+                <div className="tooltip tooltip-top justify-items-center dark:before:bg-[#292929]" data-tip="youtube">
                     <li>
                       <a 
                         className="hover:scale-150 hover:bg-transparent transition-transform duration-200"
@@ -144,14 +144,14 @@ const Footer = () => {
                       </a>
                     </li>
                 </div>
-                <div className="tooltip tooltip-top justify-items-center" data-tip="spotify">
+                <div className="tooltip tooltip-top justify-items-center dark:before:bg-[#292929]" data-tip="spotify">
                   <li>
                     <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://open.spotify.com/user/jimenamorenita?si=2fa3b2d8e7d147d1" target="_blank" rel="noopener noreferrer">
                         <ThinSpotifyIcon />
                     </a>
                   </li>
                 </div>
-                <div className="tooltip tooltip-top justify-items-center" data-tip="goodreads">
+                <div className="tooltip tooltip-top justify-items-center dark:before:bg-[#292929]" data-tip="goodreads">
                     <li>
                       <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.goodreads.com/user/show/183397302-samantha" target="_blank" rel="noopener noreferrer">
                         <GoodReadsIcon />
