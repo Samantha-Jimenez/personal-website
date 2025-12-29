@@ -57,7 +57,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
-          className="text-2xl text-[#AD8F68] dark:text-white"
+          className="text-2xl text-[#AD8F68] dark:text-white text-neon-very-subtle"
         >
           •
         </motion.span>

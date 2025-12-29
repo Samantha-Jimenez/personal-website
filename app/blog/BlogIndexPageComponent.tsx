@@ -91,28 +91,28 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
         <div className="">
             <NavBar onPortfolioClick={handlePortfolioClick} onMotevisClick={handleMotevisClick} />
         </div>
-        <div className="sticky top-0 z-[11] dark:bg-green-main bg-[#AD8F68]">
-        <label className="flex items-center py-2 pl-6">
-          <Toggle
-            icons={{
-              checked: <span className="icon-[arcticons--sunilpaulmathew-weather]"/>,
-              unchecked: <span className="icon-[arcticons--moon]"/>,
-            }}
-            checked={darkMode}
-            onChange={toggleDarkMode}
-            className='custom-classname'
-          />
-          <motion.p 
-            key={darkMode ? 'light' : 'dark'}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            className="text-base pl-2 text-gray-200 tracking-wider roboto-mine text-neon-very-very-subtle"
-          >
-            {darkMode ? 'Light Mode' : 'Dark Mode'}
-          </motion.p>
-        </label>
-      </div>
+        <div className="sticky top-0 z-30 dark:bg-green-main bg-[#AD8F68]">
+          <label className="flex items-center py-2 pl-6">
+            <Toggle
+              icons={{
+                checked: <span className="icon-[arcticons--sunilpaulmathew-weather]"/>,
+                unchecked: <span className="icon-[arcticons--moon]"/>,
+              }}
+              checked={darkMode}
+              onChange={toggleDarkMode}
+              className='custom-classname'
+            />
+            <motion.p 
+              key={darkMode ? 'light' : 'dark'}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              className="text-base pl-2 text-gray-200 tracking-wider roboto-mine text-neon-very-very-subtle"
+            >
+              {darkMode ? 'Light Mode' : 'Dark Mode'}
+            </motion.p>
+          </label>
+        </div>
       <motion.header 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

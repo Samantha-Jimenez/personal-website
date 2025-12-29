@@ -83,7 +83,7 @@ export default function Home() {
   return (
     <>
       <NavBar onPortfolioClick={handlePortfolioClick} onMotevisClick={handleMotevisClick} />
-      <div className="sticky top-0 z-[11] dark:bg-green-main bg-[#AD8F68]">
+      <div className="sticky top-0 z-30 dark:bg-green-main bg-[#AD8F68]">
         <label className="flex items-center py-2 pl-6">
           <Toggle
             icons={{
