@@ -38,7 +38,7 @@ export default function RootLayout({
           data-y_margin="15">
         </script>
         <style>
-          @import url(&quot;https://fonts.googleapis.com/css2?family=Chango&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap&quot;);
+          @import url(&quot;https://fonts.googleapis.com/css2?family=Chango&family=Knewave&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap&quot;);
         </style>
       </head>
       <body className={`${inter.className} roboto-mine`}>

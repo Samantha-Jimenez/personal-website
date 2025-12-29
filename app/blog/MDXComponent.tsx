@@ -13,11 +13,6 @@ export function useMDXComponents(components: MDXComponents = {}): MDXComponents 
     h3: ({ children }) => (
       <h3 style={{ marginTop: '1rem', marginBottom: '0.75rem' }}>{children}</h3>
     ),
-    a: ({ children, ...props }) => (
-      <a {...props} style={{ color: 'green', textDecoration: 'underline' }}>
-        {children}
-      </a>
-    ),
     p: ({ children }) => (
       <p style={{ fontWeight: '200', marginTop: '0px', marginBottom: '.75rem' }}>{children}</p>
     ),
@@ -52,7 +47,7 @@ export function useMDXComponents(components: MDXComponents = {}): MDXComponents 
     },
     Image,
     Signature: ({ children }) => (
-      <div className="nothing-you-could-do-regular text-3xl !text-zinc-600">
+      <div className="knewave-regular text-3xl !text-slate-800 dark:!text-slate-200">
         {children}
       </div>
     ),
