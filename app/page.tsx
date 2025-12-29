@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import ContactForm from "./components/ContactForm";
 import NavBar from "./components/NavBar";
 import Footer from './components/Footer';
@@ -69,7 +70,15 @@ export default function Home() {
             onChange={toggleDarkMode}
             className='custom-classname'
           />
-          <p className="text-base pl-2 text-gray-200 tracking-wider roboto-mine"> {darkMode ? 'Light Mode' : 'Dark Mode'} </p>
+          <motion.p 
+            key={darkMode ? 'light' : 'dark'}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="text-base pl-2 text-gray-200 tracking-wider roboto-mine text-neon-very-very-subtle"
+          >
+            {darkMode ? 'Light Mode' : 'Dark Mode'}
+          </motion.p>
         </label>
       </div>
       <main className="flex min-h-max flex-col overflow-x-hidden bg-background-light-main dark:bg-background-dark-main">
@@ -85,36 +94,85 @@ export default function Home() {
               playsInline
             />
             <div className="row-start-1 col-start-1 inset-0 flex flex-col z-10 px-4 md:px-30 pt-16 pb-8 w-full justify-start">
-              <p className="row-start-1 col-start-1 col-span-1 chango-regular max-[415px]:text-4xl max-[540px]:text-5xl text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem] whitespace-nowrap place-self-end dark:text-yellow-main text-red-main uppercase overflow-visible text-neon-subtle">Samantha</p>
-              <p className="row-start-2 col-start-1 col-span-1 chango-regular max-[415px]:text-4xl max-[540px]:text-5xl text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem] whitespace-nowrap place-self-end dark:text-yellow-main text-[#ED0C0A] uppercase text-neon-subtle">Jimenez</p>
-              <p className="row-start-3 col-start-1 col-span-1 tracking-wider roboto-bold text-xl justify-center mt-16 md:mt-70 dark:text-yellow-main text-[#ED0C0A] text-neon-very-subtle text-center">
-                  Hey, I’m Sam, a full-stack software engineer with a creative soul and a love for movement, good food, and meaningful projects. After years of pouring into my career, I’m reconnecting with the things that light me up: fitness, food, storytelling, and self-expression. This website is my space to document that journey, share insights, and connect with others.
+              <motion.p 
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="row-start-1 col-start-1 col-span-1 chango-regular max-[415px]:text-4xl max-[540px]:text-5xl text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem] whitespace-nowrap place-self-end dark:text-yellow-main text-red-main uppercase overflow-visible text-neon-subtle"
+              >
+                Samantha
+              </motion.p>
+              <motion.p 
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                className="row-start-2 col-start-1 col-span-1 chango-regular max-[415px]:text-4xl max-[540px]:text-5xl text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem] whitespace-nowrap place-self-end dark:text-yellow-main text-[#ED0C0A] uppercase text-neon-subtle"
+              >
+                Jimenez
+              </motion.p>
+              <motion.p 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                className="row-start-3 col-start-1 col-span-1 tracking-wider roboto-bold text-xl justify-center mt-16 md:mt-70 dark:text-yellow-main text-[#ED0C0A] text-neon-very-subtle text-center"
+              >
+                  Hey, I'm Sam, a full-stack software engineer with a creative soul and a love for movement, good food, and meaningful projects. After years of pouring into my career, I'm reconnecting with the things that light me up: fitness, food, storytelling, and self-expression. This website is my space to document that journey, share insights, and connect with others.
                   <br /><br />
-                  Right now, I’m working with fellow engineers from the Pursuit Coding Fellowship on a fitness-focused app, <a href="https://motevis.com/" target="_blank" rel="noopener noreferrer" className="dark:text-lime-100 text-lime-200 hover:text-lime-400 dark:hover:text-lime-300 transition-colors"><em>Motevis</em></a>, which helps runners find local run clubs, weekly runs, and races in New York City. I’m also sharing my <a href="https://www.youtube.com/@aka.jimena" target="_blank" rel="noopener noreferrer" className="dark:text-lime-100 text-lime-200 hover:text-lime-400 dark:hover:text-lime-300 transition-colors"><em>“6 Months to Change My Life”</em></a> journey on YouTube, documenting what it looks like to rebuild with intention.
-              </p>
+                  Right now, I'm working with fellow engineers from the Pursuit Coding Fellowship on a fitness-focused app, <a href="https://motevis.com/" target="_blank" rel="noopener noreferrer" className="dark:text-lime-100 text-lime-200 hover:text-lime-400 dark:hover:text-lime-300 transition-colors"><em>Motevis</em></a>, which helps runners find local run clubs, weekly runs, and races in New York City. I'm also sharing my <a href="https://www.youtube.com/@aka.jimena" target="_blank" rel="noopener noreferrer" className="dark:text-lime-100 text-lime-200 hover:text-lime-400 dark:hover:text-lime-300 transition-colors"><em>"6 Months to Change My Life"</em></a> journey on YouTube, documenting what it looks like to rebuild with intention.
+              </motion.p>
             </div>
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 py-8 px-4 md:px-24 bg-background-light-main dark:bg-background-dark-main">
-          <div className="">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className=""
+          >
             <InstagramEmbed />
-          </div>
+          </motion.div>
           <div className="divider divider-horizontal hidden md:flex before:bg-stone-100 after:bg-stone-100 dark:before:bg-neutral-600 dark:after:bg-neutral-600"></div>
           <div className="divider md:hidden flex before:bg-stone-100 after:bg-stone-100 dark:before:bg-neutral-600 dark:after:bg-neutral-600"></div>
-          <div className="">
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className=""
+          >
             <TikTokEmbed />
-          </div>
+          </motion.div>
         </div>
         <div className="divider md:hidden flex px-4 before:bg-stone-100 after:bg-stone-100 dark:before:bg-neutral-600 dark:after:bg-neutral-600"></div>
-        <div className="px-4 md:px-24 py-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="px-4 md:px-24 py-8"
+        >
           <YouTubeEmbed />
-        </div>
-        <div className="flex w-full bg-background-light-main dark:bg-green-announcement">
+        </motion.div>
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="flex w-full bg-background-light-main dark:bg-green-announcement"
+        >
           <AnnouncementBar />
-        </div>
-        <div className="flex w-full">
+        </motion.div>
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex w-full"
+        >
           <ContactForm />
-        </div>
+        </motion.div>
 
         <PortfolioModal 
           isOpen={isPortfolioModalOpen} 

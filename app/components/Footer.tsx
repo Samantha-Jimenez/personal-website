@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react'
+import { motion } from 'framer-motion';
 import { ThinInstagramIcon, ThinGitHubIcon, ThinLinkedInIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinTikTokIcon, ThinStravaIcon, GoodReadsIcon, ThinGoogleMailIcon, ThinPorftolioIcon, ThinSpotifyIcon, ThinMotevisIcon } from '../icons/Icons'
 import toast from 'react-hot-toast';
 import { openMenu } from '../hooks/openMenu';
@@ -41,123 +42,312 @@ const Footer = () => {
     };
   }, []);
 
+  const iconVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: (i: number) => ({
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: i * 0.05,
+        duration: 0.3,
+      },
+    }),
+  };
+
   return (
-    <footer ref={menuRef} className="footer text-black dark:bg-background-dark-main dark:text-gray-200 items-center p-2 bg-background-light-main">
+    <footer 
+      ref={menuRef} 
+      className="footer text-black dark:bg-background-dark-main dark:text-gray-200 items-center p-2 bg-background-light-main"
+    >
         {/* <aside className="grid-flow-col items-center">
             <p className="font-light">Copyright © {new Date().getFullYear()} - All right reserved</p>
         </aside> */}
         <nav className="flex-none w-full justify-end grid-flow-col gap-6 grid-rows-1 justify-self-end">
             <ul className="menu menu-horizontal px-1 grid-flow-row grid grid-rows-1 grid-cols-12 max-[662px]:grid-cols-6 max-[662px]:grid-rows-2 max-[662px]:justify-self-end tracking-wider roboto-mine">
-                <div className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" data-tip="instagram">
+                <motion.div 
+                  custom={0}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={iconVariants}
+                  className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" 
+                  data-tip="instagram"
+                >
                     <li>
-                    <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.instagram.com/aka.jimena" target="_blank" rel="noopener noreferrer">
+                    <motion.a 
+                      whileHover={{ scale: 1.5 }}
+                      whileTap={{ scale: 1.2 }}
+                      className="hover:bg-transparent" 
+                      href="https://www.instagram.com/aka.jimena" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
                         <ThinInstagramIcon />
-                    </a>
+                    </motion.a>
                     </li>
-                </div>
-                  <div className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" data-tip="threads">
+                </motion.div>
+                  <motion.div 
+                    custom={1}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={iconVariants}
+                    className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" 
+                    data-tip="threads"
+                  >
                     <li>
-                    <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.threads.net/@aka.jimena" target="_blank" rel="noopener noreferrer">
+                    <motion.a 
+                      whileHover={{ scale: 1.5 }}
+                      whileTap={{ scale: 1.2 }}
+                      className="hover:bg-transparent" 
+                      href="https://www.threads.net/@aka.jimena" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
                         <ThinThreadsIcon />
-                    </a>
+                    </motion.a>
                     </li>
-                </div>
-                <div className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" data-tip="tiktok">
+                </motion.div>
+                <motion.div 
+                  custom={2}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={iconVariants}
+                  className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" 
+                  data-tip="tiktok"
+                >
                     <li>
-                      <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.tiktok.com/@aka.jimena" target="_blank" rel="noopener noreferrer">
+                      <motion.a 
+                        whileHover={{ scale: 1.5 }}
+                        whileTap={{ scale: 1.2 }}
+                        className="hover:bg-transparent" 
+                        href="https://www.tiktok.com/@aka.jimena" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                      >
                         <ThinTikTokIcon />
-                      </a>
+                      </motion.a>
                     </li>
-                </div>
-                <div className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" data-tip="portfolio">
+                </motion.div>
+                <motion.div 
+                  custom={3}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={iconVariants}
+                  className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" 
+                  data-tip="portfolio"
+                >
                     <li>
-                        <div 
+                        <motion.div 
                           onClick={() => openMenu('portfolio', openPortfolioMenu, setOpenPortfolioMenu, openGithubMenu, setOpenGithubMenu, setActiveMenu)} 
-                          className={`cursor-pointer hover:bg-transparent hover:scale-150 hover:bg-transparent transition-transform duration-200 hover:z-[12] relative ${openPortfolioMenu ? 'scale-150 open-menu' : ''}`}
+                          whileHover={{ scale: 1.5 }}
+                          whileTap={{ scale: 1.2 }}
+                          className={`cursor-pointer hover:bg-transparent hover:z-[12] relative ${openPortfolioMenu ? 'scale-150 open-menu' : ''}`}
                         >
                                 <ThinPorftolioIcon />
                                 <span className="ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-upwards] left-[62%]"></span>
-                        </div>
+                        </motion.div>
                         {openPortfolioMenu && (
-                            <ul className="ml-[-65%] absolute dark:bg-background-dark-tertiary bg-background-light-tertiary p-2 pb-5 text-xs w-max rounded-lg top-[-245%] z-[11] border-none shadow-lg">
+                            <motion.ul 
+                              initial={{ opacity: 0, y: -10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.2 }}
+                              className="ml-[-65%] absolute dark:bg-background-dark-tertiary bg-background-light-tertiary p-2 pb-5 text-xs w-max rounded-lg top-[-245%] z-[11] border-none shadow-lg"
+                            >
                                 <li className="hover:bg-emerald-700/20 hover:bg-emerald-600/20 rounded"><a href="https://samantha-jimenez.com/" target="_blank" rel="noopener noreferrer">Current Portfolio</a></li>
                                 <li className="hover:bg-emerald-700/20 hover:bg-emerald-600/20 rounded"><a href="https://samantha-jimenez.netlify.app/" target="_blank" rel="noopener noreferrer">Previous Portfolio</a></li>
-                            </ul>
+                            </motion.ul>
                         )}
                     </li>
-                </div>
-                <div className="tooltip tooltip-top justify-items-center align-self dark:before:bg-tooltip-dark" data-tip="github">
+                </motion.div>
+                <motion.div 
+                  custom={4}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={iconVariants}
+                  className="tooltip tooltip-top justify-items-center align-self dark:before:bg-tooltip-dark" 
+                  data-tip="github"
+                >
                     <li>
-                        <div 
+                        <motion.div 
                           onClick={() => openMenu('github', openPortfolioMenu, setOpenPortfolioMenu, openGithubMenu, setOpenGithubMenu, setActiveMenu)} 
-                          className={`cursor-pointer hover:bg-transparent hover:scale-150 hover:bg-transparent transition-transform duration-200 hover:z-[12] relative ${openGithubMenu ? 'scale-150 open-menu' : ''}`}
+                          whileHover={{ scale: 1.5 }}
+                          whileTap={{ scale: 1.2 }}
+                          className={`cursor-pointer hover:bg-transparent hover:z-[12] relative ${openGithubMenu ? 'scale-150 open-menu' : ''}`}
                         >
                             <ThinGitHubIcon />
                             <span className="ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-upwards] left-[64%]"></span>
-                        </div>
+                        </motion.div>
                         {openGithubMenu && (
-                            <ul className="ml-[-65%] absolute dark:bg-background-dark-tertiary bg-background-light-tertiary p-2 pb-5 text-xs w-max rounded-lg top-[-245%] z-[11] border-none shadow-lg">
+                            <motion.ul 
+                              initial={{ opacity: 0, y: -10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ duration: 0.2 }}
+                              className="ml-[-65%] absolute dark:bg-background-dark-tertiary bg-background-light-tertiary p-2 pb-5 text-xs w-max rounded-lg top-[-245%] z-[11] border-none shadow-lg"
+                            >
                                 <li className="hover:bg-emerald-700/20 hover:bg-emerald-600/20 rounded"><a href="https://github.com/samantha-jimenez" target="_blank" rel="noopener noreferrer">Current Account</a></li>
                                 <li className="hover:bg-emerald-700/20 hover:bg-emerald-600/20 rounded"><a href="https://github.com/samanthabjimenez" target="_blank" rel="noopener noreferrer">Previous Account</a></li>
-                            </ul>
+                            </motion.ul>
                         )}
                     </li>
-                </div>
-                <div className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" data-tip="email">
+                </motion.div>
+                <motion.div 
+                  custom={5}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={iconVariants}
+                  className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" 
+                  data-tip="email"
+                >
                     <li>
-                        <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="mailto:SamanthaB.Jimenez@gmail.com" target="_blank" rel="noopener noreferrer">
+                    <motion.a 
+                      whileHover={{ scale: 1.5 }}
+                      whileTap={{ scale: 1.2 }}
+                      className="hover:bg-transparent" 
+                      href="mailto:SamanthaB.Jimenez@gmail.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
                             <ThinGoogleMailIcon />
-                        </a>
+                        </motion.a>
                     </li>
-                </div>
-                <div className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" data-tip="linkedin">
+                </motion.div>
+                <motion.div 
+                  custom={6}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={iconVariants}
+                  className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" 
+                  data-tip="linkedin"
+                >
                     <li>
-                    <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.linkedin.com/in/samanthabjimenez/" target="_blank" rel="noopener noreferrer">
+                    <motion.a 
+                      whileHover={{ scale: 1.5 }}
+                      whileTap={{ scale: 1.2 }}
+                      className="hover:bg-transparent" 
+                      href="https://www.linkedin.com/in/samanthabjimenez/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
                         <ThinLinkedInIcon />
-                    </a>
+                    </motion.a>
                     </li>
-                </div>
-                <div className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" data-tip="motevis">
+                </motion.div>
+                <motion.div 
+                  custom={7}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={iconVariants}
+                  className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" 
+                  data-tip="motevis"
+                >
                   <li>
-                    <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://motevis.com/" target="_blank" rel="noopener noreferrer">
+                    <motion.a 
+                      whileHover={{ scale: 1.5 }}
+                      whileTap={{ scale: 1.2 }}
+                      className="hover:bg-transparent" 
+                      href="https://motevis.com/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
                         <ThinMotevisIcon />
-                    </a>
+                    </motion.a>
                   </li>
-                </div>
-                <div className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" data-tip="strava">
+                </motion.div>
+                <motion.div 
+                  custom={8}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={iconVariants}
+                  className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" 
+                  data-tip="strava"
+                >
                     <li>
-                      <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://strava.app.link/lxN0E2NT0Ob" target="_blank" rel="noopener noreferrer">
+                      <motion.a 
+                        whileHover={{ scale: 1.5 }}
+                        whileTap={{ scale: 1.2 }}
+                        className="hover:bg-transparent" 
+                        href="https://strava.app.link/lxN0E2NT0Ob" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                      >
                         <ThinStravaIcon />
-                      </a>
+                      </motion.a>
                     </li>
-                </div>
-                <div className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" data-tip="youtube">
+                </motion.div>
+                <motion.div 
+                  custom={9}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={iconVariants}
+                  className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" 
+                  data-tip="youtube"
+                >
                     <li>
-                      <a 
-                        className="hover:scale-150 hover:bg-transparent transition-transform duration-200"
-                        // onClick={handleYoutubeClick}
+                      <motion.a 
+                        whileHover={{ scale: 1.5 }}
+                        whileTap={{ scale: 1.2 }}
+                        className="hover:bg-transparent"
                         href="https://www.youtube.com/@aka.jimena"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         <ThinYoutubeIcon />
-                      </a>
+                      </motion.a>
                     </li>
-                </div>
-                <div className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" data-tip="spotify">
+                </motion.div>
+                <motion.div 
+                  custom={10}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={iconVariants}
+                  className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" 
+                  data-tip="spotify"
+                >
                   <li>
-                    <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://open.spotify.com/user/jimenamorenita?si=2fa3b2d8e7d147d1" target="_blank" rel="noopener noreferrer">
+                    <motion.a 
+                      whileHover={{ scale: 1.5 }}
+                      whileTap={{ scale: 1.2 }}
+                      className="hover:bg-transparent" 
+                      href="https://open.spotify.com/user/jimenamorenita?si=2fa3b2d8e7d147d1" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
                         <ThinSpotifyIcon />
-                    </a>
+                    </motion.a>
                   </li>
-                </div>
-                <div className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" data-tip="goodreads">
+                </motion.div>
+                <motion.div 
+                  custom={11}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={iconVariants}
+                  className="tooltip tooltip-top justify-items-center dark:before:bg-tooltip-dark" 
+                  data-tip="goodreads"
+                >
                     <li>
-                      <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.goodreads.com/user/show/183397302-samantha" target="_blank" rel="noopener noreferrer">
+                      <motion.a 
+                        whileHover={{ scale: 1.5 }}
+                        whileTap={{ scale: 1.2 }}
+                        className="hover:bg-transparent" 
+                        href="https://www.goodreads.com/user/show/183397302-samantha" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                      >
                         <GoodReadsIcon />
-                      </a>
+                      </motion.a>
                     </li>
-                </div>
+                </motion.div>
             </ul>
         </nav>
     </footer>   
