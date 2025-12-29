@@ -36,7 +36,7 @@ const TyprewriterText = () => {
         <p className="text-2xl font-extralight text-gray-200 montserrat-mine">
             {startSecondTypewriter && (
                 <Typewriter
-                    words={['Tech, Lifestyle, and Thoughts I Forgot to Close']}
+                    words={['Tech, Lifestyle, & Thoughts I Forgot to Close']}
                     cursor={showSecondCursor}
                     loop={1}
                     typeSpeed={90}

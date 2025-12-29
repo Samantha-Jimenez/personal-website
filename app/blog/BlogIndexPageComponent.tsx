@@ -117,10 +117,26 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="bg-cover bg-center h-64 flex items-center justify-center" 
-        style={{ backgroundImage: 'url(/blog-images/blog-hero2.jpg)' }}
+        className="relative h-64 flex items-center justify-center overflow-hidden"
       >
-        <div className="text-center bg-gray-900 bg-opacity-55 p-6 w-full h-full content-center">
+        <motion.video
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/heroVideo.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="absolute inset-0 bg-stone-900/60 z-10"
+        />
+        <div className="relative z-20 text-center p-6 w-full h-full flex items-center justify-center">
           <TypewriterText />
           {/* {tag && <p className="text-base text-gray-600">Filtering by tag: {tag}</p>} */}
         </div>
