@@ -18,6 +18,7 @@ const BlogPostComponent = ({
 }) => {
   const components = useMDXComponents({});
   const [darkMode, setDarkMode] = useState(true);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     // Check localStorage first, then fallback to system preference
@@ -42,6 +43,16 @@ const BlogPostComponent = ({
     }
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show button when scrolled down more than 300px
+      setShowScrollTop(window.scrollY > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const toggleDarkMode = () => {
     setDarkMode(prevMode => {
       const newMode = !prevMode;
@@ -52,6 +63,13 @@ const BlogPostComponent = ({
         document.documentElement.classList.remove('dark');
       }
       return newMode;
+    });
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
   };
 
@@ -126,6 +144,22 @@ const BlogPostComponent = ({
       <div className="">
         <Footer />
       </div>
+
+      {/* Back to Top Button */}
+      {showScrollTop && (
+        <motion.button
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.5 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={scrollToTop}
+          className="fixed bottom-30 right-8 z-50 p-[10px_10px_4px_10px] rounded-full bg-[#AD8F68] dark:bg-green-main text-white shadow-lg hover:shadow-xl transition-shadow duration-300"
+          aria-label="Scroll to top"
+        >
+          <span className="icon-[mdi--arrow-up] text-2xl" />
+        </motion.button>
+      )}
     </div>
   )
 }
