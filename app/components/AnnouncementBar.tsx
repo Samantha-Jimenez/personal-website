@@ -33,11 +33,10 @@ const AnnouncementBar = () => {
 
   return (
     <div className="w-full" ref={containerRef}>
-      <div className="w-full bg-[#F4F1EC] dark:bg-[#001610] overflow-hidden">
-      {/* <div className="w-full bg-[#F4F1EC] dark:bg-[#130E0A]"> */}
+      <div className="w-full bg-white dark:bg-green-announcement overflow-hidden">
         <div className="container mx-auto px-4 py-16">
           <p 
-            className="text-center chango-regular text-4xl md:text-6xl uppercase text-[#CC1E00] dark:text-[#F1CC00] text-neon-very-subtle"
+            className="text-center chango-regular text-4xl md:text-6xl uppercase text-red-secondary dark:text-yellow-main text-neon-very-subtle"
             style={{
               transform: `translateY(${transform}px)`,
               willChange: 'transform'

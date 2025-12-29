@@ -30,12 +30,12 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
   };
 
   return (
-    <div className="navbar text-black dark:bg-[#130E0A] bg-[#ECEAE6] flex flex-col min-[675px]:flex-row justify-between dark:text-gray-200">
+    <div className="navbar text-black dark:bg-background-dark-main bg-background-light-main flex flex-col min-[675px]:flex-row justify-between dark:text-gray-200">
       <div className="grid grid-cols-[1fr_auto_1fr] pt-2">
         <Link 
           href="/" 
           // className={`hover:scale-110 transition-all duration-300 ease-in-out px-4 btn-ghost text-2xl hover:bg-transparent active:transform-none focus:transform-none transform-gpu ${
-          className={`px-4 btn-ghost text-2xl chango-regular uppercase hover:bg-transparent active:transform-none focus:transform-none transform-gpu cursor-default text-[#CC1E00] dark:text-[#F1CC00]`}
+          className={`px-4 btn-ghost text-2xl chango-regular uppercase hover:bg-transparent active:transform-none focus:transform-none transform-gpu cursor-default text-red-secondary dark:text-yellow-main`}
         >
           aka.jimena
         </Link>
@@ -53,42 +53,42 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
       </div>
       <div className="flex-none self-start">
         <ul className="menu menu-horizontal px-1 justify-items-center grid grid-flow-row grid-cols-6 tracking-wider roboto-mine">
-          <div className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-[#292929]" data-tip="instagram">
+          <div className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-tooltip-dark" data-tip="instagram">
             <li>
               <a className="hover:scale-150 hover:bg-transparent active:bg-white active:dark:bg-neutral-200 transition-transform duration-200" href="https://www.instagram.com/aka.jimena" target="_blank" rel="noopener noreferrer">
                 <ThinInstagramIcon />
               </a>
             </li>
           </div>
-          <div className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-[#292929]" data-tip="threads">
+          <div className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-tooltip-dark" data-tip="threads">
             <li>
               <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.threads.net/@aka.jimena" target="_blank" rel="noopener noreferrer">
                 <ThinThreadsIcon />
               </a>
             </li>
           </div>
-          <div className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-[#292929]" data-tip="tiktok">
+          <div className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-tooltip-dark" data-tip="tiktok">
             <li>
               <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" href="https://www.tiktok.com/@aka.jimena" target="_blank" rel="noopener noreferrer">
                 <ThinTikTokIcon />
               </a>
             </li>
           </div>
-          <div className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-[#292929]" data-tip="portfolio">
+          <div className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-tooltip-dark" data-tip="portfolio">
             <li>
               <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" onClick={onPortfolioClick}>
                 <ThinPorftolioIcon />
               </a>
             </li>
           </div>
-          <div className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-[#292929]" data-tip="motevis">
+          <div className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-tooltip-dark" data-tip="motevis">
             <li>
               <a className="hover:scale-150 hover:bg-transparent transition-transform duration-200" onClick={onMotevisClick}>
                 <ThinMotevisIcon />
               </a>
             </li>
           </div>
-          <div className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-[#292929]" data-tip="youtube">
+          <div className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-tooltip-dark" data-tip="youtube">
             <li>
               <a 
                   className="hover:scale-150 hover:bg-transparent transition-transform duration-200 cursor-pointer" 

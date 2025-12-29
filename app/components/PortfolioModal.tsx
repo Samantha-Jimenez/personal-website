@@ -5,9 +5,9 @@ const PortfolioModal = ({ isOpen, onClose, onConfirm }: { isOpen: boolean, onClo
 
   return (
     <dialog className="modal modal-open" onClick={onClose}>
-      <div className="modal-box bg-[#F4F0E9] dark:bg-[#333333] tracking-wide roboto-mine" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-box bg-background-light-main dark:bg-background-modal-dark tracking-wide roboto-mine" onClick={(e) => e.stopPropagation()}>
         <form method="dialog">
-          <button onClick={onClose} className="btn btn-circle btn-ghost absolute border-none right-[0.1rem] top-[0.1rem] dark:text-white text-gray-900 hover:bg-transparent hover:shadow-none hover:border-none hover:text-[#CC1E00] hover:dark:text-[#F1CC00] hover:scale-125 transition-transform duration-200">✕</button>
+          <button onClick={onClose} className="btn btn-circle btn-ghost absolute border-none right-[0.1rem] top-[0.1rem] dark:text-white text-gray-900 hover:bg-transparent hover:shadow-none hover:border-none hover:text-red-main hover:dark:text-yellow-main hover:scale-125 transition-transform duration-200">✕</button>
         </form>
         <h2 className="font-bold text-lg dark:text-white pb-2 text-gray-900">Heads up,</h2>
         <p className="dark:text-white text-gray-900">You are leaving this site to go to my professional portfolio. Do you want to continue?</p>

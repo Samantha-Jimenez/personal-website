@@ -49,37 +49,37 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="pt-10 pb-8 px-6 sm:px-24 w-[100%] bg-white dark:bg-[#151210] shadow-xl">
-      <h2 className="text-2xl font-bold mb-4 chango-regular uppercase text-[#CC1E00] dark:text-[#F1CC00]">Contact me</h2>
+    <div className="pt-10 pb-8 px-6 sm:px-8 md:px-30 w-[100%] bg-background-light-secondary dark:bg-background-dark-secondary shadow-xl">
+      <h2 className="text-2xl font-bold mb-4 chango-regular uppercase text-red-secondary dark:text-yellow-main">Contact me</h2>
       <form ref={form} onSubmit={handleSubmit} className="tracking-wider roboto-mine">
         <div className="flex flex-col sm:flex-row mb-4 w-full gap-4 text-gray-200">
           <div className="form-control w-full mr-4 sm:mr-0">
             <label className="label">
               <span className="label-text text-black dark:text-white mb-2">Name</span>
             </label>
-            <input type="text" className="input text-[16px] bg-[#F5F1EC] dark:bg-[#1C1B1B] placeholder:text-black dark:placeholder:text-gray-400 w-full" placeholder="Your Name" name="from_name" autoComplete='name' required />
+            <input type="text" className="input text-[16px] bg-white dark:bg-background-dark-tertiary placeholder:text-black dark:placeholder:text-gray-400 w-full" placeholder="Your Name" name="from_name" autoComplete='name' required />
           </div>
           <div className="form-control w-full">
             <label className="label">
               <span className="label-text text-black dark:text-white mb-2">Email</span>
             </label>
-            <input type="email" name="reply_to" className="input text-[16px] bg-[#F5F1EC] dark:bg-[#1C1B1B] placeholder:text-black dark:placeholder:text-gray-400 w-full" placeholder="Your Email" autoComplete='email' required />
+            <input type="email" name="reply_to" className="input text-[16px] bg-white dark:bg-background-dark-tertiary placeholder:text-black dark:placeholder:text-gray-400 w-full" placeholder="Your Email" autoComplete='email' required />
           </div>
         </div>
         <div className="form-control w-full mr-4 sm:mr-0 hidden">
           <label className="label">
             <span className="label-text text-black dark:text-white mb-2">Site Name</span>
           </label>
-          <input type="text" value="Personal Website" readOnly className="input text-[16px] dark:bg-[#1D232A] placeholder:text-black dark:placeholder:text-gray-400 w-full" placeholder="Site Name" name="site_name" required />
+          <input type="text" value="Personal Website" readOnly className="input text-[16px] dark:bg-background-dark-tertiary placeholder:text-black dark:placeholder:text-gray-400 w-full" placeholder="Site Name" name="site_name" required />
         </div>
         <div className="form-control mb-4">
           <label className="label">
             <span className="label-text text-black dark:text-white mb-2">Message</span>
           </label>
-          <textarea className="textarea text-[16px] bg-[#F5F1EC] dark:bg-[#1C1B1B] placeholder:text-black dark:placeholder:text-gray-400 w-full" placeholder="Your Message" name="message" required></textarea>
+          <textarea className="textarea text-[16px] bg-white dark:bg-background-dark-tertiary placeholder:text-black dark:placeholder:text-gray-400 w-full" placeholder="Your Message" name="message" required></textarea>
         </div>
         <div className="flex justify-center">
-          <button type="submit" className="btn bg-emerald-700 dark:bg-emerald-600 hover:dark:bg-emerald-800 hover:bg-emerald-600 active:bg-emerald-500 active:dark:bg-emerald-950 text-white w-full my-5 text-base border-none tracking-wider font-thin">Send Message</button>
+          <button type="submit" className="btn bg-emerald-800 dark:bg-green-main hover:dark:bg-green-main/80 hover:bg-emerald-600 active:bg-emerald-500 active:dark:bg-emerald-950 text-white w-full my-5 text-base border-none tracking-wider font-thin">Send Message</button>
         </div>
       </form>
     </div>
