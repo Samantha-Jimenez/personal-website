@@ -19,6 +19,33 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const savedMode = localStorage.getItem('darkMode');
+                  if (savedMode !== null) {
+                    const isDark = savedMode === 'true';
+                    if (isDark) {
+                      document.documentElement.classList.add('dark');
+                    } else {
+                      document.documentElement.classList.remove('dark');
+                    }
+                  } else {
+                    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    if (prefersDarkMode) {
+                      document.documentElement.classList.add('dark');
+                    } else {
+                      document.documentElement.classList.remove('dark');
+                    }
+                    localStorage.setItem('darkMode', prefersDarkMode.toString());
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         {/* <link rel="stylesheet" href="https://code.iconify.design/3/3.1.0/iconify.min.css" /> */}
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png" />

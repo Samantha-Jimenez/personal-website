@@ -25,11 +25,19 @@ const BlogPostComponent = ({
     if (savedMode !== null) {
       const isDark = savedMode === 'true';
       setDarkMode(isDark);
-      document.documentElement.classList.toggle('dark', isDark);
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
     } else {
       const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
       setDarkMode(prefersDarkMode);
-      document.documentElement.classList.toggle('dark', prefersDarkMode);
+      if (prefersDarkMode) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
       localStorage.setItem('darkMode', prefersDarkMode.toString());
     }
   }, []);
@@ -38,7 +46,11 @@ const BlogPostComponent = ({
     setDarkMode(prevMode => {
       const newMode = !prevMode;
       localStorage.setItem('darkMode', newMode.toString());
-      document.documentElement.classList.toggle('dark');
+      if (newMode) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
       return newMode;
     });
   };

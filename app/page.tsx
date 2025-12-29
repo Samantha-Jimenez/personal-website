@@ -19,15 +19,39 @@ export default function Home() {
   const [isMotevisModalOpen, setIsMotevisModalOpen] = useState(false);
 
   useEffect(() => {
-    // Check user's preferred color scheme
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setDarkMode(prefersDarkMode);
-    document.documentElement.classList.toggle('dark', prefersDarkMode);
+    // Check localStorage first, then fallback to system preference
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode !== null) {
+      const isDark = savedMode === 'true';
+      setDarkMode(isDark);
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    } else {
+      const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setDarkMode(prefersDarkMode);
+      if (prefersDarkMode) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      localStorage.setItem('darkMode', prefersDarkMode.toString());
+    }
   }, []);
 
   const toggleDarkMode = () => {
-    setDarkMode(prevMode => !prevMode);
-    document.documentElement.classList.toggle('dark');
+    setDarkMode(prevMode => {
+      const newMode = !prevMode;
+      localStorage.setItem('darkMode', newMode.toString());
+      if (newMode) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      return newMode;
+    });
   };
 
   const handlePortfolioClick = () => {
