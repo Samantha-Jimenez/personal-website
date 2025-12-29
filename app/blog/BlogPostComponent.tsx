@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 import Link from 'next/link'
@@ -7,6 +7,7 @@ import { formatDate } from './utils/formatDate'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { useMDXComponents } from './MDXComponent'
 import { motion } from 'framer-motion'
+import Toggle from 'react-toggle'
 
 const BlogPostComponent = ({
   post,
@@ -16,11 +17,58 @@ const BlogPostComponent = ({
   mdxSource: MDXRemoteSerializeResult
 }) => {
   const components = useMDXComponents({});
+  const [darkMode, setDarkMode] = useState(true);
+
+  useEffect(() => {
+    // Check localStorage first, then fallback to system preference
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode !== null) {
+      const isDark = savedMode === 'true';
+      setDarkMode(isDark);
+      document.documentElement.classList.toggle('dark', isDark);
+    } else {
+      const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setDarkMode(prefersDarkMode);
+      document.documentElement.classList.toggle('dark', prefersDarkMode);
+      localStorage.setItem('darkMode', prefersDarkMode.toString());
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    setDarkMode(prevMode => {
+      const newMode = !prevMode;
+      localStorage.setItem('darkMode', newMode.toString());
+      document.documentElement.classList.toggle('dark');
+      return newMode;
+    });
+  };
 
   return (
     <div>
       <div className="">
         <NavBar onPortfolioClick={() => {}} onMotevisClick={() => {}} />
+      </div>
+      <div className="sticky top-0 z-[11] dark:bg-green-main bg-[#AD8F68]">
+        <label className="flex items-center py-2 pl-6">
+          <Toggle
+            icons={{
+              checked: <span className="icon-[arcticons--sunilpaulmathew-weather]"/>,
+              unchecked: <span className="icon-[arcticons--moon]"/>,
+            }}
+            checked={darkMode}
+            onChange={toggleDarkMode}
+            className='custom-classname'
+          />
+          <motion.p 
+            key={darkMode ? 'light' : 'dark'}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="text-base pl-2 text-gray-200 tracking-wider roboto-mine text-neon-very-very-subtle"
+          >
+            {darkMode ? 'Light Mode' : 'Dark Mode'}
+          </motion.p>
+        </label>
       </div>
       {/* <div className="max-w-4xl mx-auto px-4 pt-8 pb-12"> */}
       <div className="px-6 md:px-38 pt-8 pb-12 bg-background-light-secondary dark:bg-background-dark-secondary text-black dark:text-white">

@@ -19,15 +19,27 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
     const [darkMode, setDarkMode] = useState(true);
 
     useEffect(() => {
-        // Check user's preferred color scheme
-        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        setDarkMode(prefersDarkMode);
-        document.documentElement.classList.toggle('dark', prefersDarkMode);
+        // Check localStorage first, then fallback to system preference
+        const savedMode = localStorage.getItem('darkMode');
+        if (savedMode !== null) {
+            const isDark = savedMode === 'true';
+            setDarkMode(isDark);
+            document.documentElement.classList.toggle('dark', isDark);
+        } else {
+            const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            setDarkMode(prefersDarkMode);
+            document.documentElement.classList.toggle('dark', prefersDarkMode);
+            localStorage.setItem('darkMode', prefersDarkMode.toString());
+        }
     }, []);
 
     const toggleDarkMode = () => {
-        setDarkMode(prevMode => !prevMode);
-        document.documentElement.classList.toggle('dark');
+        setDarkMode(prevMode => {
+            const newMode = !prevMode;
+            localStorage.setItem('darkMode', newMode.toString());
+            document.documentElement.classList.toggle('dark');
+            return newMode;
+        });
     };
 
     const handlePortfolioClick = () => {
