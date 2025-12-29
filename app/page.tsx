@@ -122,7 +122,7 @@ export default function Home() {
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="row-start-1 col-start-1 col-span-1 chango-regular max-[415px]:text-4xl max-[540px]:text-5xl text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem] whitespace-nowrap place-self-end dark:text-yellow-main text-red-main uppercase overflow-visible text-neon-subtle"
+                className="row-start-1 col-start-1 col-span-1 chango-regular max-[415px]:text-4xl max-[540px]:text-5xl text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem] whitespace-nowrap place-self-end dark:text-yellow-main text-red-secondary uppercase overflow-visible text-neon-subtle"
               >
                 Samantha
               </motion.p>
@@ -130,7 +130,7 @@ export default function Home() {
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                className="row-start-2 col-start-1 col-span-1 chango-regular max-[415px]:text-4xl max-[540px]:text-5xl text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem] whitespace-nowrap place-self-end dark:text-yellow-main text-[#ED0C0A] uppercase text-neon-subtle"
+                className="row-start-2 col-start-1 col-span-1 chango-regular max-[415px]:text-4xl max-[540px]:text-5xl text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem] whitespace-nowrap place-self-end dark:text-yellow-main text-red-secondary uppercase text-neon-subtle"
               >
                 Jimenez
               </motion.p>
@@ -138,7 +138,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                className="row-start-3 col-start-1 col-span-1 tracking-wider roboto-bold text-xl justify-center mt-16 md:mt-70 dark:text-yellow-main text-[#ED0C0A] text-neon-very-subtle text-center"
+                className="row-start-3 col-start-1 col-span-1 tracking-wider roboto-bold text-xl justify-center mt-16 md:mt-70 dark:text-yellow-main text-red-secondary text-neon-very-subtle text-center"
               >
                   Hey, I&apos;m Sam, a full-stack software engineer with a creative soul and a love for movement, good food, and meaningful projects. After years of pouring into my career, I&apos;m reconnecting with the things that light me up: fitness, food, storytelling, and self-expression. This website is my space to document that journey, share insights, and connect with others.
                   <br /><br />
