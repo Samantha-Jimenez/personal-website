@@ -304,10 +304,14 @@ dark .tabs-lift {
 
 .tab-active span {
   color: #000000;
+  transition: transform 0.2s ease;
+  transform: scale(1.2);
 }
 
 .dark .tab-active span {
   color: #FFFFFF;
+  transition: transform 0.2s ease;
+  transform: scale(1.2);
 }
 
 @media (hover: hover) {

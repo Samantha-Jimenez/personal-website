@@ -161,7 +161,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.5 }}
-            className="min-[528px]:hidden text-4xl font-extralight mt-6 text-black"
+            className="min-[528px]:hidden text-4xl font-extralight mt-6 text-black dark:text-white"
           >
             {tag}
           </motion.p>
@@ -170,12 +170,12 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.5 }}
-            className="min-[528px]:hidden text-4xl font-extralight mt-6 text-black"
+            className="min-[528px]:hidden text-4xl font-extralight mt-6 text-black dark:text-white"
           >
             All Posts
           </motion.div>
         )}
-        <div className="divider divider-neutral min-[528px]:hidden mt-4 mx-4"></div>
+        <div className="divider divider-neutral min-[528px]:hidden mt-4 mx-4 dark:before:bg-neutral-200 dark:after:bg-neutral-200"></div>
       </motion.div>
 
       <main className="max-w-4xl mx-auto px-4 py-12 flex-grow">
