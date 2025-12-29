@@ -12,7 +12,7 @@ const ContactForm = () => {
       icon: <Icon icon="line-md:email-check-twotone" className="ml-[4px] h-[20px] w-[20px]" />,
       style: {
         borderRadius: '10px',
-        background: '#065f46',
+        background: '#174526',
         color: '#fff',
         // fontFamily: 'Chango, sans-serif',
         fontFamily: 'Roboto, sans-serif',

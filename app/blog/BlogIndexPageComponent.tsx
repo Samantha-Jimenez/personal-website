@@ -151,7 +151,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
       >
         <Link
           href="/"
-          className="inline-block border border-gray-800 dark:border-gray-200 text-gray-800 dark:text-gray-200 hover:dark:bg-neutral-800 px-3 py-1 rounded hover:bg-amber-300/10 transition text-sm"
+          className="inline-block border border-gray-800 dark:border-gray-200 text-zinc-800 dark:text-zinc-200 hover:dark:bg-neutral-800 px-3 py-1 rounded hover:bg-background-light-main/50 transition duration-300 ease-in-out text-sm"
         >
           ← Back to Home
         </Link>
@@ -184,7 +184,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
               href={`?tag=${name}`} 
               className={`tab rounded-t-lg min-[655px]:!px-6 ${tag === name ? 'tab-active bg-white' : ''}`}
             >
-              <span className="hidden min-[528px]:inline max-[640px]:text-xs text-gray-400 hover:text-gray-500 dark:text-gray-400 hover:dark:text-gray-300">{name}</span>
+              <span className="hidden min-[528px]:inline max-[640px]:text-xs text-zinc-400 hover:text-zinc-500 dark:text-zinc-400 hover:dark:text-zinc-300 hover:scale-110 transition-all duration-300 ease-in-out">{name}</span>
               <span className="min-[528px]:hidden">{icon}</span>
             </Link>
           ))}
@@ -192,7 +192,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
             href="/blog"
             className={`tab rounded-t-lg ${!tag ? 'tab-active' : ''}`}
           >
-            <span className="hidden min-[528px]:inline max-[640px]:text-xs text-gray-400 hover:text-gray-500 dark:text-gray-400 hover:dark:text-gray-300">All</span>
+            <span className="hidden min-[528px]:inline max-[640px]:text-xs text-gray-400 hover:text-gray-500 dark:text-gray-400 hover:dark:text-gray-300 hover:scale-110 transition-all duration-300 ease-in-out">All</span>
             <span className="min-[528px]:hidden"><AllTabIcon /></span>
           </Link>
         </motion.div>
@@ -246,9 +246,8 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
                   <div className="border-b dark:border-neutral-600 pb-6 flex items-start">
                     {post.coverImage && (
                       <motion.div
-                        whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.2 }}
-                        className="mr-4 w-[100px] h-[140px] flex-shrink-0"
+                        className="mr-4 w-[100px] h-[140px] flex-shrink-0 group-hover:scale-105 transition-all duration-300 ease-in-out"
                       >
                         <Image
                           width={100}
@@ -260,10 +259,10 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
                       </motion.div>
                     )}
                     <div>
-                      <h2 className="text-2xl font-medium mb-1 group-hover:underline">{post.title}</h2>
-                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{formatDate(post.date)}</p>
+                      <h2 className="text-2xl font-medium mb-1 group-hover:scale-100 group-hover:font-bold transition-all duration-300 ease-in-out">{post.title}</h2>
+                      <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-2">{formatDate(post.date)}</p>
                       <p>{formatTags(post.tags)}</p>
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{post.excerpt}</p>
+                      <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">{post.excerpt}</p>
                     </div>
                   </div>
                 </Link>

@@ -88,9 +88,9 @@ const BlogPostComponent = ({
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4 }}
-          className="text-base mb-6 text-gray-900 dark:text-gray-400"
+          className="text-base mb-6 text-zinc-800 dark:text-zinc-200"
         >
-          <Link href="/">Home</Link> <span className="text-black dark:text-white">/</span> <Link href="/blog">Blog</Link> <span className="text-black dark:text-white">/</span> <span>{post.data.title}</span>
+          <Link href="/">Home</Link> <span className="text-black dark:text-zinc-500">/</span> <Link href="/blog">Blog</Link> <span className="text-black dark:text-zinc-500">/</span> <span>{post.data.title}</span>
         </motion.nav>
 
         <article className="flex items-start">
@@ -107,7 +107,7 @@ const BlogPostComponent = ({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.3 }}
-              className="text-sm text-gray-900 dark:text-gray-400 mb-4"
+              className="text-sm text-zinc-800 dark:text-zinc-200 mb-4"
             >
               {formatDate(post.data.date)}
             </motion.p>
@@ -115,7 +115,7 @@ const BlogPostComponent = ({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="prose prose-p:text-gray-900 dark:prose-p:text-gray-100 prose-headings:text-gray-800 dark:prose-headings:text-gray-300 prose-strong:text-gray-900 dark:prose-strong:text-gray-500 prose-li:text-gray-800 dark:prose-li:text-gray-400 prose-li:marker:text-gray-500 dark:prose-li:marker:text-green-100 prose-ul:list-[circle] prose-a:text-red-main dark:prose-a:text-yellow-main max-w-none text-black"
+              className="prose prose-p:text-zinc-600 dark:prose-p:text-zinc-400 prose-headings:text-zinc-800 dark:prose-headings:text-zinc-100 prose-strong:text-zinc-900 dark:prose-strong:text-zinc-100 prose-li:text-zinc-700 dark:prose-li:text-zinc-300 prose-li:marker:text-zinc-700 dark:prose-li:marker:text-zinc-300 prose-ul:list-[circle] max-w-none text-black"
             >
               <MDXRemote {...mdxSource} components={components} />
             </motion.div>
