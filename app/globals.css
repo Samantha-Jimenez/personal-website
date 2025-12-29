@@ -5,6 +5,40 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  /* --color-background-light-main: #E8E2D6;
+  --color-background-light-secondary: #F6F4F0; */
+
+  /*TESTING COLORS*/
+  --color-background-light-main: #E6D8CB;
+  --color-background-light-secondary: #F3EFE8;
+
+  /* footer menu background */
+  --color-background-light-tertiary: #F5F1EC;
+
+  --color-background-dark-main: #130E0A;
+  --color-background-dark-secondary: #161412;
+
+  /* contact form input & footer menu background */
+  --color-background-dark-tertiary: #1C1B1B;
+
+  --color-green-main: #16512A;
+  --color-green-secondary: #104220;
+  --color-green-announcement: #04160F;
+  --color-yellow-main: #FEB503;
+  
+  /* darker red */
+  --color-red-main: #CC1E00;
+  /* lighter red */
+  --color-red-secondary: #ED0C0A;
+
+  --color-tooltip-dark: #292929;
+  --color-background-modal-dark: #333333;
+  --color-background-modal-light: #F4F0E9;
+  /* --color-video-overlay: #191816; */
+  --color-video-overlay: #1A120C;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0; /* Light theme foreground */
   --background-start-rgb: 255, 255, 255; /* Light theme background start */
@@ -98,6 +132,15 @@ body.dark .menu li > *:not(ul, .menu-title, details, .btn):active {
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-weight: 200;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
@@ -485,8 +528,8 @@ img[alt="The Great Divide"] { width: 200px; }
 
 .text-neon-subtle {
   text-shadow: 
-    0 0 3px currentColor,
-    0 0 6px currentColor;
+    0 0 2px currentColor,
+    0 0 4px currentColor;
 }
 
 .text-neon-very-subtle {
