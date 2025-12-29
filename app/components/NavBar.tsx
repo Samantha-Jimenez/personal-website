@@ -37,15 +37,17 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          {...(pathname.startsWith('/blog') && {
+            whileHover: { scale: 1.05 },
+            whileTap: { scale: 0.95 }
+          })}
         >
           <Link 
             href="/" 
-            className={`px-4 btn-ghost text-2xl chango-regular uppercase hover:bg-transparent active:transform-none focus:transform-none transform-gpu cursor-default ${
+            className={`px-4 btn-ghost text-2xl chango-regular uppercase hover:bg-transparent active:transform-none focus:transform-none transform-gpu text-neon-very-subtle ${
               pathname.startsWith('/blog') 
-                ? 'text-red-main dark:text-yellow-main/70 hover:text-red-secondary hover:dark:text-yellow-main transition-all duration-300 ease-in-out' 
-                : 'text-red-secondary dark:text-yellow-main'
+                ? 'text-red-main dark:text-yellow-main/70 hover:text-red-secondary hover:dark:text-yellow-main transition-all duration-300 ease-in-out cursor-pointer' 
+                : 'text-red-secondary dark:text-yellow-main cursor-default'
             }`}
           >
             aka.jimena
@@ -63,15 +65,17 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          {...(!pathname.startsWith('/blog') && {
+            whileHover: { scale: 1.05 },
+            whileTap: { scale: 0.95 }
+          })}
         > 
           <Link 
             href="/blog" 
-            className={`hover:scale-110 transition-all duration-300 ease-in-out text-2xl px-4 transform-gpu chango-regular uppercase ${
+            className={`hover:scale-110 transition-all duration-300 ease-in-out text-2xl px-4 transform-gpu chango-regular uppercase text-neon-very-subtle ${
               pathname.startsWith('/blog') 
-                ? 'text-red-secondary dark:text-yellow-main' 
-                : 'text-red-main dark:text-yellow-main/70 hover:text-red-secondary hover:dark:text-yellow-main transition-all duration-300 ease-in-out'
+                ? 'text-red-secondary dark:text-yellow-main cursor-default' 
+                : 'text-red-main dark:text-yellow-main/70 hover:text-red-secondary hover:dark:text-yellow-main transition-all duration-300 ease-in-out cursor-pointer'
             }`}
           >
             Blog
