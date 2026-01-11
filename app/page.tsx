@@ -12,6 +12,7 @@ import InstagramEmbed from './components/InstagramEmbed';
 import YouTubeEmbed from './components/YouTubeEmbed';
 import TikTokEmbed from './components/TikTokEmbed';
 import AnnouncementBar from './components/AnnouncementBar';
+import BioBar from './components/BioBar';
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
@@ -106,18 +107,18 @@ export default function Home() {
         </label>
       </div>
       <main className="flex min-h-max flex-col overflow-x-hidden bg-background-light-main dark:bg-background-dark-main">
-        <div className="grid grid-cols-1">
+        <div className="grid grid-cols-1 h-[30rem] max-[675px]:h-[20rem]">
           <div className="relative grid w-full bg-gray-100 dark:bg-zinc-900 overflow-hidden">
-            <div className="row-start-1 row-end-2 col-start-1 col-end-3 absolute inset-0 opacity-75 bg-video-overlay dark:opacity-70 z-10"></div>
+            <div className="row-start-1 row-end-2 col-start-1 col-end-3 absolute inset-0 opacity-75 bg-video-overlay dark:opacity-70 z-10 h-[30rem] max-[675px]:h-[20rem]"></div>
             <video
-              className="row-start-1 row-end-2 col-start-1 h-full w-full object-cover object-center"
+              className="row-start-1 row-end-2 col-start-1 w-full object-cover object-[center_20%] h-[30rem] max-[675px]:h-[20rem]"
               src="/bg-video.mp4"
               autoPlay
               loop
               muted
               playsInline
             />
-            <div className="row-start-1 col-start-1 inset-0 flex flex-col z-10 px-4 md:px-30 pt-16 pb-8 w-full justify-start">
+            <div className="row-start-1 col-start-1 inset-0 flex flex-col z-10 px-4 md:px-30 pt-40 pb-8 w-full justify-start self-end">
               <motion.p 
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -134,7 +135,7 @@ export default function Home() {
               >
                 Jimenez
               </motion.p>
-              <motion.p 
+              {/* <motion.p 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -143,10 +144,11 @@ export default function Home() {
                   Hey, I&apos;m Sam, a full-stack software engineer with a creative soul and a love for movement, good food, and meaningful projects. After years of pouring into my career, I&apos;m reconnecting with the things that light me up: fitness, food, storytelling, and self-expression. This website is my space to document that journey, share insights, and connect with others.
                   <br /><br />
                   Right now, I&apos;m working with fellow engineers from the Pursuit Coding Fellowship on a fitness-focused app, <a href="https://motevis.com/" target="_blank" rel="noopener noreferrer" className="dark:text-lime-100 text-lime-200 hover:text-lime-400 dark:hover:text-lime-300 transition-colors"><em>Motevis</em></a>, which helps runners find local run clubs, weekly runs, and races in New York City. I&apos;m also sharing my <a href="https://www.youtube.com/@aka.jimena" target="_blank" rel="noopener noreferrer" className="dark:text-lime-100 text-lime-200 hover:text-lime-400 dark:hover:text-lime-300 transition-colors"><em>&quot;6 Months to Change My Life&quot;</em></a> journey on YouTube, documenting what it looks like to rebuild with intention.
-              </motion.p>
+              </motion.p> */}
             </div>
           </div>
         </div>
+        <BioBar />
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 py-8 px-4 md:px-24 bg-background-light-main dark:bg-background-dark-main">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
