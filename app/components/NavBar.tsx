@@ -88,7 +88,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-tooltip-dark" 
+            className="tooltip tooltip-bottom hover:z-40 dark:before:bg-tooltip-dark" 
             data-tip="instagram"
           >
             <li>
@@ -108,7 +108,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.15 }}
-            className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-tooltip-dark" 
+            className="tooltip tooltip-bottom hover:z-40 dark:before:bg-tooltip-dark" 
             data-tip="threads"
           >
             <li>
@@ -128,7 +128,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.2 }}
-            className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-tooltip-dark" 
+            className="tooltip tooltip-bottom hover:z-40 dark:before:bg-tooltip-dark" 
             data-tip="tiktok"
           >
             <li>
@@ -148,7 +148,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.25 }}
-            className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-tooltip-dark" 
+            className="tooltip tooltip-bottom hover:z-40 dark:before:bg-tooltip-dark" 
             data-tip="portfolio"
           >
             <li>
@@ -166,7 +166,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.3 }}
-            className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-tooltip-dark" 
+            className="tooltip tooltip-bottom hover:z-40 dark:before:bg-tooltip-dark" 
             data-tip="motevis"
           >
             <li>
@@ -184,7 +184,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.35 }}
-            className="tooltip tooltip-bottom hover:z-[12] dark:before:bg-tooltip-dark" 
+            className="tooltip tooltip-bottom hover:z-40 dark:before:bg-tooltip-dark" 
             data-tip="youtube"
           >
             <li>
@@ -200,7 +200,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
               </motion.a>
             </li>
           </motion.div>
-          {/* <div className="tooltip tooltip-bottom hover:z-[12]" data-tip="blog">
+          {/* <div className="tooltip tooltip-bottom hover:z-40" data-tip="blog">
             <li>
               <Link href="/blog" className="montserrat-mine">
                 Blog
