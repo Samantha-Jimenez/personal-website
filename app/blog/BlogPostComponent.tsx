@@ -3,18 +3,22 @@ import React, { useEffect, useState } from 'react'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 import Link from 'next/link'
+import Image from 'next/image'
 import { formatDate } from './utils/formatDate'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { useMDXComponents } from './MDXComponent'
 import { motion } from 'framer-motion'
 import Toggle from 'react-toggle'
+import { Post } from './utils/getAllPosts'
 
 const BlogPostComponent = ({
   post,
   mdxSource,
+  relatedPosts = [],
 }: {
   post: any,
-  mdxSource: MDXRemoteSerializeResult
+  mdxSource: MDXRemoteSerializeResult,
+  relatedPosts?: Post[],
 }) => {
   const components = useMDXComponents({});
   const [darkMode, setDarkMode] = useState(true);
@@ -141,6 +145,57 @@ const BlogPostComponent = ({
             </motion.div>
           </div>
         </article>
+
+        {/* Related Posts Section */}
+        {relatedPosts.length > 0 && (
+          <motion.section
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-16 pt-8 border-t border-zinc-300 dark:border-zinc-700"
+          >
+            <h2 className="text-2xl font-semibold mb-6 text-zinc-800 dark:text-zinc-100">
+              Related Posts
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {relatedPosts.map((relatedPost, index) => (
+                <motion.div
+                  key={relatedPost.slug}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
+                >
+                  <Link
+                    href={`/blog/${relatedPost.slug}`}
+                    className="group block bg-background-light-main dark:bg-background-dark-tertiary rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300"
+                  >
+                    {relatedPost.coverImage && (
+                      <div className="aspect-[21/9] overflow-hidden">
+                        <Image
+                          src={relatedPost.coverImage.startsWith('/') ? relatedPost.coverImage : `/${relatedPost.coverImage}`}
+                          alt={relatedPost.title}
+                          width={400}
+                          height={250}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    )}
+                    <div className="p-4">
+                      <h3 className="font-medium text-zinc-800 dark:text-zinc-100 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition-colors line-clamp-1">
+                        {relatedPost.title}
+                      </h3>
+                      <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-2">
+                        {formatDate(relatedPost.date)}
+                        <span className="mx-2">·</span>
+                        {relatedPost.readingTime}
+                      </p>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </motion.section>
+        )}
       </div>
 
       <div className="">
