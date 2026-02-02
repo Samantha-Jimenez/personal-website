@@ -329,7 +329,11 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
                     )}
                     <div>
                       <h2 className="text-2xl font-medium mb-1 group-hover:scale-100 group-hover:font-bold transition-all duration-300 ease-in-out">{post.title}</h2>
-                      <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-2">{formatDate(post.date)}</p>
+                      <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-2">
+                                        {formatDate(post.date)}
+                                        <span className="mx-2">·</span>
+                                        <span>{post.readingTime}</span>
+                                      </p>
                       <p>{formatTags(post.tags)}</p>
                       <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">{post.excerpt}</p>
                     </div>

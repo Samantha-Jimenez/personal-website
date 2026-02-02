@@ -125,9 +125,11 @@ const BlogPostComponent = ({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.3 }}
-              className="text-sm text-zinc-800 dark:text-zinc-200 mb-4"
+              className="text-sm text-zinc-500 dark:text-zinc-400 mb-4"
             >
               {formatDate(post.data.date)}
+              <span className="mx-2">·</span>
+              <span>{post.data.readingTime}</span>
             </motion.p>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}

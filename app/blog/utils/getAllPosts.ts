@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { calculateReadingTime } from './calculateReadingTime';
 
 const postsDirectory = path.join(process.cwd(), 'app/blog/posts');
 
@@ -12,6 +13,7 @@ export interface Post {
   coverImage: string;
   tags: string[];
   draft?: boolean;
+  readingTime: string;
 }
 
 export function getAllPosts() {
@@ -21,7 +23,7 @@ export function getAllPosts() {
     const fullPath = path.join(postsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     
-    const { data } = matter(fileContents);
+    const { data, content } = matter(fileContents);
 
     return {
       slug,
@@ -31,6 +33,7 @@ export function getAllPosts() {
       coverImage: data.coverImage,
       tags: data.tags,
       draft: data.draft || false,
+      readingTime: calculateReadingTime(content),
     };
   });
 

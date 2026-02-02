@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { calculateReadingTime } from './calculateReadingTime';
 
 export const getPostBySlug = (slug: string) => {
   const mdxFilePath = path.join(process.cwd(), 'app/blog/posts', `${slug}.mdx`);
@@ -25,9 +26,13 @@ export const getPostBySlug = (slug: string) => {
   }
 
   const { data, content } = matter(fileContents);
+  const readingTime = calculateReadingTime(content);
   
   return {
-    data,
+    data: {
+      ...data,
+      readingTime,
+    },
     content,
   };
 }; 
