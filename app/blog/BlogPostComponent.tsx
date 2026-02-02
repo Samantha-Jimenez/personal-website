@@ -105,7 +105,7 @@ const BlogPostComponent = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className="text-[0.72rem] pl-2 text-gray-200 tracking-[0.28em] uppercase"
+            className="text-[0.72rem] pl-4 text-gray-200 tracking-[0.28em] uppercase"
           >
             {darkMode ? 'Light Mode' : 'Dark Mode'}
           </motion.p>

@@ -36,7 +36,7 @@ const BioBar = () => {
     <div className="w-full" ref={containerRef}>
       <div className="w-full bg-background-light-secondary dark:bg-green-announcement overflow-hidden">
         <div className="container mx-auto px-4 py-20">
-          <p 
+          <div 
             className="text-center text-4xl md:text-6xl text-red-secondary dark:text-yellow-main font-medium"
             style={{
               transform: `translateY(${transform}px)`,
@@ -47,12 +47,13 @@ const BioBar = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                className="row-start-3 col-start-1 col-span-1 text-xl justify-center dark:text-[#F9D042] text-red-main text-center"
+                className="row-start-3 col-start-1 col-span-1 text-xl justify-center dark:text-[#F9D042] text-red-main text-center roboto-mine !font-light tracking-[0.016em]"
               >
                   Hey, I&apos;m Sam, a full-stack software engineer with a creative soul and a love for movement, good food, and meaningful projects. After years of pouring into my career, I&apos;m reconnecting with the things that light me up: fitness, food, storytelling, and self-expression. This website is my space to document that journey, share insights, and connect with others.
                   <br /><br />
                   Right now, I&apos;m working with fellow engineers from the Pursuit Coding Fellowship on a fitness-focused app, <a href="https://motevis.com/" target="_blank" rel="noopener noreferrer" className="dark:text-lime-100 text-lime-500 hover:text-lime-400 dark:hover:text-lime-300 transition-colors"><em>Motevis</em></a>, which helps runners find local run clubs, weekly runs, and races in New York City. I&apos;m also sharing my <a href="https://www.youtube.com/@aka.jimena" target="_blank" rel="noopener noreferrer" className="dark:text-lime-100 text-lime-500 hover:text-lime-400 dark:hover:text-lime-300 transition-colors"><em>&quot;6 Months to Change My Life&quot;</em></a> journey on YouTube, documenting what it looks like to rebuild with intention.
-              </motion.p>          </p>
+              </motion.p>          
+          </div>
         </div>
       </div>
     </div>

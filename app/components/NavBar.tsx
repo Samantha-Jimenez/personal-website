@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { motion } from 'framer-motion';
-import { ThinInstagramIcon, ThinTikTokIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinPorftolioIcon, ThinMotevisIcon } from '../icons/Icons'
+import { InstagramLineIcon, InstagramFillIcon, ThreadsLineIcon, ThreadsFillIcon, TikTokLineIcon, TikTokFillIcon, ThinPorftolioIcon, ThinMotevisIcon, ThinYoutubeIcon, YoutubeLineIcon, YoutubeFillIcon, MotevisLineIcon, MotevisFillIcon, PortfolioLineIcon, PortfolioFillIcon } from '../icons/Icons'
 import toast from 'react-hot-toast';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -95,12 +95,17 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
               <motion.a 
                 whileHover={{ scale: 1.5 }}
                 whileTap={{ scale: 1.2 }}
-                className="hover:bg-transparent active:bg-white active:dark:bg-neutral-200" 
+                className="group relative inline-block hover:bg-transparent active:bg-white active:dark:bg-neutral-200" 
                 href="https://www.instagram.com/aka.jimena" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <ThinInstagramIcon />
+                <span className="group-hover:opacity-0 transition-opacity duration-200">
+                  <InstagramLineIcon />
+                </span>
+                <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 self-center inset-3">
+                  <InstagramFillIcon />
+                </span>
               </motion.a>
             </li>
           </motion.div>
@@ -115,12 +120,17 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
               <motion.a 
                 whileHover={{ scale: 1.5 }}
                 whileTap={{ scale: 1.2 }}
-                className="hover:bg-transparent" 
+                className="group relative inline-block hover:bg-transparent active:bg-white active:dark:bg-neutral-200" 
                 href="https://www.threads.net/@aka.jimena" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <ThinThreadsIcon />
+                <span className="group-hover:opacity-0 transition-opacity duration-200">
+                  <ThreadsLineIcon />
+                </span>
+                <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 self-center inset-3">
+                  <ThreadsFillIcon />
+                </span>
               </motion.a>
             </li>
           </motion.div>
@@ -135,12 +145,17 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
               <motion.a 
                 whileHover={{ scale: 1.5 }}
                 whileTap={{ scale: 1.2 }}
-                className="hover:bg-transparent" 
+                className="group relative inline-block hover:bg-transparent active:bg-white active:dark:bg-neutral-200" 
                 href="https://www.tiktok.com/@aka.jimena" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <ThinTikTokIcon />
+                <span className="group-hover:opacity-0 transition-opacity duration-200">
+                  <TikTokLineIcon />
+                </span>
+                <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 self-center inset-3">
+                  <TikTokFillIcon />
+                </span>
               </motion.a>
             </li>
           </motion.div>
@@ -155,10 +170,15 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
               <motion.a 
                 whileHover={{ scale: 1.5 }}
                 whileTap={{ scale: 1.2 }}
-                className="hover:bg-transparent" 
+                className="group relative inline-block hover:bg-transparent active:bg-white active:dark:bg-neutral-200" 
                 onClick={onPortfolioClick}
               >
-                <ThinPorftolioIcon />
+                <span className="group-hover:opacity-0 transition-opacity duration-200">
+                  <PortfolioLineIcon />
+                </span>
+                <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 self-center inset-3">
+                  <PortfolioFillIcon />
+                </span>
               </motion.a>
             </li>
           </motion.div>
@@ -173,10 +193,15 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
               <motion.a 
                 whileHover={{ scale: 1.5 }}
                 whileTap={{ scale: 1.2 }}
-                className="hover:bg-transparent" 
+                className="group relative inline-block hover:bg-transparent active:bg-white active:dark:bg-neutral-200" 
                 onClick={onMotevisClick}
               >
-                <ThinMotevisIcon />
+                <span className="group-hover:opacity-0 transition-opacity duration-200">
+                  <MotevisLineIcon />
+                </span>
+                <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 self-center inset-3">
+                  <MotevisFillIcon />
+                </span>
               </motion.a>
             </li>
           </motion.div>
@@ -191,22 +216,20 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
               <motion.a 
                 whileHover={{ scale: 1.5 }}
                 whileTap={{ scale: 1.2 }}
-                className="hover:bg-transparent cursor-pointer" 
+                className="group relative inline-block hover:bg-transparent active:bg-white active:dark:bg-neutral-200" 
                 href="https://www.youtube.com/@aka.jimena"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <ThinYoutubeIcon />
+                <span className="group-hover:opacity-0 transition-opacity duration-200">
+                  <YoutubeLineIcon />
+                </span>
+                <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 self-center inset-3">
+                  <YoutubeFillIcon />
+                </span>
               </motion.a>
             </li>
           </motion.div>
-          {/* <div className="tooltip tooltip-bottom hover:z-40" data-tip="blog">
-            <li>
-              <Link href="/blog" className="montserrat-mine">
-                Blog
-              </Link>
-            </li>
-          </div> */}
         </ul>
       </div>
     </div>

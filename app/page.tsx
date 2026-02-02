@@ -104,7 +104,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className="text-[0.72rem] pl-2 text-gray-200 tracking-[0.28em] uppercase"
+            className="text-[0.72rem] pl-4 text-gray-200 tracking-[0.28em] uppercase"
           >
             {darkMode ? 'Light Mode' : 'Dark Mode'}
           </motion.p>
@@ -164,7 +164,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut", delay: 0.05 }}
-                  className="text-lg md:text-xl leading-relaxed text-white dark:text-amber-50/95 max-w-xl"
+                  className="text-lg md:text-xl text-white dark:text-amber-50/95 max-w-xl roboto-mine !font-light tracking-[0.016em]"
                 >
                   {LOG_LINE}
                 </motion.p>

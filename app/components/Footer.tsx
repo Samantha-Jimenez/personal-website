@@ -1,8 +1,9 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion';
-import { ThinInstagramIcon, ThinGitHubIcon, ThinLinkedInIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinTikTokIcon, ThinStravaIcon, GoodReadsIcon, ThinGoogleMailIcon, ThinPorftolioIcon, ThinSpotifyIcon, ThinMotevisIcon } from '../icons/Icons'
+import { ThinInstagramIcon, ThinGitHubIcon, ThinLinkedInIcon, ThinYoutubeIcon, ThinThreadsIcon, ThinTikTokIcon, ThinStravaIcon, GoodReadsIcon, ThinGoogleMailIcon, ThinPorftolioIcon, ThinSpotifyIcon, ThinMotevisIcon, InstagramFillIcon, InstagramLineIcon, ThreadsLineIcon, ThreadsFillIcon, TikTokLineIcon, TikTokFillIcon, GoogleMailLineIcon, GoogleMailFillIcon, LinkedInLineIcon, LinkedInFillIcon, MotevisLineIcon, MotevisFillIcon, YoutubeLineIcon, YoutubeFillIcon, SpotifyFillIcon, SpotifyLineIcon, GitHubLineIcon, GitHubFillIcon, StravaFillIcon, StravaLineIcon, GoodReadsLineIcon, GoodReadsFillIcon } from '../icons/Icons'
 import toast from 'react-hot-toast';
+import { PortfolioLineIcon, PortfolioFillIcon } from '../icons/Icons';
 import { openMenu } from '../hooks/openMenu';
 
 const Footer = () => {
@@ -77,12 +78,17 @@ const Footer = () => {
                     <motion.a 
                       whileHover={{ scale: 1.5 }}
                       whileTap={{ scale: 1.2 }}
-                      className="hover:bg-transparent" 
+                      className="group relative inline-block hover:bg-transparent active:bg-white active:dark:bg-neutral-200" 
                       href="https://www.instagram.com/aka.jimena" 
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
-                        <ThinInstagramIcon />
+                        <span className="group-hover:opacity-0 transition-opacity duration-200">
+                          <InstagramLineIcon />
+                        </span>
+                        <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 self-center inset-3">
+                          <InstagramFillIcon />
+                        </span>
                     </motion.a>
                     </li>
                 </motion.div>
@@ -99,12 +105,17 @@ const Footer = () => {
                     <motion.a 
                       whileHover={{ scale: 1.5 }}
                       whileTap={{ scale: 1.2 }}
-                      className="hover:bg-transparent" 
+                      className="group relative inline-block hover:bg-transparent active:bg-white active:dark:bg-neutral-200" 
                       href="https://www.threads.net/@aka.jimena" 
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
-                        <ThinThreadsIcon />
+                        <span className="group-hover:opacity-0 transition-opacity duration-200">
+                          <ThreadsLineIcon />
+                        </span>
+                        <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 self-center inset-3">
+                          <ThreadsFillIcon />
+                        </span>
                     </motion.a>
                     </li>
                 </motion.div>
@@ -121,12 +132,17 @@ const Footer = () => {
                       <motion.a 
                         whileHover={{ scale: 1.5 }}
                         whileTap={{ scale: 1.2 }}
-                        className="hover:bg-transparent" 
+                        className="group relative inline-block hover:bg-transparent active:bg-white active:dark:bg-neutral-200" 
                         href="https://www.tiktok.com/@aka.jimena" 
                         target="_blank" 
                         rel="noopener noreferrer"
                       >
-                        <ThinTikTokIcon />
+                        <span className="group-hover:opacity-0 transition-opacity duration-200">
+                          <TikTokLineIcon />
+                        </span>
+                        <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 self-center inset-3">
+                          <TikTokFillIcon />
+                        </span>
                       </motion.a>
                     </li>
                 </motion.div>
@@ -144,10 +160,15 @@ const Footer = () => {
                           onClick={() => openMenu('portfolio', openPortfolioMenu, setOpenPortfolioMenu, openGithubMenu, setOpenGithubMenu, setActiveMenu)} 
                           whileHover={{ scale: 1.5 }}
                           whileTap={{ scale: 1.2 }}
-                          className={`cursor-pointer hover:bg-transparent hover:z-[12] relative ${openPortfolioMenu ? 'scale-150 open-menu' : ''}`}
+                          className={`group cursor-pointer hover:bg-transparent hover:z-[12] relative inline-block ${openPortfolioMenu ? 'scale-150 open-menu' : ''}`}
                         >
-                                <ThinPorftolioIcon />
-                                <span className="ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-upwards] left-[62%]"></span>
+                          <span className="group-hover:opacity-0 transition-opacity duration-200">
+                            <PortfolioLineIcon />
+                          </span>
+                          <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                            <PortfolioFillIcon />
+                          </span>
+                                <span className="ml-1 arrow-icon icon-[ph--arrow-bend-right-up] left-[62%]"></span>
                         </motion.div>
                         {openPortfolioMenu && (
                             <motion.ul 
@@ -176,10 +197,15 @@ const Footer = () => {
                           onClick={() => openMenu('github', openPortfolioMenu, setOpenPortfolioMenu, openGithubMenu, setOpenGithubMenu, setActiveMenu)} 
                           whileHover={{ scale: 1.5 }}
                           whileTap={{ scale: 1.2 }}
-                          className={`cursor-pointer hover:bg-transparent hover:z-[12] relative ${openGithubMenu ? 'scale-150 open-menu' : ''}`}
+                          className={`group cursor-pointer hover:bg-transparent hover:z-[12] relative inline-block ${openGithubMenu ? 'scale-150 open-menu' : ''}`}
                         >
-                            <ThinGitHubIcon />
-                            <span className="ml-1 arrow-icon icon-[arcticons--emoji-arrow-pointing-rightwards-then-curving-upwards] left-[64%]"></span>
+                            <span className="group-hover:opacity-0 transition-opacity duration-200">
+                              <GitHubLineIcon />
+                            </span>
+                            <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                              <GitHubFillIcon />
+                            </span>
+                            <span className="ml-1 arrow-icon icon-[ph--arrow-bend-right-up] left-[58%]"></span>
                         </motion.div>
                         {openGithubMenu && (
                             <motion.ul 
@@ -207,12 +233,17 @@ const Footer = () => {
                     <motion.a 
                       whileHover={{ scale: 1.5 }}
                       whileTap={{ scale: 1.2 }}
-                      className="hover:bg-transparent" 
+                      className="group relative inline-block hover:bg-transparent active:bg-white active:dark:bg-neutral-200" 
                       href="mailto:SamanthaB.Jimenez@gmail.com" 
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
-                            <ThinGoogleMailIcon />
+                        <span className="group-hover:opacity-0 transition-opacity duration-200">
+                          <GoogleMailLineIcon />
+                        </span>
+                        <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 self-center inset-3">
+                          <GoogleMailFillIcon />
+                        </span>
                         </motion.a>
                     </li>
                 </motion.div>
@@ -229,12 +260,17 @@ const Footer = () => {
                     <motion.a 
                       whileHover={{ scale: 1.5 }}
                       whileTap={{ scale: 1.2 }}
-                      className="hover:bg-transparent" 
+                      className="group relative inline-block hover:bg-transparent active:bg-white active:dark:bg-neutral-200" 
                       href="https://www.linkedin.com/in/samanthabjimenez/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
-                        <ThinLinkedInIcon />
+                        <span className="group-hover:opacity-0 transition-opacity duration-200">
+                          <LinkedInLineIcon />
+                        </span>
+                        <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 self-center inset-3">
+                          <LinkedInFillIcon />
+                        </span>
                     </motion.a>
                     </li>
                 </motion.div>
@@ -251,12 +287,17 @@ const Footer = () => {
                     <motion.a 
                       whileHover={{ scale: 1.5 }}
                       whileTap={{ scale: 1.2 }}
-                      className="hover:bg-transparent" 
+                      className="group relative inline-block hover:bg-transparent active:bg-white active:dark:bg-neutral-200" 
                       href="https://motevis.com/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
-                        <ThinMotevisIcon />
+                        <span className="group-hover:opacity-0 transition-opacity duration-200">
+                          <MotevisLineIcon />
+                        </span>
+                        <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 self-center inset-3">
+                          <MotevisFillIcon />
+                        </span>
                     </motion.a>
                   </li>
                 </motion.div>
@@ -273,12 +314,17 @@ const Footer = () => {
                       <motion.a 
                         whileHover={{ scale: 1.5 }}
                         whileTap={{ scale: 1.2 }}
-                        className="hover:bg-transparent" 
+                        className="group relative inline-block hover:bg-transparent active:bg-white active:dark:bg-neutral-200" 
                         href="https://strava.app.link/lxN0E2NT0Ob" 
                         target="_blank" 
                         rel="noopener noreferrer"
                       >
-                        <ThinStravaIcon />
+                        <span className="group-hover:opacity-0 transition-opacity duration-200">
+                           <StravaLineIcon />
+                        </span>
+                        <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 self-center inset-3">
+                          <StravaFillIcon />
+                        </span>
                       </motion.a>
                     </li>
                 </motion.div>
@@ -295,12 +341,17 @@ const Footer = () => {
                       <motion.a 
                         whileHover={{ scale: 1.5 }}
                         whileTap={{ scale: 1.2 }}
-                        className="hover:bg-transparent"
+                        className="group relative inline-block hover:bg-transparent active:bg-white active:dark:bg-neutral-200" 
                         href="https://www.youtube.com/@aka.jimena"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <ThinYoutubeIcon />
+                        <span className="group-hover:opacity-0 transition-opacity duration-200">
+                          <YoutubeLineIcon />
+                        </span>
+                        <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 self-center inset-3">
+                          <YoutubeFillIcon />
+                        </span>
                       </motion.a>
                     </li>
                 </motion.div>
@@ -317,12 +368,17 @@ const Footer = () => {
                     <motion.a 
                       whileHover={{ scale: 1.5 }}
                       whileTap={{ scale: 1.2 }}
-                      className="hover:bg-transparent" 
+                      className="group relative inline-block hover:bg-transparent active:bg-white active:dark:bg-neutral-200" 
                       href="https://open.spotify.com/user/jimenamorenita?si=2fa3b2d8e7d147d1" 
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
-                        <ThinSpotifyIcon />
+                        <span className="group-hover:opacity-0 transition-opacity duration-200">
+                          <SpotifyLineIcon />
+                        </span>
+                        <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 self-center inset-3">
+                          <SpotifyFillIcon />
+                        </span>
                     </motion.a>
                   </li>
                 </motion.div>
@@ -339,12 +395,17 @@ const Footer = () => {
                       <motion.a 
                         whileHover={{ scale: 1.5 }}
                         whileTap={{ scale: 1.2 }}
-                        className="hover:bg-transparent" 
+                        className="group relative inline-block hover:bg-transparent active:bg-white active:dark:bg-neutral-200" 
                         href="https://www.goodreads.com/user/show/183397302-samantha" 
                         target="_blank" 
                         rel="noopener noreferrer"
                       >
-                        <GoodReadsIcon />
+                        <span className="group-hover:opacity-0 transition-opacity duration-200">
+                          <GoodReadsLineIcon />
+                        </span>
+                        <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 self-center inset-3">
+                          <GoodReadsFillIcon />
+                        </span>
                       </motion.a>
                     </li>
                 </motion.div>
