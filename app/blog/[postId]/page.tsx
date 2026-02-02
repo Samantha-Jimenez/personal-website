@@ -1,5 +1,6 @@
 import { getPostBySlug, PostWithContent } from '@/app/blog/utils/getPostBySlug';
 import { getRelatedPosts } from '@/app/blog/utils/getRelatedPosts';
+import { getAdjacentPosts } from '@/app/blog/utils/getAdjacentPosts';
 import { notFound } from 'next/navigation';
 import BlogPostComponent from '@/app/blog/BlogPostComponent';
 import { serialize } from 'next-mdx-remote/serialize';
@@ -20,9 +21,19 @@ export default async function BlogPost({ params }: { params: Promise<{ postId: s
   // Get related posts based on shared tags
   const relatedPosts = getRelatedPosts(resolvedParams.postId, post.data.tags, 3);
 
+  // Get previous and next posts for navigation
+  const { previousPost, nextPost } = getAdjacentPosts(resolvedParams.postId);
+
   return (
     <div className="bg-white text-gray-900 min-h-screen">
-      <BlogPostComponent post={post} mdxSource={mdxSource} relatedPosts={relatedPosts} slug={resolvedParams.postId} />
+      <BlogPostComponent 
+        post={post} 
+        mdxSource={mdxSource} 
+        relatedPosts={relatedPosts} 
+        slug={resolvedParams.postId}
+        previousPost={previousPost}
+        nextPost={nextPost}
+      />
     </div>
   );
 }

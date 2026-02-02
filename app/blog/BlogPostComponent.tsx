@@ -17,11 +17,15 @@ const BlogPostComponent = ({
   mdxSource,
   relatedPosts = [],
   slug,
+  previousPost,
+  nextPost,
 }: {
   post: any,
   mdxSource: MDXRemoteSerializeResult,
   relatedPosts?: Post[],
   slug: string,
+  previousPost?: Post | null,
+  nextPost?: Post | null,
 }) => {
   const components = useMDXComponents({});
   const [darkMode, setDarkMode] = useState(true);
@@ -149,6 +153,55 @@ const BlogPostComponent = ({
             </motion.div>
           </div>
         </article>
+
+        {/* Previous/Next Post Navigation */}
+        {(previousPost || nextPost) && (
+          <motion.nav
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="mt-12 pt-8 border-t border-zinc-300 dark:border-zinc-700"
+            aria-label="Post navigation"
+          >
+            <div className="flex flex-col sm:flex-row justify-between gap-4">
+              {/* Previous Post (Older) */}
+              {previousPost ? (
+                <Link
+                  href={`/blog/${previousPost.slug}`}
+                  className="group flex-1 p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-500 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-all duration-200"
+                >
+                  <div className="flex items-center text-sm text-zinc-500 dark:text-zinc-400 mb-2">
+                    <span className="icon-[mdi--arrow-left] mr-1 group-hover:-translate-x-1 transition-transform duration-200" />
+                    Previous
+                  </div>
+                  <p className="font-medium text-zinc-800 dark:text-zinc-200 line-clamp-2 group-hover:text-red-main dark:group-hover:text-yellow-main transition-colors">
+                    {previousPost.title}
+                  </p>
+                </Link>
+              ) : (
+                <div className="flex-1" />
+              )}
+
+              {/* Next Post (Newer) */}
+              {nextPost ? (
+                <Link
+                  href={`/blog/${nextPost.slug}`}
+                  className="group flex-1 p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-500 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-all duration-200 text-right"
+                >
+                  <div className="flex items-center justify-end text-sm text-zinc-500 dark:text-zinc-400 mb-2">
+                    Next
+                    <span className="icon-[mdi--arrow-right] ml-1 group-hover:translate-x-1 transition-transform duration-200" />
+                  </div>
+                  <p className="font-medium text-zinc-800 dark:text-zinc-200 line-clamp-2 group-hover:text-red-main dark:group-hover:text-yellow-main transition-colors">
+                    {nextPost.title}
+                  </p>
+                </Link>
+              ) : (
+                <div className="flex-1" />
+              )}
+            </div>
+          </motion.nav>
+        )}
 
         {/* Related Posts Section */}
         {relatedPosts.length > 0 && (
