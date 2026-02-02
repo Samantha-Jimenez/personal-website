@@ -17,6 +17,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
     const [isPortfolioModalOpen, setIsPortfolioModalOpen] = useState(false);
     const [isMotevisModalOpen, setIsMotevisModalOpen] = useState(false);
     const [darkMode, setDarkMode] = useState(true);
+    const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
         // Check localStorage first, then fallback to system preference
@@ -82,9 +83,18 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
         setIsMotevisModalOpen(false);
     };
 
-  const filteredPosts = tag 
-  ? posts.filter((post: any) => post.tags.includes(tag)) 
-  : posts;
+  // Filter by tag first, then by search query
+  const filteredPosts = posts
+    .filter((post: any) => !tag || post.tags.includes(tag))
+    .filter((post: any) => {
+      if (!searchQuery.trim()) return true;
+      const query = searchQuery.toLowerCase();
+      return (
+        post.title.toLowerCase().includes(query) ||
+        post.excerpt.toLowerCase().includes(query) ||
+        post.tags.some((t: string) => t.toLowerCase().includes(query))
+      );
+    });
 
   return (
     <div className="bg-background-light-secondary dark:bg-background-dark-secondary text-black dark:text-white min-h-screen flex flex-col">
@@ -218,16 +228,75 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
         <div className="divider divider-neutral min-[528px]:hidden mt-4 mx-4 dark:before:bg-neutral-200 dark:after:bg-neutral-200"></div>
       </motion.div>
 
+      {/* Search Bar */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="max-w-4xl mx-auto w-full px-4 pt-6"
+      >
+        <div className="relative">
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400 dark:text-zinc-500">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </span>
+          <input
+            type="text"
+            placeholder="Search posts by title, content, or tag..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full pl-10 pr-10 py-2 rounded-md border bg-white dark:bg-background-dark-tertiary text-zinc-800 dark:text-zinc-200 placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-500 focus:border-transparent transition-all duration-200"
+          />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery('')}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-zinc-600 dark:text-zinc-500 dark:hover:text-zinc-300 transition-colors"
+              aria-label="Clear search"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          )}
+        </div>
+        {searchQuery && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-sm text-zinc-500 dark:text-zinc-400 mt-2"
+          >
+            {filteredPosts.length} {filteredPosts.length === 1 ? 'result' : 'results'} for &quot;{searchQuery}&quot;
+            {tag && ` in ${tag}`}
+          </motion.p>
+        )}
+      </motion.div>
+
       <main className="max-w-4xl mx-auto px-4 py-12 flex-grow">
         {filteredPosts.length === 0 ? (
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="text-center text-gray-500"
+            className="text-center text-gray-500 dark:text-gray-400"
           >
-            <h2 className="text-xl font-semibold mb-4">No Blog Posts Yet</h2>
-            <p>Stay tuned—new stories are on the way.</p>
+            {searchQuery ? (
+              <>
+                <h2 className="text-xl font-semibold mb-4">No posts found</h2>
+                <p>No posts match &quot;{searchQuery}&quot;{tag && ` in ${tag}`}.</p>
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="mt-4 text-zinc-600 dark:text-zinc-300 underline hover:no-underline transition-all"
+                >
+                  Clear search
+                </button>
+              </>
+            ) : (
+              <>
+                <h2 className="text-xl font-semibold mb-4">No Blog Posts Yet</h2>
+                <p>Stay tuned—new stories are on the way.</p>
+              </>
+            )}
           </motion.div>
         ) : (
           <div className="space-y-12">
