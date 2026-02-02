@@ -6,9 +6,53 @@ import BuyMeACoffeeAnimation from './components/BuyMeACoffeeAnimation'
 
 const inter = Inter({ subsets: ['latin'] })
 
+// Base URL for the site - update this when deploying
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://akajimena.com'
+
 export const metadata: Metadata = {
-  title: 'aka.jimena',
-  description: 'Created by Samantha Jimenez',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: 'aka.jimena | Samantha Jimenez',
+    template: '%s | aka.jimena',
+  },
+  description: 'Personal website and blog by Samantha Jimenez. Tech, lifestyle, fitness, beauty, food, and music.',
+  keywords: ['Samantha Jimenez', 'aka.jimena', 'blog', 'tech', 'lifestyle', 'fitness', 'beauty', 'food', 'music'],
+  authors: [{ name: 'Samantha Jimenez' }],
+  creator: 'Samantha Jimenez',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: siteUrl,
+    siteName: 'aka.jimena',
+    title: 'aka.jimena | Samantha Jimenez',
+    description: 'Personal website and blog by Samantha Jimenez. Tech, lifestyle, fitness, beauty, food, and music.',
+    images: [
+      {
+        url: '/blog-images/blog-hero.png',
+        width: 1200,
+        height: 630,
+        alt: 'aka.jimena',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'aka.jimena | Samantha Jimenez',
+    description: 'Personal website and blog by Samantha Jimenez. Tech, lifestyle, fitness, beauty, food, and music.',
+    images: ['/blog-images/blog-hero.png'],
+    creator: '@akajimena', // Update with actual Twitter handle
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export default function RootLayout({
