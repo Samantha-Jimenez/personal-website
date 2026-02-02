@@ -10,15 +10,18 @@ import { useMDXComponents } from './MDXComponent'
 import { motion } from 'framer-motion'
 import Toggle from 'react-toggle'
 import { Post } from './utils/getAllPosts'
+import ShareButtons from './components/ShareButtons'
 
 const BlogPostComponent = ({
   post,
   mdxSource,
   relatedPosts = [],
+  slug,
 }: {
   post: any,
   mdxSource: MDXRemoteSerializeResult,
   relatedPosts?: Post[],
+  slug: string,
 }) => {
   const components = useMDXComponents({});
   const [darkMode, setDarkMode] = useState(true);
@@ -135,6 +138,7 @@ const BlogPostComponent = ({
               <span className="mx-2">·</span>
               <span>{post.data.readingTime}</span>
             </motion.p>
+            <ShareButtons title={post.data.title} slug={slug} />
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

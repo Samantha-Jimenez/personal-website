@@ -22,7 +22,7 @@ export default async function BlogPost({ params }: { params: Promise<{ postId: s
 
   return (
     <div className="bg-white text-gray-900 min-h-screen">
-      <BlogPostComponent post={post} mdxSource={mdxSource} relatedPosts={relatedPosts} />
+      <BlogPostComponent post={post} mdxSource={mdxSource} relatedPosts={relatedPosts} slug={resolvedParams.postId} />
     </div>
   );
 }
