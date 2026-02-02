@@ -44,13 +44,13 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
         >
           <Link 
             href="/" 
-            className={`px-4 btn-ghost text-2xl chango-regular uppercase hover:bg-transparent active:transform-none focus:transform-none transform-gpu text-neon-very-subtle ${
+            className={`px-4 btn-ghost text-2xl bodoni-moda-mine hover:bg-transparent active:transform-none focus:transform-none transform-gpu ${
               pathname.startsWith('/blog') 
                 ? 'text-red-main dark:text-yellow-main/70 hover:text-red-secondary hover:dark:text-yellow-main transition-all duration-300 ease-in-out cursor-pointer' 
                 : 'text-red-secondary dark:text-yellow-main cursor-default'
             }`}
           >
-            aka.jimena
+            aka Jimena
           </Link>
         </motion.div>
         <motion.span
@@ -72,13 +72,13 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
         > 
           <Link 
             href="/blog" 
-            className={`hover:scale-110 transition-all duration-300 ease-in-out text-2xl px-4 transform-gpu chango-regular uppercase text-neon-very-subtle ${
+            className={`hover:scale-110 transition-all duration-300 ease-in-out text-2xl px-4 transform-gpu bodoni-moda-mine ${
               pathname.startsWith('/blog') 
                 ? 'text-red-secondary dark:text-yellow-main cursor-default' 
                 : 'text-red-main dark:text-yellow-main/70 hover:text-red-secondary hover:dark:text-yellow-main transition-all duration-300 ease-in-out cursor-pointer'
             }`}
           >
-            Blog
+            blog
           </Link> 
         </motion.div>
       </div>

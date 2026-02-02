@@ -37,7 +37,7 @@ const BioBar = () => {
       <div className="w-full bg-background-light-secondary dark:bg-green-announcement overflow-hidden">
         <div className="container mx-auto px-4 py-20">
           <p 
-            className="text-center chango-regular text-4xl md:text-6xl uppercase text-red-secondary dark:text-yellow-main text-neon-very-subtle"
+            className="text-center text-4xl md:text-6xl text-red-secondary dark:text-yellow-main font-medium"
             style={{
               transform: `translateY(${transform}px)`,
               willChange: 'transform'
@@ -47,7 +47,7 @@ const BioBar = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                className="row-start-3 col-start-1 col-span-1 tracking-wider roboto-bold text-xl justify-center dark:text-yellow-main text-red-secondary text-neon-very-subtle text-center"
+                className="row-start-3 col-start-1 col-span-1 text-xl justify-center dark:text-[#F9D042] text-red-main text-center"
               >
                   Hey, I&apos;m Sam, a full-stack software engineer with a creative soul and a love for movement, good food, and meaningful projects. After years of pouring into my career, I&apos;m reconnecting with the things that light me up: fitness, food, storytelling, and self-expression. This website is my space to document that journey, share insights, and connect with others.
                   <br /><br />

@@ -29,7 +29,7 @@ const InstagramEmbed = () => {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4 }}
-        className="text-2xl font-bold mb-4 chango-regular uppercase text-red-secondary dark:text-yellow-main"
+        className="text-3xl font-bold mb-4 tracking-tight bodoni-moda-mine text-red-secondary dark:text-yellow-main"
       >
         Instagram
       </motion.h2>

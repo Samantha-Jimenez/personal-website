@@ -110,7 +110,8 @@ export default function RootLayout({
         </script>
         <style>
           @import url(&quot;https://fonts.googleapis.com/css2?family=Chango&family=Knewave&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap&quot;);
-        </style>
+          @import url(&quot;https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Chango&family=Knewave&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap&quot;);
+        </style>  
       </head>
       <body className={`${inter.className} roboto-mine`}>
         <BuyMeACoffeeAnimation />

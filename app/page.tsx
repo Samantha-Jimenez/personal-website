@@ -14,6 +14,10 @@ import TikTokEmbed from './components/TikTokEmbed';
 import AnnouncementBar from './components/AnnouncementBar';
 import BioBar from './components/BioBar';
 
+const LOG_LINE = "Writing code and stories that move people, rooted in motion, food, and community.";
+const CREDITS = "A personal website by Samantha Jimenez · NYC · 2026";
+const SUBTITLE = "Software engineer · storyteller";
+
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
   const [isPortfolioModalOpen, setIsPortfolioModalOpen] = useState(false);
@@ -100,54 +104,82 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className="text-base pl-2 text-gray-200 tracking-wider roboto-mine text-neon-very-very-subtle"
+            className="text-[0.72rem] pl-2 text-gray-200 tracking-[0.28em] uppercase"
           >
             {darkMode ? 'Light Mode' : 'Dark Mode'}
           </motion.p>
         </label>
       </div>
       <main className="flex min-h-max flex-col overflow-x-hidden bg-background-light-main dark:bg-background-dark-main">
-        <div className="grid grid-cols-1 h-[30rem] max-[675px]:h-[20rem]">
-          <div className="relative grid w-full bg-gray-100 dark:bg-zinc-900 overflow-hidden">
-            <div className="row-start-1 row-end-2 col-start-1 col-end-3 absolute inset-0 opacity-75 bg-video-overlay dark:opacity-70 z-10 h-[30rem] max-[675px]:h-[20rem]"></div>
-            <video
-              className="row-start-1 row-end-2 col-start-1 w-full object-cover object-[center_20%] h-[30rem] max-[675px]:h-[20rem]"
-              src="/bg-video.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-            />
-            <div className="row-start-1 col-start-1 inset-0 flex flex-col z-10 px-4 md:px-30 pt-40 pb-8 w-full justify-start self-end">
-              <motion.p 
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="row-start-1 col-start-1 col-span-1 chango-regular max-[415px]:text-4xl max-[540px]:text-5xl text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem] whitespace-nowrap place-self-end dark:text-yellow-main text-red-secondary uppercase overflow-visible text-neon-subtle"
-              >
-                Samantha
-              </motion.p>
-              <motion.p 
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                className="row-start-2 col-start-1 col-span-1 chango-regular max-[415px]:text-4xl max-[540px]:text-5xl text-6xl md:text-7xl lg:text-8xl xl:text-[6.5rem] whitespace-nowrap place-self-end dark:text-yellow-main text-red-secondary uppercase text-neon-subtle"
-              >
-                Jimenez
-              </motion.p>
-              {/* <motion.p 
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                className="row-start-3 col-start-1 col-span-1 tracking-wider roboto-bold text-xl justify-center mt-16 md:mt-70 dark:text-yellow-main text-red-secondary text-neon-very-subtle text-center"
-              >
-                  Hey, I&apos;m Sam, a full-stack software engineer with a creative soul and a love for movement, good food, and meaningful projects. After years of pouring into my career, I&apos;m reconnecting with the things that light me up: fitness, food, storytelling, and self-expression. This website is my space to document that journey, share insights, and connect with others.
-                  <br /><br />
-                  Right now, I&apos;m working with fellow engineers from the Pursuit Coding Fellowship on a fitness-focused app, <a href="https://motevis.com/" target="_blank" rel="noopener noreferrer" className="dark:text-lime-100 text-lime-200 hover:text-lime-400 dark:hover:text-lime-300 transition-colors"><em>Motevis</em></a>, which helps runners find local run clubs, weekly runs, and races in New York City. I&apos;m also sharing my <a href="https://www.youtube.com/@aka.jimena" target="_blank" rel="noopener noreferrer" className="dark:text-lime-100 text-lime-200 hover:text-lime-400 dark:hover:text-lime-300 transition-colors"><em>&quot;6 Months to Change My Life&quot;</em></a> journey on YouTube, documenting what it looks like to rebuild with intention.
-              </motion.p> */}
+        <section className="relative min-h-[70vh] md:min-h-[80vh] overflow-hidden">
+          <video
+            className="absolute inset-0 h-full w-full object-cover object-[center_20%] -scale-x-100"
+            src="/bg-video.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+
+          <div className="absolute inset-0 bg-[#0c0805]/40" aria-hidden="true" />
+          <div
+            className="absolute inset-0 opacity-90"
+            aria-hidden="true"
+            style={{
+              background: "radial-gradient(ellipse at center, rgba(12,8,5,0) 45%, rgba(10,6,4,0.8) 90%)"
+            }}
+          />
+          <div
+            className="absolute inset-0 opacity-60"
+            aria-hidden="true"
+            style={{
+              background: "radial-gradient(ellipse at 38% 42%, rgba(255,214,160,0.18) 0%, rgba(255,214,160,0) 55%)"
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-transparent" aria-hidden="true" />
+          <div className="absolute inset-0 hero-grain pointer-events-none" aria-hidden="true" />
+
+          <div className="relative z-20 flex items-end h-[90vh]">
+            <div className="w-full px-6 sm:px-10 lg:px-16 pb-16 md:pb-24">
+              <div className="max-w-2xl space-y-5 md:space-y-6 text-left text-amber-50">
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  className="uppercase tracking-[0.28em] text-[0.72rem] md:text-xs text-[#ff0000] dark:text-amber-200/80"
+                >
+                  {SUBTITLE}
+                </motion.p>
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, ease: "easeOut" }}
+                  className="font-bold bodoni-moda-mine leading-[0.95] tracking-tight text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-red-secondary dark:text-yellow-main drop-shadow-[0_15px_40px_rgba(0,0,0,0.55)]"
+                >
+                  Samantha
+                  <br />
+                  Jimenez
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 0.05 }}
+                  className="text-lg md:text-xl leading-relaxed text-white dark:text-amber-50/95 max-w-xl"
+                >
+                  {LOG_LINE}
+                </motion.p>
+                <motion.p
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 0.12 }}
+                  className="uppercase tracking-[0.22em] text-[0.72rem] md:text-xs text-[#ff0000] dark:text-amber-200/90"
+                >
+                  {CREDITS}
+                </motion.p>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
         <BioBar />
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 py-8 px-4 md:px-24 bg-background-light-main dark:bg-background-dark-main">
           <motion.div 

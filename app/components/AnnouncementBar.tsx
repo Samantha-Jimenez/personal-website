@@ -36,13 +36,13 @@ const AnnouncementBar = () => {
       <div className="w-full bg-white dark:bg-green-announcement overflow-hidden">
         <div className="container mx-auto px-4 py-16">
           <p 
-            className="text-center chango-regular text-4xl md:text-6xl uppercase text-red-secondary dark:text-yellow-main text-neon-very-subtle"
+            className="text-center font-black bodoni-moda-sc-mine text-5xl md:text-7xl text-red-secondary dark:text-yellow-main"
             style={{
               transform: `translateY(${transform}px)`,
               willChange: 'transform'
             }}
           >
-            Blog coming soon
+            Blog Coming Soon
           </p>
         </div>
       </div>
