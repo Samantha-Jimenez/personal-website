@@ -28,15 +28,27 @@ const BlogPostComponent = ({
   nextPost?: Post | null,
 }) => {
   const components = useMDXComponents({});
-  const [darkMode, setDarkMode] = useState(true);
+  // Initialize from document class (set by script in layout) or matchMedia to avoid flash
+  const [darkMode, setDarkMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      // Check if document already has dark class (set by script in layout)
+      if (document.documentElement.classList.contains('dark')) {
+        return true;
+      }
+      // Fallback to matchMedia if class not set yet
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    return false; // SSR default
+  });
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
-    // Check localStorage first, then fallback to system preference
+    // Sync state with localStorage/preference (script in layout already set the class)
     const savedMode = localStorage.getItem('darkMode');
     if (savedMode !== null) {
       const isDark = savedMode === 'true';
       setDarkMode(isDark);
+      // Ensure class matches state
       if (isDark) {
         document.documentElement.classList.add('dark');
       } else {

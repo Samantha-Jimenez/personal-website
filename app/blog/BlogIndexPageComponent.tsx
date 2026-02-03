@@ -16,15 +16,27 @@ import Toggle from 'react-toggle'
 const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => {
     const [isPortfolioModalOpen, setIsPortfolioModalOpen] = useState(false);
     const [isMotevisModalOpen, setIsMotevisModalOpen] = useState(false);
-    const [darkMode, setDarkMode] = useState(true);
+    // Initialize from document class (set by script in layout) or matchMedia to avoid flash
+    const [darkMode, setDarkMode] = useState(() => {
+        if (typeof window !== 'undefined') {
+            // Check if document already has dark class (set by script in layout)
+            if (document.documentElement.classList.contains('dark')) {
+                return true;
+            }
+            // Fallback to matchMedia if class not set yet
+            return window.matchMedia('(prefers-color-scheme: dark)').matches;
+        }
+        return false; // SSR default
+    });
     const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
-        // Check localStorage first, then fallback to system preference
+        // Sync state with localStorage/preference (script in layout already set the class)
         const savedMode = localStorage.getItem('darkMode');
         if (savedMode !== null) {
             const isDark = savedMode === 'true';
             setDarkMode(isDark);
+            // Ensure class matches state
             if (isDark) {
                 document.documentElement.classList.add('dark');
             } else {
@@ -56,7 +68,6 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
     };
 
     const handlePortfolioClick = () => {
-        console.log("Portfolio button clicked");
         setIsPortfolioModalOpen(true);
     };
     
@@ -70,7 +81,6 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
     };
     
     const handleMotevisClick = () => {
-        console.log("Motevis button clicked");
         setIsMotevisModalOpen(true);
     };
     
@@ -265,7 +275,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
           </span>
           <input
             type="text"
-            placeholder="Search posts by title, content, or tag..."
+            placeholder="Search posts by title, summary, or tag..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-10 pr-10 py-2 rounded-md bg-white dark:bg-background-dark-tertiary text-zinc-800 dark:text-zinc-200 placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-500 focus:border-transparent transition-all duration-200"
