@@ -140,12 +140,33 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
           muted
           playsInline
         />
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="absolute inset-0 bg-stone-900/60 z-10"
-        />
+        {darkMode && (
+          <div className="absolute inset-0 z-10 bg-[#0c0805]/40" aria-hidden="true" />
+        )}
+        {darkMode && (
+          <div
+            className="absolute inset-0 z-10 opacity-90"
+            aria-hidden="true"
+            style={{
+              background: "radial-gradient(ellipse at center, rgba(12,8,5,0) 45%, rgba(10,6,4,0.8) 90%)"
+            }}
+          />
+        )}
+        {darkMode && (
+          <div
+            className="absolute inset-0 z-10 opacity-60"
+            aria-hidden="true"
+            style={{
+              background: "radial-gradient(ellipse at 38% 42%, rgba(255,214,160,0.18) 0%, rgba(255,214,160,0) 55%)"
+            }}
+          />
+        )}
+        {darkMode && (
+          <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/80 via-black/15 to-transparent" aria-hidden="true" />
+        )}
+        {darkMode && (
+          <div className="absolute inset-0 z-10 hero-grain pointer-events-none" aria-hidden="true" />
+        )}
         <div className="relative z-20 text-center p-6 w-full h-full flex items-center justify-center">
           <TypewriterText />
           {/* {tag && <p className="text-base text-gray-600">Filtering by tag: {tag}</p>} */}
@@ -157,13 +178,13 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="max-w-4xl mx-auto w-full px-4 pt-10"
+        className="max-w-4xl mx-auto w-full px-4 pt-4"
       >
         <Link
           href="/"
-          className="inline-block border border-gray-800 dark:border-gray-200 text-zinc-800 dark:text-zinc-200 hover:dark:bg-neutral-800 px-3 py-1 rounded hover:bg-background-light-main/50 transition duration-300 ease-in-out text-sm"
+          className="inline-block text-zinc-800 dark:text-zinc-200 hover:dark:bg-neutral-800 px-3 py-1 rounded hover:bg-background-light-main/50 transition duration-300 ease-in-out text-sm"
         >
-          ← Back to Home
+          ← Home
         </Link>
       </motion.div>
 
@@ -172,38 +193,39 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="max-w-2xl md:mx-auto px-4 pt-4"
+        className="max-w-4xl md:mx-auto w-full px-4 pt-4"
       >
         <motion.div 
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.4 }}
-          className="tabs tabs-lift space-x-2 whitespace-nowrap place-content-between"
+          className="tabs tabs-lift flex w-full flex-nowrap gap-1 sm:gap-2"
+          role="tablist"
         >
           {[
             { name: "Lifestyle", icon: <LifestyleTabIcon /> },
             { name: "Tech", icon: <TechTabIcon /> },
             { name: "Fitness", icon: <FitnessTabIcon /> },
-            { name: "Beauty", icon: <BeautyTabIcon /> },
-            { name: "Food", icon: <FoodTabIcon /> },
+            // { name: "Beauty", icon: <BeautyTabIcon /> },
+            // { name: "Food", icon: <FoodTabIcon /> },
             { name: "Music", icon: <MusicTabIcon /> },
             // { name: "Travel", icon: <TravelTabIcon /> },
           ].map(({ name, icon }) => (
             <Link 
               key={name}
               href={`?tag=${name}`} 
-              className={`tab rounded-t-lg min-[655px]:!px-6 ${tag === name ? 'tab-active bg-white' : ''}`}
+              className={`tab flex-1 min-w-0 flex justify-center items-center rounded-t-lg px-1 sm:px-2 ${tag === name ? 'tab-active bg-white' : ''}`}
             >
-              <span className="hidden min-[528px]:inline max-[640px]:text-xs text-zinc-400 hover:text-zinc-500 dark:text-zinc-400 hover:dark:text-zinc-300 hover:scale-110 transition-all duration-300 ease-in-out">{name}</span>
-              <span className="min-[528px]:hidden">{icon}</span>
+              <span className="hidden min-[650px]:inline text-zinc-400 hover:text-zinc-500 dark:text-zinc-400 hover:dark:text-zinc-300 hover:scale-110 transition-all duration-300 ease-in-out text-[0.72rem] text-gray-200 tracking-[0.28em] uppercase truncate">{name}</span>
+              <span className="min-[650px]:hidden flex-shrink-0 align-self-end place-self-end">{icon}</span>
             </Link>
           ))}
           <Link 
             href="/blog"
-            className={`tab rounded-t-lg ${!tag ? 'tab-active' : ''}`}
+            className={`tab flex-1 min-w-0 flex justify-center items-center rounded-t-lg px-1 sm:px-2 min-[655px]:!px-4 ${!tag ? 'tab-active' : ''}`}
           >
-            <span className="hidden min-[528px]:inline max-[640px]:text-xs text-gray-400 hover:text-gray-500 dark:text-gray-400 hover:dark:text-gray-300 hover:scale-110 transition-all duration-300 ease-in-out">All</span>
-            <span className="min-[528px]:hidden"><AllTabIcon /></span>
+            <span className="hidden min-[650px]:inline text-gray-400 hover:text-gray-500 dark:text-gray-400 hover:dark:text-gray-300 hover:scale-110 transition-all duration-300 ease-in-out text-[0.72rem] text-gray-200 tracking-[0.28em] uppercase truncate">All</span>
+            <span className="min-[650px]:hidden flex-shrink-0 align-self-end place-self-end"><AllTabIcon /></span>
           </Link>
         </motion.div>
         {tag ? (
@@ -211,7 +233,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.5 }}
-            className="min-[528px]:hidden text-4xl font-extralight mt-6 text-black dark:text-white"
+            className="min-[650px]:hidden text-4xl font-extralight mt-6 text-black dark:text-white"
           >
             {tag}
           </motion.p>
@@ -220,12 +242,12 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.5 }}
-            className="min-[528px]:hidden text-4xl font-extralight mt-6 text-black dark:text-white"
+            className="min-[650px]:hidden text-4xl font-extralight mt-6 text-black dark:text-white"
           >
             All Posts
           </motion.div>
         )}
-        <div className="divider divider-neutral min-[528px]:hidden mt-4 mx-4 dark:before:bg-neutral-200 dark:after:bg-neutral-200"></div>
+        <div className="divider divider-neutral min-[650px]:hidden mt-4 mx-4 dark:before:bg-neutral-200 dark:after:bg-neutral-200"></div>
       </motion.div>
 
       {/* Search Bar */}
@@ -246,7 +268,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
             placeholder="Search posts by title, content, or tag..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-10 py-2 rounded-md border bg-white dark:bg-background-dark-tertiary text-zinc-800 dark:text-zinc-200 placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-500 focus:border-transparent transition-all duration-200"
+            className="w-full pl-10 pr-10 py-2 rounded-md bg-white dark:bg-background-dark-tertiary text-zinc-800 dark:text-zinc-200 placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-500 focus:border-transparent transition-all duration-200"
           />
           {searchQuery && (
             <button
@@ -329,11 +351,11 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
                     )}
                     <div>
                       <h2 className="text-2xl font-medium mb-1 group-hover:scale-100 group-hover:font-bold transition-all duration-300 ease-in-out">{post.title}</h2>
-                      <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-2">
-                                        {formatDate(post.date)}
-                                        <span className="mx-2">·</span>
-                                        <span>{post.readingTime}</span>
-                                      </p>
+                      <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-2 text-[0.72rem] text-gray-200 tracking-[0.28em] uppercase">
+                        {formatDate(post.date)}
+                        <span className="mx-2">·</span>
+                        <span>{post.readingTime}</span>
+                      </p>
                       <p>{formatTags(post.tags)}</p>
                       <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">{post.excerpt}</p>
                     </div>

@@ -32,7 +32,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
 
   return (
     <div className="navbar text-black dark:bg-background-dark-main bg-background-light-main flex flex-col min-[675px]:flex-row justify-between dark:text-gray-200">
-      <div className="grid grid-cols-[1fr_auto_1fr] pt-2">
+      <div className="grid grid-cols-[max-content_auto_max-content] pt-2">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -82,13 +82,13 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
           </Link> 
         </motion.div>
       </div>
-      <div className="flex-none self-start">
+      <div className="flex-none">
         <ul className="menu menu-horizontal px-1 justify-items-center grid grid-flow-row grid-cols-6 tracking-wider roboto-mine">
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="tooltip tooltip-bottom hover:z-40 dark:before:bg-tooltip-dark" 
+            className="tooltip tooltip-bottom z-40 dark:before:bg-tooltip-dark" 
             data-tip="instagram"
           >
             <li>
@@ -113,7 +113,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.15 }}
-            className="tooltip tooltip-bottom hover:z-40 dark:before:bg-tooltip-dark" 
+            className="tooltip tooltip-bottom z-40 dark:before:bg-tooltip-dark" 
             data-tip="threads"
           >
             <li>
@@ -138,7 +138,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.2 }}
-            className="tooltip tooltip-bottom hover:z-40 dark:before:bg-tooltip-dark" 
+            className="tooltip tooltip-bottom z-40 dark:before:bg-tooltip-dark" 
             data-tip="tiktok"
           >
             <li>
@@ -163,7 +163,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.25 }}
-            className="tooltip tooltip-bottom hover:z-40 dark:before:bg-tooltip-dark" 
+            className="tooltip tooltip-bottom z-40 dark:before:bg-tooltip-dark" 
             data-tip="portfolio"
           >
             <li>
@@ -186,7 +186,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.3 }}
-            className="tooltip tooltip-bottom hover:z-40 dark:before:bg-tooltip-dark" 
+            className="tooltip tooltip-bottom z-40 dark:before:bg-tooltip-dark" 
             data-tip="motevis"
           >
             <li>
@@ -209,7 +209,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.35 }}
-            className="tooltip tooltip-bottom hover:z-40 dark:before:bg-tooltip-dark" 
+            className="tooltip tooltip-bottom z-40 dark:before:bg-tooltip-dark" 
             data-tip="youtube"
           >
             <li>

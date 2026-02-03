@@ -136,7 +136,7 @@ const BlogPostComponent = ({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.3 }}
-              className="text-sm text-zinc-500 dark:text-zinc-400 mb-4"
+              className="text-sm text-zinc-500 dark:text-zinc-400 mb-4 text-[0.72rem] text-gray-200 tracking-[0.28em] uppercase"
             >
               {formatDate(post.data.date)}
               <span className="mx-2">·</span>
@@ -160,7 +160,7 @@ const BlogPostComponent = ({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-12 pt-8 border-t border-zinc-300 dark:border-zinc-700"
+            className="mt-10 pt-8 border-t border-zinc-300 dark:border-zinc-700"
             aria-label="Post navigation"
           >
             <div className="flex flex-col sm:flex-row justify-between gap-4">
@@ -170,7 +170,7 @@ const BlogPostComponent = ({
                   href={`/blog/${previousPost.slug}`}
                   className="group flex-1 p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-500 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-all duration-200"
                 >
-                  <div className="flex items-center text-sm text-zinc-500 dark:text-zinc-400 mb-2">
+                  <div className="flex items-center text-sm text-zinc-500 dark:text-zinc-400 mb-2 text-[0.72rem] text-gray-200 tracking-[0.28em] uppercase">
                     <span className="icon-[mdi--arrow-left] mr-1 group-hover:-translate-x-1 transition-transform duration-200" />
                     Previous
                   </div>
@@ -188,7 +188,7 @@ const BlogPostComponent = ({
                   href={`/blog/${nextPost.slug}`}
                   className="group flex-1 p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-500 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-all duration-200 text-right"
                 >
-                  <div className="flex items-center justify-end text-sm text-zinc-500 dark:text-zinc-400 mb-2">
+                  <div className="flex items-center justify-end text-sm text-zinc-500 dark:text-zinc-400 mb-2 text-[0.72rem] text-gray-200 tracking-[0.28em] uppercase">
                     Next
                     <span className="icon-[mdi--arrow-right] ml-1 group-hover:translate-x-1 transition-transform duration-200" />
                   </div>
@@ -209,7 +209,7 @@ const BlogPostComponent = ({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-16 pt-8 border-t border-zinc-300 dark:border-zinc-700"
+            className="mt-8 pt-8 border-t border-zinc-300 dark:border-zinc-700"
           >
             <h2 className="text-2xl font-semibold mb-6 text-zinc-800 dark:text-zinc-100">
               Related Posts
