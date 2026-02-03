@@ -100,13 +100,13 @@ export default function Home() {
             className='custom-classname'
           />
           <motion.p 
-            key={darkMode ? 'light' : 'dark'}
+            key={darkMode ? 'dark' : 'light'}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
             className="text-[0.72rem] pl-4 text-gray-200 tracking-[0.28em] uppercase"
           >
-            {darkMode ? 'Light Mode' : 'Dark Mode'}
+            {darkMode ? 'Dark Mode' : 'Light Mode'}
           </motion.p>
         </label>
       </div>
@@ -140,7 +140,7 @@ export default function Home() {
           <div className="absolute inset-0 hero-grain pointer-events-none" aria-hidden="true" />
 
           <div className="relative z-20 flex items-end h-[90vh]">
-            <div className="w-full px-6 sm:px-10 lg:px-16 pb-16 md:pb-24">
+            <div className="w-full px-6 sm:px-10 lg:px-16 pb-16 md:pb-24 pr-[58px]">
               <div className="max-w-2xl space-y-5 md:space-y-6 text-left text-amber-50">
                 <motion.p
                   initial={{ opacity: 0, y: 10 }}

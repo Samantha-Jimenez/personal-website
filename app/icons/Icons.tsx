@@ -196,12 +196,12 @@ export const MotevisFillIcon = () => {
 
 export const GoodReadsLineIcon = () => {    
     return (
-        <span className={`icon-[mdi--goodreads] text-[1.7rem] leading-9font-light opacity-70`}></span>
+        <span className={`icon-[mdi--goodreads] text-[1.7rem] leading-9`}></span>
     );
 }  
 
 export const GoodReadsFillIcon = () => {
     return (
-        <span className={`icon-[ph--goodreads-logo-fill] text-[1.7rem] leading-9 font-light opacity-70`}></span>
+        <span className={`icon-[ph--goodreads-logo-fill] text-[1.7rem] leading-9`}></span>
     );
 }

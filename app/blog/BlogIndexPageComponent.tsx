@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 import Link from 'next/link'
 import { formatTags } from './utils/formatTags'
 import { formatDate } from './utils/formatDate'
-import TypewriterText from '../components/TyprewriterText'
+import TypewriterText from '../components/TypewriterText'
 import { LifestyleTabIcon, TechTabIcon, FitnessTabIcon, BeautyTabIcon, FoodTabIcon, MusicTabIcon, TravelTabIcon, AllTabIcon } from '../icons/BlogIcons'
 import Image from 'next/image'
 import PortfolioModal from '../components/PortfolioModal'
@@ -123,13 +123,13 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
               className='custom-classname'
             />
             <motion.p 
-              key={darkMode ? 'light' : 'dark'}
+              key={darkMode ? 'dark' : 'light'}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
               className="text-[0.72rem] pl-4 text-gray-200 tracking-[0.28em] uppercase"
             >
-              {darkMode ? 'Light Mode' : 'Dark Mode'}
+              {darkMode ? 'Dark Mode' : 'Light Mode'}
             </motion.p>
           </label>
         </div>
@@ -344,7 +344,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
                 }}
               >
                 <Link href={`/blog/${post.slug}`} className="block group">
-                  <div className="border-b dark:border-neutral-600 pb-6 flex items-start">
+                  <div className={`pb-6 flex items-start ${index < filteredPosts.length - 1 ? 'border-b border-zinc-300 dark:border-zinc-600' : ''}`}>
                     {post.coverImage && (
                       <motion.div
                         transition={{ duration: 0.2 }}

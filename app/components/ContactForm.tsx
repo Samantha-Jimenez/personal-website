@@ -1,12 +1,15 @@
 "use client";
-import React, { useRef, useEffect, FormEvent } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import { Icon } from '@iconify/react';
 
 const ContactForm = () => {
-  const notify = () => toast('Message Sent!',
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const form = useRef<HTMLFormElement>(null);
+
+  const notifySuccess = () => toast('Message Sent!',
     {
       position: 'bottom-center',
       icon: <Icon icon="line-md:email-check-twotone" className="ml-[4px] h-[20px] w-[20px]" />,
@@ -14,15 +17,11 @@ const ContactForm = () => {
         borderRadius: '10px',
         background: '#174526',
         color: '#fff',
-        // fontFamily: 'Chango, sans-serif',
         fontFamily: 'Roboto, sans-serif',
         letterSpacing: '0.05em',
-        // textTransform: 'uppercase',
       },
     }
   );
-  
-  const form = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     emailjs.init({
@@ -32,21 +31,27 @@ const ContactForm = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (form.current) {
-      emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
-        form.current,
-        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "" }
-      )
-          .then((result) => {
-            console.log(result.text);
-            notify();
-        }, (error) => {
-            console.log(error.text);
-        });
-      (e.target as HTMLFormElement).reset();
-    }
+    if (!form.current) return;
+
+    setIsSubmitting(true);
+    emailjs.sendForm(
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+      form.current,
+      { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "" }
+    )
+      .then((result) => {
+        console.log(result.text);
+        notifySuccess();
+        form.current?.reset();
+      })
+      .catch((error) => {
+        console.error(error);
+        toast.error('Something went wrong. Please try again.');
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   }
 
   return (
@@ -104,11 +109,12 @@ const ContactForm = () => {
         <div className="flex justify-center">
           <motion.button 
             type="submit" 
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="btn bg-emerald-800 dark:bg-green-main hover:dark:bg-green-main/80 hover:bg-emerald-600 active:bg-emerald-500 active:dark:bg-emerald-950 text-white w-full my-5 border-none font-thin uppercase tracking-[0.28em] text-[0.72rem] md:text-xs"
+            disabled={isSubmitting}
+            whileHover={!isSubmitting ? { scale: 1.02 } : undefined}
+            whileTap={!isSubmitting ? { scale: 0.98 } : undefined}
+            className="btn bg-emerald-800 dark:bg-green-main hover:dark:bg-green-main/80 hover:bg-emerald-600 active:bg-emerald-500 active:dark:bg-emerald-950 text-white w-full my-5 border-none font-thin uppercase tracking-[0.28em] text-[0.72rem] md:text-xs disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            Send Message
+            {isSubmitting ? 'Sending…' : 'Send Message'}
           </motion.button>
         </div>
       </motion.form>

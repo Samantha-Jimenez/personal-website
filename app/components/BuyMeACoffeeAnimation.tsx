@@ -66,7 +66,7 @@ const BuyMeACoffeeAnimation = () => {
         
         // Set base styles
         widget.style.setProperty('transform', 'scale(0.75)', 'important')
-        widget.style.setProperty('transform-origin', 'bottom left', 'important')
+        widget.style.setProperty('transform-origin', 'bottom right', 'important')
         widget.style.setProperty('transition', 'transform 0.3s ease', 'important')
         widget.style.setProperty('will-change', 'transform', 'important')
         

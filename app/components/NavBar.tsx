@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 import { motion } from 'framer-motion';
 import { InstagramLineIcon, InstagramFillIcon, ThreadsLineIcon, ThreadsFillIcon, TikTokLineIcon, TikTokFillIcon, ThinPorftolioIcon, ThinMotevisIcon, ThinYoutubeIcon, YoutubeLineIcon, YoutubeFillIcon, MotevisLineIcon, MotevisFillIcon, PortfolioLineIcon, PortfolioFillIcon } from '../icons/Icons'
-import toast from 'react-hot-toast';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -12,23 +11,6 @@ interface NavBarProps {
 
 const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
   const pathname = usePathname();
-  
-  const notify = () => toast('check back for my youtube channel',
-    {
-      position: 'top-right',
-      icon: '👀',
-      style: {
-        borderRadius: '10px',
-        background: '#065f46',
-        color: '#fff',
-      },
-      duration: 2000,
-    }
-  );
-
-  const handleYoutubeClick = () => {
-    notify();
-  };
 
   return (
     <div className="navbar text-black dark:bg-background-dark-main bg-background-light-main flex flex-col min-[675px]:flex-row justify-between dark:text-gray-200">
@@ -137,24 +119,24 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.35 }}
             className="tooltip tooltip-bottom z-40 dark:before:bg-tooltip-dark" 
-            data-tip="tiktok"
+            data-tip="youtube"
           >
             <li>
               <motion.a 
                 whileHover={{ scale: 1.5 }}
                 whileTap={{ scale: 1.2 }}
                 className="group relative inline-block hover:bg-transparent active:bg-white active:dark:bg-neutral-200" 
-                href="https://www.tiktok.com/@aka.jimena" 
-                target="_blank" 
+                href="https://www.youtube.com/@aka.jimena"
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 <span className="group-hover:opacity-0 transition-opacity duration-200">
-                  <TikTokLineIcon />
+                  <YoutubeLineIcon />
                 </span>
                 <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 self-center inset-3">
-                  <TikTokFillIcon />
+                  <YoutubeFillIcon />
                 </span>
               </motion.a>
             </li>
@@ -208,24 +190,24 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4, delay: 0.35 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
             className="tooltip tooltip-bottom z-40 dark:before:bg-tooltip-dark" 
-            data-tip="youtube"
+            data-tip="tiktok"
           >
             <li>
               <motion.a 
                 whileHover={{ scale: 1.5 }}
                 whileTap={{ scale: 1.2 }}
                 className="group relative inline-block hover:bg-transparent active:bg-white active:dark:bg-neutral-200" 
-                href="https://www.youtube.com/@aka.jimena"
-                target="_blank"
+                href="https://www.tiktok.com/@aka.jimena" 
+                target="_blank" 
                 rel="noopener noreferrer"
               >
                 <span className="group-hover:opacity-0 transition-opacity duration-200">
-                  <YoutubeLineIcon />
+                  <TikTokLineIcon />
                 </span>
                 <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 self-center inset-3">
-                  <YoutubeFillIcon />
+                  <TikTokFillIcon />
                 </span>
               </motion.a>
             </li>

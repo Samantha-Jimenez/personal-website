@@ -5,9 +5,13 @@ import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import { motion } from 'framer-motion'
 import Toggle from 'react-toggle'
+import PortfolioModal from './components/PortfolioModal'
+import MotevisModal from './components/MotevisModal'
 
 export default function NotFound() {
   const [darkMode, setDarkMode] = useState(true)
+  const [isPortfolioModalOpen, setIsPortfolioModalOpen] = useState(false);
+  const [isMotevisModalOpen, setIsMotevisModalOpen] = useState(false);
 
   useEffect(() => {
     const savedMode = localStorage.getItem('darkMode')
@@ -44,9 +48,35 @@ export default function NotFound() {
     })
   }
 
+  const handlePortfolioClick = () => {
+    setIsPortfolioModalOpen(true);
+  };
+
+  const handleClosePortfolioModal = () => {
+    setIsPortfolioModalOpen(false);
+  };
+
+  const handleConfirmPortfolioRedirect = () => {
+    window.open("https://samantha-jimenez.com/", "_blank");
+    setIsPortfolioModalOpen(false);
+  };
+
+  const handleMotevisClick = () => {
+    setIsMotevisModalOpen(true);
+  };
+
+  const handleCloseMotevisModal = () => {
+    setIsMotevisModalOpen(false);
+  };
+
+  const handleConfirmMotevisRedirect = () => {
+    window.open("https://motevis.com/", "_blank");
+    setIsMotevisModalOpen(false);
+  };
+
   return (
     <div className="bg-background-light-secondary dark:bg-background-dark-secondary text-black dark:text-white min-h-screen flex flex-col">
-      <NavBar onPortfolioClick={() => {}} onMotevisClick={() => {}} />
+        <NavBar onPortfolioClick={handlePortfolioClick} onMotevisClick={handleMotevisClick} />
       
       <div className="sticky top-0 z-30 dark:bg-green-main bg-[#AD8F68]">
         <label className="flex items-center py-2 pl-6">
@@ -60,13 +90,13 @@ export default function NotFound() {
             className='custom-classname'
           />
           <motion.p 
-            key={darkMode ? 'light' : 'dark'}
+            key={darkMode ? 'dark' : 'light'}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
             className="text-[0.72rem] pl-4 text-gray-200 tracking-[0.28em] uppercase"
           >
-            {darkMode ? 'Light Mode' : 'Dark Mode'}
+            {darkMode ? 'Dark Mode' : 'Light Mode'}
           </motion.p>
         </label>
       </div>
@@ -123,9 +153,21 @@ export default function NotFound() {
             </Link>
           </motion.div>
         </div>
+
+        <PortfolioModal 
+          isOpen={isPortfolioModalOpen} 
+          onClose={handleClosePortfolioModal} 
+          onConfirm={handleConfirmPortfolioRedirect} 
+        />
+
+        <MotevisModal 
+          isOpen={isMotevisModalOpen} 
+          onClose={handleCloseMotevisModal} 
+          onConfirm={handleConfirmMotevisRedirect} 
+        />
       </main>
 
-      <Footer />
+      <Footer  />
     </div>
   )
 }

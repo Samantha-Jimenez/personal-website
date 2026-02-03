@@ -11,6 +11,8 @@ import { motion } from 'framer-motion'
 import Toggle from 'react-toggle'
 import { Post } from './utils/getAllPosts'
 import ShareButtons from './components/ShareButtons'
+import PortfolioModal from '../components/PortfolioModal'
+import MotevisModal from '../components/MotevisModal'
 
 const BlogPostComponent = ({
   post,
@@ -27,6 +29,8 @@ const BlogPostComponent = ({
   previousPost?: Post | null,
   nextPost?: Post | null,
 }) => {
+  const [isPortfolioModalOpen, setIsPortfolioModalOpen] = useState(false);
+  const [isMotevisModalOpen, setIsMotevisModalOpen] = useState(false);
   const components = useMDXComponents({});
   // Initialize from document class (set by script in layout) or matchMedia to avoid flash
   const [darkMode, setDarkMode] = useState(() => {
@@ -96,10 +100,36 @@ const BlogPostComponent = ({
     });
   };
 
+  const handlePortfolioClick = () => {
+    setIsPortfolioModalOpen(true);
+  };
+
+  const handleClosePortfolioModal = () => {
+    setIsPortfolioModalOpen(false);
+  };
+
+  const handleConfirmPortfolioRedirect = () => {
+    window.open("https://samantha-jimenez.com/", "_blank");
+    setIsPortfolioModalOpen(false);
+  };
+
+  const handleMotevisClick = () => {
+    setIsMotevisModalOpen(true);
+  };
+
+  const handleCloseMotevisModal = () => {
+    setIsMotevisModalOpen(false);
+  };
+
+  const handleConfirmMotevisRedirect = () => {
+    window.open("https://motevis.com/", "_blank");
+    setIsMotevisModalOpen(false);
+  };
+
   return (
     <div>
       <div className="">
-        <NavBar onPortfolioClick={() => {}} onMotevisClick={() => {}} />
+        <NavBar onPortfolioClick={handlePortfolioClick} onMotevisClick={handleMotevisClick} />
       </div>
       <div className="sticky top-0 z-30 dark:bg-green-main bg-[#AD8F68]">
         <label className="flex items-center py-2 pl-6">
@@ -113,18 +143,18 @@ const BlogPostComponent = ({
             className='custom-classname'
           />
           <motion.p 
-            key={darkMode ? 'light' : 'dark'}
+            key={darkMode ? 'dark' : 'light'}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
             className="text-[0.72rem] pl-4 text-gray-200 tracking-[0.28em] uppercase"
           >
-            {darkMode ? 'Light Mode' : 'Dark Mode'}
+            {darkMode ? 'Dark Mode' : 'Light Mode'}
           </motion.p>
         </label>
       </div>
       {/* <div className="max-w-4xl mx-auto px-4 pt-8 pb-12"> */}
-      <div className="px-6 md:px-38 pt-8 pb-12 bg-background-light-secondary dark:bg-background-dark-secondary text-black dark:text-white">
+      <div className="px-6 md:px-40 pt-8 pb-12 bg-background-light-secondary dark:bg-background-dark-secondary text-black dark:text-white">
         <motion.nav 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -267,6 +297,16 @@ const BlogPostComponent = ({
         )}
       </div>
 
+      <PortfolioModal 
+          isOpen={isPortfolioModalOpen} 
+          onClose={handleClosePortfolioModal} 
+          onConfirm={handleConfirmPortfolioRedirect} 
+      />
+      <MotevisModal 
+          isOpen={isMotevisModalOpen} 
+          onClose={handleCloseMotevisModal} 
+          onConfirm={handleConfirmMotevisRedirect} 
+      />
       <div className="">
         <Footer />
       </div>

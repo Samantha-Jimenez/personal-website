@@ -104,9 +104,9 @@ export default function RootLayout({
           data-description="Support me on Buy me a coffee!" 
           data-message="" 
           data-color="#40DCA5" 
-          data-position="left" 
-          data-x_margin="15" 
-          data-y_margin="15">
+          data-position="right"
+          data-x_margin="8" 
+          data-y_margin="10">
         </script>
         <style>
           @import url(&quot;https://fonts.googleapis.com/css2?family=Chango&family=Knewave&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap&quot;);
