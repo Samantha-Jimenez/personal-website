@@ -32,18 +32,9 @@ const BlogPostComponent = ({
   const [isPortfolioModalOpen, setIsPortfolioModalOpen] = useState(false);
   const [isMotevisModalOpen, setIsMotevisModalOpen] = useState(false);
   const components = useMDXComponents({});
-  // Initialize from document class (set by script in layout) or matchMedia to avoid flash
-  const [darkMode, setDarkMode] = useState(() => {
-    if (typeof window !== 'undefined') {
-      // Check if document already has dark class (set by script in layout)
-      if (document.documentElement.classList.contains('dark')) {
-        return true;
-      }
-      // Fallback to matchMedia if class not set yet
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
-    }
-    return false; // SSR default
-  });
+  // Fixed initial state so server and client render the same (avoids hydration mismatch).
+  // useEffect below syncs from localStorage and updates state + document class.
+  const [darkMode, setDarkMode] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [readingProgress, setReadingProgress] = useState(0);
 
@@ -158,7 +149,8 @@ const BlogPostComponent = ({
             }}
             checked={darkMode}
             onChange={toggleDarkMode}
-            className='custom-classname'
+            className="custom-classname"
+            aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
           />
           <motion.p 
             key={darkMode ? 'dark' : 'light'}
@@ -172,7 +164,7 @@ const BlogPostComponent = ({
         </label>
       </div>
       {/* <div className="max-w-4xl mx-auto px-4 pt-8 pb-12"> */}
-      <div className="px-6 md:px-40 pt-8 pb-12 bg-background-light-secondary dark:bg-background-dark-secondary text-black dark:text-white">
+      <div id="main-content" className="px-6 md:px-40 pt-8 pb-12 bg-background-light-secondary dark:bg-background-dark-secondary text-black dark:text-white">
         <motion.nav 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}

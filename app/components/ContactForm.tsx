@@ -85,26 +85,26 @@ const ContactForm = () => {
             <label className="label">
               <span className="label-text text-black dark:text-white mb-2 uppercase tracking-[0.28em] text-[0.72rem] md:text-xs">Name</span>
             </label>
-            <input type="text" className="input text-[16px] bg-white dark:bg-background-dark-tertiary placeholder:text-black dark:placeholder:text-gray-400 text-black dark:text-white w-full" name="from_name" autoComplete='name' required />
+            <input type="text" className="input text-[16px] bg-white dark:bg-background-dark-tertiary placeholder:text-black dark:placeholder:text-gray-400 text-black dark:text-white w-full" name="from_name" autoComplete="name" required suppressHydrationWarning />
           </div>
           <div className="form-control w-full">
             <label className="label">
               <span className="label-text text-black dark:text-white mb-2 uppercase tracking-[0.28em] text-[0.72rem] md:text-xs">Email</span>
             </label>
-            <input type="email" name="reply_to" className="input text-[16px] bg-white dark:bg-background-dark-tertiary placeholder:text-black dark:placeholder:text-gray-400 text-black dark:text-white w-full" autoComplete='email' required />
+            <input type="email" name="reply_to" className="input text-[16px] bg-white dark:bg-background-dark-tertiary placeholder:text-black dark:placeholder:text-gray-400 text-black dark:text-white w-full" autoComplete="email" required suppressHydrationWarning />
           </div>
         </div>
         <div className="form-control w-full mr-4 sm:mr-0 hidden">
           <label className="label">
             <span className="label-text text-black dark:text-white mb-2 uppercase tracking-[0.28em] text-[0.72rem] md:text-xs">Site Name</span>
           </label>
-          <input type="text" value="Personal Website" readOnly className="input text-[16px] dark:bg-background-dark-tertiary placeholder:text-black dark:placeholder:text-gray-400 text-black dark:text-white w-full" name="site_name" required />
+          <input type="text" value="Personal Website" readOnly className="input text-[16px] dark:bg-background-dark-tertiary placeholder:text-black dark:placeholder:text-gray-400 text-black dark:text-white w-full" name="site_name" required suppressHydrationWarning />
         </div>
         <div className="form-control mb-4">
           <label className="label">
             <span className="label-text text-black dark:text-white mb-2 uppercase tracking-[0.28em] text-[0.72rem] md:text-xs">Message</span>
           </label>
-          <textarea className="textarea text-[16px] bg-white dark:bg-background-dark-tertiary placeholder:text-black dark:placeholder:text-gray-400 text-black dark:text-white w-full" name="message" required></textarea>
+          <textarea className="textarea text-[16px] bg-white dark:bg-background-dark-tertiary placeholder:text-black dark:placeholder:text-gray-400 text-black dark:text-white w-full" name="message" required suppressHydrationWarning />
         </div>
         <div className="flex justify-center">
           <motion.button 

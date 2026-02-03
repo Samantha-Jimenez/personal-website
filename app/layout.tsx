@@ -114,6 +114,9 @@ export default function RootLayout({
         </style>  
       </head>
       <body className={`${inter.className} roboto-mine`}>
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <BuyMeACoffeeAnimation />
         <Toaster 
           toastOptions={{

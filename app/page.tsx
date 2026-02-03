@@ -97,7 +97,8 @@ export default function Home() {
             }}
             checked={darkMode}
             onChange={toggleDarkMode}
-            className='custom-classname'
+            className="custom-classname"
+            aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
           />
           <motion.p 
             key={darkMode ? 'dark' : 'light'}
@@ -110,7 +111,7 @@ export default function Home() {
           </motion.p>
         </label>
       </div>
-      <main className="flex min-h-max flex-col overflow-x-hidden bg-background-light-main dark:bg-background-dark-main">
+      <main id="main-content" className="flex min-h-max flex-col overflow-x-hidden bg-background-light-main dark:bg-background-dark-main">
         <section className="relative min-h-[70vh] md:min-h-[80vh] overflow-hidden">
           <video
             className="absolute inset-0 h-full w-full object-cover object-[center_20%] -scale-x-100"

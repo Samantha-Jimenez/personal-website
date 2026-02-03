@@ -57,6 +57,42 @@
   }
 }
 
+/* Skip to main content link - visible on focus for keyboard/screen reader users */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 999;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-red-main);
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+  transition: left 0.2s ease;
+}
+.skip-link:focus {
+  left: 0;
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.dark .skip-link:focus {
+  outline-color: var(--color-yellow-main);
+}
+
+/* Focus visible - visible focus ring for keyboard users (not on mouse click) */
+*:focus {
+  outline: none;
+}
+*:focus-visible {
+  outline: 2px solid var(--color-red-main);
+  outline-offset: 2px;
+}
+.dark *:focus-visible {
+  outline-color: var(--color-yellow-main);
+}
+
 /* Additional styles for dark theme */
 body {
   background: rgb(243, 244, 246);
@@ -251,11 +287,16 @@ footer .menu :where(li > details[open] > summary)::after {
   background-color: rgb(251, 191, 36) !important;
 }
 
-.input:focus, .input:focus-within, .textarea:focus {
-  /* outline-color: #90EE8F; */
-  outline-color: rgb(214 211 209 / var(--tw-bg-opacity, 1));
-  outline-width: 1px;
+.input:focus, .input:focus-within, .textarea:focus,
+.input:focus-visible, .textarea:focus-visible {
   border-color: #90EE8F;
+}
+.input:focus-visible, .textarea:focus-visible {
+  outline: 2px solid var(--color-red-main);
+  outline-offset: 2px;
+}
+.dark .input:focus-visible, .dark .textarea:focus-visible {
+  outline-color: var(--color-yellow-main);
 }
 
 .react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb {
@@ -282,6 +323,16 @@ footer .menu :where(li > details[open] > summary)::after {
   border-color: #4D4D4D !important;
 }
 
+/* Theme toggle: visible focus on wrapper when inner input has focus */
+.react-toggle:has(:focus-visible) {
+  outline: 2px solid var(--color-red-main);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.dark .react-toggle:has(:focus-visible) {
+  outline-color: var(--color-yellow-main);
+}
+
 img[alt="Make Time"] { width: 200px; }
 
 img[alt="The Artist's Way"] { width: 200px; }
@@ -296,24 +347,29 @@ img[alt="The Great Divide"] { width: 200px; }
   color: black !important;
 }
 
+.tab {
+  --tab-bg: #787881;
+  --tab-border-color: #787881;
+}
+
 .dark .tabs-lift {
   & > .tab {
       &:is(.tab-active, [aria-selected="true"], [aria-current="true"], [aria-current="page"]):not( .tab-disabled, [disabled] ), &:is(input:checked, label:has(:checked)) {
           --tab-border: 1px 1px 0 1px;
-          --tab-border-colors: #FFFFFF #FFFFFF #FFFFFF #FFFFFF;
+          --tab-border-colors: #71717A #71717A #71717A #71717A;
         }
     }
 }
 
 .tabs-lift {
   > .tab {
-    --tab-border-colors: #000000 #000000 #000000 #000000;
+    --tab-border-colors: #787881 #787881 #787881 #787881;
   }
 }
 
 .dark .tabs-lift {
   > .tab {
-    --tab-border-colors: #FFFFFF #FFFFFF #FFFFFF #FFFFFF;
+    --tab-border-colors: #71717A #71717A #71717A #71717A;
   }
 }
 

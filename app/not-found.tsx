@@ -87,7 +87,8 @@ export default function NotFound() {
             }}
             checked={darkMode}
             onChange={toggleDarkMode}
-            className='custom-classname'
+            className="custom-classname"
+            aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
           />
           <motion.p 
             key={darkMode ? 'dark' : 'light'}
@@ -101,7 +102,7 @@ export default function NotFound() {
         </label>
       </div>
 
-      <main className="flex-grow flex items-center justify-center px-6">
+      <main id="main-content" className="flex-grow flex items-center justify-center px-6">
         <div className="text-center max-w-lg">
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}

@@ -16,18 +16,9 @@ import Toggle from 'react-toggle'
 const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => {
     const [isPortfolioModalOpen, setIsPortfolioModalOpen] = useState(false);
     const [isMotevisModalOpen, setIsMotevisModalOpen] = useState(false);
-    // Initialize from document class (set by script in layout) or matchMedia to avoid flash
-    const [darkMode, setDarkMode] = useState(() => {
-        if (typeof window !== 'undefined') {
-            // Check if document already has dark class (set by script in layout)
-            if (document.documentElement.classList.contains('dark')) {
-                return true;
-            }
-            // Fallback to matchMedia if class not set yet
-            return window.matchMedia('(prefers-color-scheme: dark)').matches;
-        }
-        return false; // SSR default
-    });
+    // Fixed initial state so server and client render the same (avoids hydration mismatch).
+    // useEffect below syncs from localStorage and updates state + document class.
+    const [darkMode, setDarkMode] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
@@ -120,7 +111,8 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
               }}
               checked={darkMode}
               onChange={toggleDarkMode}
-              className='custom-classname'
+              className="custom-classname"
+              aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
             />
             <motion.p 
               key={darkMode ? 'dark' : 'light'}
@@ -209,7 +201,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.4 }}
-          className="tabs tabs-lift flex w-full flex-nowrap gap-1 sm:gap-2"
+          className="tabs tabs-lift flex w-full flex-nowrap"
           role="tablist"
         >
           {[
@@ -278,7 +270,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
             placeholder="Search posts by title, summary, or tag..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-10 py-2 rounded-md bg-white dark:bg-background-dark-tertiary text-zinc-800 dark:text-zinc-200 placeholder-zinc-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-500 focus:border-transparent transition-all duration-200"
+            className="w-full pl-10 pr-10 py-2 rounded-md bg-white dark:bg-background-dark-tertiary text-zinc-800 dark:text-zinc-200 placeholder-zinc-400 dark:placeholder-zinc-500 focus:border-zinc-400 dark:focus:border-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 dark:focus-visible:ring-zinc-500 focus-visible:ring-offset-2 focus-visible:border-transparent transition-all duration-200"
           />
           {searchQuery && (
             <button
@@ -304,7 +296,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
         )}
       </motion.div>
 
-      <main className="max-w-4xl mx-auto px-4 py-12 flex-grow">
+      <main id="main-content" className="max-w-4xl mx-auto px-4 py-12 flex-grow">
         {filteredPosts.length === 0 ? (
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
