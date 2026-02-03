@@ -45,6 +45,7 @@ const BlogPostComponent = ({
     return false; // SSR default
   });
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [readingProgress, setReadingProgress] = useState(0);
 
   useEffect(() => {
     // Sync state with localStorage/preference (script in layout already set the class)
@@ -72,11 +73,14 @@ const BlogPostComponent = ({
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show button when scrolled down more than 300px
       setShowScrollTop(window.scrollY > 300);
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollHeight > 0 ? (window.scrollY / scrollHeight) * 100 : 0;
+      setReadingProgress(Math.min(100, progress));
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // set initial progress
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -128,6 +132,20 @@ const BlogPostComponent = ({
 
   return (
     <div>
+      {/* Reading progress bar - fixed at top */}
+      <div
+        className="fixed bottom-0 left-0 right-0 h-[5px] z-50 bg-zinc-200/80 dark:bg-zinc-700/80"
+        role="progressbar"
+        aria-valuenow={Math.round(readingProgress)}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-label="Reading progress"
+      >
+        <div
+          className="h-full bg-red-secondary dark:bg-yellow-main transition-[width] duration-150 ease-out motion-reduce:transition-none"
+          style={{ width: `${readingProgress}%` }}
+        />
+      </div>
       <div className="">
         <NavBar onPortfolioClick={handlePortfolioClick} onMotevisClick={handleMotevisClick} />
       </div>
@@ -320,7 +338,7 @@ const BlogPostComponent = ({
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          className="fixed bottom-30 right-8 z-50 p-[10px_10px_4px_10px] rounded-full bg-[#AD8F68] dark:bg-green-main text-white shadow-lg hover:shadow-xl transition-shadow duration-300"
+          className="fixed bottom-30 right-2 md:right-8 z-50 p-[10px_10px_4px_10px] rounded-full bg-[#AD8F68] dark:bg-green-main text-white shadow-lg hover:shadow-xl transition-shadow duration-300"
           aria-label="Scroll to top"
         >
           <span className="icon-[mdi--arrow-up] text-2xl" />
