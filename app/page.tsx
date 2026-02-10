@@ -5,7 +5,6 @@ import ContactForm from "./components/ContactForm";
 import NavBar from "./components/NavBar";
 import Footer from './components/Footer';
 import Toggle from 'react-toggle';
-import 'react-toggle/style.css';
 import PortfolioModal from './components/PortfolioModal';
 import MotevisModal from './components/MotevisModal';
 import InstagramEmbed from './components/InstagramEmbed';
