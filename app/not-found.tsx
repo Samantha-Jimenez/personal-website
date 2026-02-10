@@ -9,7 +9,8 @@ import PortfolioModal from './components/PortfolioModal'
 import MotevisModal from './components/MotevisModal'
 
 export default function NotFound() {
-  const [darkMode, setDarkMode] = useState(true)
+  // Match blog pattern: init false so layout script + useEffect control theme; avoids flash for light-mode users
+  const [darkMode, setDarkMode] = useState(false)
   const [isPortfolioModalOpen, setIsPortfolioModalOpen] = useState(false);
   const [isMotevisModalOpen, setIsMotevisModalOpen] = useState(false);
 
