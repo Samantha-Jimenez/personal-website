@@ -82,6 +82,12 @@ export const TravelTabIcon = () => {
     );
 }
 
+export const BooksTabIcon = () => {
+    return (
+        <span className={`icon-[arcticons--books] text-xl max-[462px]:text-lg text-gray-600 dark:text-gray-400`}></span>
+    );
+}
+
 export const AllTabIcon = () => {
     return (
         <span className={`icon-[arcticons--services] text-xl max-[462px]:text-lg text-gray-600 dark:text-gray-400`}></span>
