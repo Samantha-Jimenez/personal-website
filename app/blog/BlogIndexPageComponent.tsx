@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { formatTags } from './utils/formatTags'
 import { formatDate } from './utils/formatDate'
 import TypewriterText from '../components/TypewriterText'
-import { LifestyleTabIcon, TechTabIcon, FitnessTabIcon, BeautyTabIcon, FoodTabIcon, MusicTabIcon, TravelTabIcon, AllTabIcon } from '../icons/BlogIcons'
+import { LifestyleTabIcon, TechTabIcon, FitnessTabIcon, BeautyTabIcon, FoodTabIcon, MusicTabIcon, TravelTabIcon, BooksTabIcon, AllTabIcon } from '../icons/BlogIcons'
 import Image from 'next/image'
 import PortfolioModal from '../components/PortfolioModal'
 import MotevisModal from '../components/MotevisModal'
@@ -211,6 +211,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
             // { name: "Beauty", icon: <BeautyTabIcon /> },
             // { name: "Food", icon: <FoodTabIcon /> },
             { name: "Music", icon: <MusicTabIcon /> },
+            { name: "Books", icon: <BooksTabIcon /> },
             // { name: "Travel", icon: <TravelTabIcon /> },
           ].map(({ name, icon }) => (
             <Link 
