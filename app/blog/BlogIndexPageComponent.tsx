@@ -10,6 +10,7 @@ import { LifestyleTabIcon, TechTabIcon, FitnessTabIcon, BeautyTabIcon, FoodTabIc
 import Image from 'next/image'
 import PortfolioModal from '../components/PortfolioModal'
 import MotevisModal from '../components/MotevisModal'
+import SpotifyEmbed from '../components/SpotifyEmbed'
 import { motion } from 'framer-motion'
 import Toggle from 'react-toggle'
 
@@ -175,12 +176,14 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
         </div>
       </motion.header>
 
+      {/* Blog content wrapper: two-column on desktop (main + music sidebar), stacked on mobile */}
+      <div className="max-w-6xl mx-auto w-full px-4">
       {/* Back to Home Button */}
       <motion.div 
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="max-w-4xl mx-auto w-full px-4 pt-4"
+        className="pt-4"
       >
         <Link
           href="/"
@@ -195,7 +198,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="max-w-4xl md:mx-auto w-full px-4 pt-4"
+        className="pt-4"
       >
         <motion.div 
           initial={{ opacity: 0, y: 10 }}
@@ -258,7 +261,7 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
-        className="max-w-4xl mx-auto w-full px-4 pt-6"
+        className="pt-6"
       >
         <div className="relative">
           <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400 dark:text-zinc-500">
@@ -297,7 +300,8 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
         )}
       </motion.div>
 
-      <main id="main-content" className="max-w-4xl mx-auto px-4 py-12 flex-grow">
+      <div className="flex flex-col lg:flex-row-reverse lg:items-stretch gap-8 lg:gap-10 py-12">
+        <main id="main-content" className="flex-1 min-w-0 order-1">
         {filteredPosts.length === 0 ? (
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
@@ -369,6 +373,10 @@ const BlogIndexPageComponent = ({ tag, posts }: { tag: string, posts: any }) => 
           </div>
         )}
       </main>
+        <SpotifyEmbed />
+      </div>
+      </div>
+
       <PortfolioModal 
           isOpen={isPortfolioModalOpen} 
           onClose={handleClosePortfolioModal} 
