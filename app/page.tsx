@@ -7,14 +7,16 @@ import Footer from './components/Footer';
 import Toggle from 'react-toggle';
 import PortfolioModal from './components/PortfolioModal';
 import MotevisModal from './components/MotevisModal';
+import NewsletterModal from './components/NewsletterModal';
 import InstagramEmbed from './components/InstagramEmbed';
 import YouTubeEmbed from './components/YouTubeEmbed';
 import TikTokEmbed from './components/TikTokEmbed';
 import AnnouncementBar from './components/AnnouncementBar';
 import BioBar from './components/BioBar';
 
-const LOG_LINE = "Writing code and stories that move people, rooted in motion, food, and community.";
-const CREDITS = "A personal website by Samantha Jimenez · NYC · 2026";
+// const LOG_LINE = "Writing code and stories that move people, rooted in motion, food, and community.";
+const LOG_LINE = "Documenting my life in code, culture, and story. Engineer by trade. Creator by nature.";
+const CREDITS = "Personal website · NYC · 2026";
 const SUBTITLE = "Software engineer · storyteller";
 
 export default function Home() {
@@ -238,11 +240,12 @@ export default function Home() {
           onConfirm={handleConfirmPortfolioRedirect} 
         />
 
-        <MotevisModal 
-          isOpen={isMotevisModalOpen} 
-          onClose={handleCloseMotevisModal} 
-          onConfirm={handleConfirmMotevisRedirect} 
+        <MotevisModal
+          isOpen={isMotevisModalOpen}
+          onClose={handleCloseMotevisModal}
+          onConfirm={handleConfirmMotevisRedirect}
         />
+        <NewsletterModal />
       </main>
       <Footer />
     </>
