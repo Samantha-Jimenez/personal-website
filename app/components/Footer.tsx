@@ -2,6 +2,7 @@
 import React, { useRef, FC } from 'react'
 import { motion } from 'framer-motion';
 import { InstagramFillIcon, InstagramLineIcon, ThreadsLineIcon, ThreadsFillIcon, TikTokLineIcon, TikTokFillIcon, GoogleMailLineIcon, GoogleMailFillIcon, LinkedInLineIcon, LinkedInFillIcon, MotevisLineIcon, MotevisFillIcon, YoutubeLineIcon, YoutubeFillIcon, SpotifyFillIcon, SpotifyLineIcon, GitHubLineIcon, GitHubFillIcon, StravaFillIcon, StravaLineIcon, GoodReadsLineIcon, GoodReadsFillIcon, PortfolioLineIcon, PortfolioFillIcon } from '../icons/Icons'
+import NewsletterSignup from './NewsletterSignup'
 // import { openMenu } from '../hooks/openMenu';
 
 const Footer = () => {
@@ -39,12 +40,9 @@ const Footer = () => {
   return (
     <footer 
       ref={menuRef} 
-      className="footer text-black dark:bg-background-dark-main dark:text-gray-200 items-center p-2 bg-background-light-main"
+      className="footer flex flex-row flex-wrap items-center justify-between gap-0 md:gap-4 text-black dark:bg-background-dark-main dark:text-gray-200 pl-4 pr-14 py-2 bg-background-light-main"
     >
-        {/* <aside className="grid-flow-col items-center">
-            <p className="font-light">Copyright © {new Date().getFullYear()} - All right reserved</p>
-        </aside> */}
-        <nav className="flex-none w-full justify-start grid-flow-col gap-6 grid-rows-1 justify-self-start">
+        <nav className="flex-none justify-start grid-flow-col gap-6 grid-rows-1 justify-self-start">
             <ul className="menu menu-horizontal px-1 grid-flow-row grid grid-rows-1 grid-cols-5 max-[662px]:grid-cols-5 max-[662px]:justify-self-start tracking-wider roboto-mine">
                 <motion.div 
                   custom={0}
@@ -419,6 +417,9 @@ const Footer = () => {
                 </motion.div> */}
             </ul>
         </nav>
+        <div className="w-full min-w-0 sm:w-auto sm:flex-shrink-0 flex justify-end">
+          <NewsletterSignup variant="footer" />
+        </div>
     </footer>   
   )
 }
