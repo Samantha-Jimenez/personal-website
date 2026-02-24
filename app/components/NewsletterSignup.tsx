@@ -26,7 +26,7 @@ const NewsletterSignup = ({
   const notifySuccess = () =>
     toast("You're on the list! I'll be in touch when the newsletter launches.", {
       position: 'bottom-center',
-      icon: <Icon icon="line-md:email-check-twotone" className="ml-[4px] h-[20px] w-[20px]" />,
+      icon: <Icon icon="line-md:email-check-twotone" className="ml-[4px] h-[30px] w-[45px]" />,
       style: {
         borderRadius: '10px',
         background: '#174526',
@@ -36,19 +36,31 @@ const NewsletterSignup = ({
       },
     })
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!email.trim()) return
 
     setIsSubmitting(true)
-    // Simulate a short delay; replace with your API call when you have a newsletter provider
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.trim() }),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok) {
+        toast.error((data as { error?: string }).error ?? 'Something went wrong. Please try again.')
+        return
+      }
       setSubmitted(true)
       setEmail('')
       notifySuccess()
-      setIsSubmitting(false)
       onSuccess?.()
-    }, 400)
+    } catch {
+      toast.error('Something went wrong. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (submitted) {
@@ -85,7 +97,7 @@ const NewsletterSignup = ({
                 : 'roboto-mine text-black dark:text-gray-200 tracking-wider'
           }
         >
-          You're on the list. I'll email you when the newsletter launches.
+          You&apos;re on the list. I&apos;ll email you when the newsletter launches.
         </p>
       </motion.div>
     )
