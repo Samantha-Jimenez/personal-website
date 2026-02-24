@@ -119,7 +119,9 @@ export default function RootLayout({
           Skip to main content
         </a>
         <BuyMeACoffeeAnimation />
-        <Toaster 
+        <Toaster
+          position="bottom-center"
+          containerStyle={{ bottom: 35 }}
           toastOptions={{
             className: 'roboto-mine',
           }}
