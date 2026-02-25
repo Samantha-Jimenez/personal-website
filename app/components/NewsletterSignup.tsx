@@ -26,7 +26,7 @@ const NewsletterSignup = ({
   const notifySuccess = () =>
     toast("You're on the list! I'll be in touch when the newsletter launches.", {
       position: 'bottom-center',
-      icon: <Icon icon="line-md:email-check-twotone" className="ml-[4px] h-[30px] w-[45px]" />,
+      icon: <Icon icon="line-md:email-plus-twotone" className="ml-[4px] h-[30px] w-[45px]" />,
       style: {
         borderRadius: '10px',
         background: '#174526',
