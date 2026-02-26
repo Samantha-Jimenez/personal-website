@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 import BuyMeACoffeeAnimation from './components/BuyMeACoffeeAnimation'
+import SupabaseAuthCallback from './components/SupabaseAuthCallback'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -115,6 +116,7 @@ export default function RootLayout({
         </style>  
       </head>
       <body className={`${inter.className} roboto-mine`}>
+        <SupabaseAuthCallback />
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
