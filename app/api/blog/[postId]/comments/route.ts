@@ -4,8 +4,9 @@ import { createAdminClient, getUserFromRequest } from '@/lib/supabase/server'
 export interface CommentRow {
   id: string
   post_id: string
-  author_id: string
-  author_name: string
+  commenter_id: string
+  commenter_email: string
+  commenter_name: string
   body: string
   created_at: string
 }
@@ -23,7 +24,7 @@ export async function GET(
   const supabase = createAdminClient()
   const { data, error } = await supabase
     .from('comments')
-    .select('id, post_id, author_id, author_name, body, created_at')
+    .select('id, post_id, commenter_id, commenter_email, commenter_name, body, created_at')
     .eq('post_id', postId)
     .order('created_at', { ascending: true })
 
@@ -50,7 +51,7 @@ export async function POST(
     return NextResponse.json({ error: 'Sign in to comment' }, { status: 401 })
   }
 
-  let body: { body?: string }
+  let body: { body?: string; commenter_name?: string }
   try {
     body = await request.json()
   } catch {
@@ -62,10 +63,10 @@ export async function POST(
     return NextResponse.json({ error: 'Comment text is required' }, { status: 400 })
   }
 
-  const authorName =
+  const commenterName =
+    (typeof body.commenter_name === 'string' && body.commenter_name.trim()) ||
     user.user_metadata?.full_name ||
     user.user_metadata?.name ||
-    user.email ||
     'Anonymous'
 
   const supabase = createAdminClient()
@@ -73,11 +74,12 @@ export async function POST(
     .from('comments')
     .insert({
       post_id: postId,
-      author_id: user.id,
-      author_name: authorName,
+      commenter_id: user.id,
+      commenter_email: user.email ?? '',
+      commenter_name: commenterName,
       body: text,
     })
-    .select('id, post_id, author_id, author_name, body, created_at')
+    .select('id, post_id, commenter_id, commenter_email, commenter_name, body, created_at')
     .single()
 
   if (error) {
