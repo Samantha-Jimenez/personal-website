@@ -9,8 +9,9 @@ import { formatDate } from '../utils/formatDate'
 export interface Comment {
   id: string
   post_id: string
-  author_id: string
-  author_name: string
+  commenter_id: string
+  commenter_email: string
+  commenter_name: string
   body: string
   created_at: string
 }
@@ -28,14 +29,24 @@ export default function Comments({ postId }: CommentsProps) {
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [magicEmail, setMagicEmail] = useState('')
+  const [magicDisplayName, setMagicDisplayName] = useState('')
   const [magicSent, setMagicSent] = useState(false)
+  const [commenterDisplayName, setCommenterDisplayName] = useState('')
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null)
+      if (session?.user && typeof window !== 'undefined') {
+        const stored = window.localStorage.getItem('commenter_display_name')
+        setCommenterDisplayName(stored ?? '')
+      }
     })
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser(session?.user ?? null)
+      if (session?.user && typeof window !== 'undefined') {
+        const stored = window.localStorage.getItem('commenter_display_name')
+        setCommenterDisplayName(stored ?? '')
+      }
     })
     return () => subscription.unsubscribe()
   }, [])
@@ -61,12 +72,21 @@ export default function Comments({ postId }: CommentsProps) {
     e.preventDefault()
     const email = magicEmail.trim()
     if (!email) return
+    if (typeof window !== 'undefined') {
+      const name = magicDisplayName.trim()
+      if (name) window.localStorage.setItem('commenter_display_name', name)
+      else window.localStorage.removeItem('commenter_display_name')
+    }
     setAuthLoading(true)
     setError(null)
     try {
+      const redirectTo =
+        typeof window !== 'undefined'
+          ? `${window.location.origin}/blog/${postId}`
+          : undefined
       const { error: err } = await supabase.auth.signInWithOtp({
         email,
-        options: { emailRedirectTo: typeof window !== 'undefined' ? window.location.href : undefined },
+        options: { emailRedirectTo: redirectTo },
       })
       if (err) setError(err.message)
       else setMagicSent(true)
@@ -101,7 +121,10 @@ export default function Comments({ postId }: CommentsProps) {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({ body: text }),
+        body: JSON.stringify({
+          body: text,
+          ...(commenterDisplayName.trim() && { commenter_name: commenterDisplayName.trim() }),
+        }),
       })
       const data = await res.json().catch(() => ({}))
       if (!res.ok) {
@@ -153,28 +176,44 @@ export default function Comments({ postId }: CommentsProps) {
                     : "Sign in with your email. We'll send you a one-time link, no password needed."}
                 </p>
                 {!magicSent && (
-                  <form onSubmit={handleSignInWithMagicLink} className="mt-5">
-                    <label htmlFor="comment-signin-email" className="sr-only">
-                      Email address
-                    </label>
-                    <div className="flex flex-col sm:flex-row gap-3">
+                  <form onSubmit={handleSignInWithMagicLink} className="mt-5 space-y-3">
+                    <div className="flex flex-col gap-3">
+                      <label htmlFor="comment-signin-name" className="sr-only">
+                        Name (optional)
+                      </label>
                       <input
-                        id="comment-signin-email"
-                        type="email"
-                        value={magicEmail}
-                        onChange={(e) => setMagicEmail(e.target.value)}
-                        placeholder="you@example.com"
-                        autoComplete="email"
+                        id="comment-signin-name"
+                        type="text"
+                        value={magicDisplayName}
+                        onChange={(e) => setMagicDisplayName(e.target.value)}
+                        placeholder="Display Name (optional)"
+                        autoComplete="name"
                         disabled={authLoading}
                         className="min-w-0 flex-1 rounded-lg border border-zinc-300 dark:border-zinc-600 bg-white dark:bg-zinc-800 px-4 py-2.5 text-zinc-800 dark:text-zinc-200 placeholder-zinc-400 dark:placeholder-zinc-500 text-sm focus:outline-none focus:ring-2 focus:ring-[#AD8F68]/50 dark:focus:ring-yellow-main/50 focus:border-[#AD8F68] dark:focus:border-yellow-main transition-colors disabled:opacity-60"
                       />
-                      <button
-                        type="submit"
-                        disabled={authLoading || !magicEmail.trim()}
-                        className="shrink-0 rounded-lg bg-[#AD8F68] dark:bg-green-main px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[#AD8F68]/50 dark:focus:ring-yellow-main/50 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-zinc-900 transition-opacity disabled:opacity-50 disabled:pointer-events-none"
-                      >
-                        {authLoading ? 'Sending…' : 'Send sign-in link'}
-                      </button>
+                      <div className="flex flex-col sm:flex-row gap-3">
+                        <label htmlFor="comment-signin-email" className="sr-only">
+                          Email address (required)
+                        </label>
+                        <input
+                          id="comment-signin-email"
+                          type="email"
+                          value={magicEmail}
+                          onChange={(e) => setMagicEmail(e.target.value)}
+                          placeholder="Email"
+                          autoComplete="email"
+                          required
+                          disabled={authLoading}
+                          className="min-w-0 flex-1 rounded-lg border border-zinc-300 dark:border-zinc-600 bg-white dark:bg-zinc-800 px-4 py-2.5 text-zinc-800 dark:text-zinc-200 placeholder-zinc-400 dark:placeholder-zinc-500 text-sm focus:outline-none focus:ring-2 focus:ring-[#AD8F68]/50 dark:focus:ring-yellow-main/50 focus:border-[#AD8F68] dark:focus:border-yellow-main transition-colors disabled:opacity-60"
+                        />
+                        <button
+                          type="submit"
+                          disabled={authLoading || !magicEmail.trim()}
+                          className="shrink-0 rounded-lg bg-[#AD8F68] dark:bg-green-main px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[#AD8F68]/50 dark:focus:ring-yellow-main/50 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-zinc-900 transition-opacity disabled:opacity-50 disabled:pointer-events-none"
+                        >
+                          {authLoading ? 'Sending…' : 'Send sign-in link'}
+                        </button>
+                      </div>
                     </div>
                   </form>
                 )}
@@ -230,11 +269,11 @@ export default function Comments({ postId }: CommentsProps) {
               key={comment.id}
               className="py-4 border-b border-zinc-200 dark:border-zinc-700 last:border-0"
             >
-              <div className="flex items-baseline gap-2 mb-1">
+              <div className="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-2 mb-1">
                 <span className="font-medium text-zinc-800 dark:text-zinc-200">
-                  {comment.author_name}
+                  {comment.commenter_name || comment.commenter_email}
                 </span>
-                <span className="text-xs text-zinc-500 dark:text-zinc-400">
+                <span className="text-xs text-zinc-500 dark:text-zinc-400 whitespace-nowrap">
                   {formatDate(comment.created_at)}
                 </span>
               </div>
