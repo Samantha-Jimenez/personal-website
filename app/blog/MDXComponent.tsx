@@ -66,6 +66,10 @@ export function useMDXComponents(components: MDXComponents = {}): MDXComponents 
         {children}
       </div>
     ),
+    /** Inline “label” before a sentence—stays on the same line as the following text. */
+    LeadIn: ({ children }) => (
+      <span className="font-semibold text-zinc-800 dark:text-zinc-100">{children}</span>
+    ),
     ...components,
   }
 }
