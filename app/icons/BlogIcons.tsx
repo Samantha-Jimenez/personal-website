@@ -18,7 +18,7 @@ export const TechTabIcon2 = () => {
 
 export const FitnessTabIcon = () => {
     return (
-        <span className={`icon-[arcticons--wger] text-3xl max-[462px]:text-2xl text-gray-600 dark:text-gray-400 mt-2`}></span>
+        <span className={`icon-[arcticons--wger] text-3xl max-[462px]:text-2xl text-gray-600 dark:text-gray-400 min-[456px]:mt-3 min-[462px]:mt-2`}></span>
     );
 }
 
