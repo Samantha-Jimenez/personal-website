@@ -156,6 +156,8 @@ const NewsletterSignup = ({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="your@email.com"
+            // Extensions (e.g. NordPass) inject attrs like data-np-intersection-state; suppress avoids hydration noise.
+            suppressHydrationWarning
             className={
               isFooter
                 ? 'input text-sm bg-white dark:bg-background-dark-tertiary placeholder:text-black dark:placeholder:text-gray-400 text-black dark:text-white w-full input-sm'
