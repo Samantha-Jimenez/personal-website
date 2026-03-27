@@ -40,8 +40,7 @@ const ContactForm = () => {
       form.current,
       { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "" }
     )
-      .then((result) => {
-        console.log(result.text);
+      .then(() => {
         notifySuccess();
         form.current?.reset();
       })

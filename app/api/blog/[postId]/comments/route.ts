@@ -5,7 +5,6 @@ export interface CommentRow {
   id: string
   post_id: string
   commenter_id: string
-  commenter_email: string
   commenter_name: string
   body: string
   created_at: string
@@ -24,7 +23,7 @@ export async function GET(
   const supabase = createAdminClient()
   const { data, error } = await supabase
     .from('comments')
-    .select('id, post_id, commenter_id, commenter_email, commenter_name, body, created_at')
+    .select('id, post_id, commenter_id, commenter_name, body, created_at')
     .eq('post_id', postId)
     .order('created_at', { ascending: true })
 
@@ -79,7 +78,7 @@ export async function POST(
       commenter_name: commenterName,
       body: text,
     })
-    .select('id, post_id, commenter_id, commenter_email, commenter_name, body, created_at')
+    .select('id, post_id, commenter_id, commenter_name, body, created_at')
     .single()
 
   if (error) {
@@ -88,4 +87,59 @@ export async function POST(
   }
 
   return NextResponse.json(data as CommentRow, { status: 201 })
+}
+
+/** DELETE /api/blog/[postId]/comments — delete a user's own comment (requires auth) */
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: Promise<{ postId: string }> }
+) {
+  const { postId } = await params
+  if (!postId) {
+    return NextResponse.json({ error: 'Missing postId' }, { status: 400 })
+  }
+
+  const user = await getUserFromRequest(request)
+  if (!user) {
+    return NextResponse.json({ error: 'Sign in to delete comments' }, { status: 401 })
+  }
+
+  const searchCommentId = request.nextUrl.searchParams.get('commentId')?.trim() || ''
+  let bodyCommentId = ''
+  if (!searchCommentId) {
+    const raw = await request.text()
+    if (raw) {
+      try {
+        const body = JSON.parse(raw) as { commentId?: string }
+        bodyCommentId = typeof body.commentId === 'string' ? body.commentId.trim() : ''
+      } catch {
+        return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
+      }
+    }
+  }
+
+  const commentId = searchCommentId || bodyCommentId
+  if (!commentId) {
+    return NextResponse.json({ error: 'Comment ID is required' }, { status: 400 })
+  }
+
+  const supabase = createAdminClient()
+  const { data, error } = await supabase
+    .from('comments')
+    .delete()
+    .eq('id', commentId)
+    .eq('post_id', postId)
+    .eq('commenter_id', user.id)
+    .select('id')
+
+  if (error) {
+    console.error('Comments DELETE error:', error)
+    return NextResponse.json({ error: 'Failed to delete comment' }, { status: 500 })
+  }
+
+  if (!data || data.length === 0) {
+    return NextResponse.json({ error: 'Comment not found' }, { status: 404 })
+  }
+
+  return NextResponse.json({ success: true })
 }

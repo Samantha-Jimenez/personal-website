@@ -10,7 +10,6 @@ export interface Comment {
   id: string
   post_id: string
   commenter_id: string
-  commenter_email: string
   commenter_name: string
   body: string
   created_at: string
@@ -27,6 +26,7 @@ export default function Comments({ postId }: CommentsProps) {
   const [authLoading, setAuthLoading] = useState(false)
   const [body, setBody] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const [deletingCommentId, setDeletingCommentId] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [magicEmail, setMagicEmail] = useState('')
   const [magicDisplayName, setMagicDisplayName] = useState('')
@@ -138,6 +138,43 @@ export default function Comments({ postId }: CommentsProps) {
       setError('Failed to post comment')
     } finally {
       setSubmitting(false)
+    }
+  }
+
+  const handleDelete = async (commentId: string) => {
+    if (!user) return
+    setDeletingCommentId(commentId)
+    setError(null)
+    try {
+      const { data: { session } } = await supabase.auth.getSession()
+      const token = session?.access_token
+      if (!token) {
+        setError('Session expired. Please sign in again.')
+        setDeletingCommentId(null)
+        return
+      }
+
+      const deleteRes = await fetch(
+        `/api/blog/${postId}/comments?commentId=${encodeURIComponent(commentId)}`,
+        {
+          method: 'DELETE',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      const data = await deleteRes.json().catch(() => ({}))
+      if (!deleteRes.ok) {
+        setError(data.error || 'Failed to delete comment')
+        setDeletingCommentId(null)
+        return
+      }
+
+      setComments((prev) => prev.filter((comment) => comment.id !== commentId))
+    } catch {
+      setError('Failed to delete comment')
+    } finally {
+      setDeletingCommentId(null)
     }
   }
 
@@ -269,13 +306,25 @@ export default function Comments({ postId }: CommentsProps) {
               key={comment.id}
               className="py-4 border-b border-zinc-200 dark:border-zinc-700 last:border-0"
             >
-              <div className="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-2 mb-1">
-                <span className="font-medium text-zinc-800 dark:text-zinc-200">
-                  {comment.commenter_name || comment.commenter_email}
-                </span>
-                <span className="text-xs text-zinc-500 dark:text-zinc-400 whitespace-nowrap">
-                  {formatDate(comment.created_at)}
-                </span>
+              <div className="flex items-start justify-between gap-3 mb-1">
+                <div className="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-2">
+                  <span className="font-medium text-zinc-800 dark:text-zinc-200">
+                    {comment.commenter_name || 'Anonymous'}
+                  </span>
+                  <span className="text-xs text-zinc-500 dark:text-zinc-400 whitespace-nowrap">
+                    {formatDate(comment.created_at)}
+                  </span>
+                </div>
+                {user?.id === comment.commenter_id && (
+                  <button
+                    type="button"
+                    onClick={() => handleDelete(comment.id)}
+                    disabled={deletingCommentId === comment.id}
+                    className="text-xs text-zinc-500 hover:text-red-600 dark:text-zinc-400 dark:hover:text-red-400 transition-colors disabled:opacity-50"
+                  >
+                    {deletingCommentId === comment.id ? 'Deleting…' : 'Delete'}
+                  </button>
+                )}
               </div>
               <p className="text-zinc-600 dark:text-zinc-400 whitespace-pre-wrap">
                 {comment.body}
