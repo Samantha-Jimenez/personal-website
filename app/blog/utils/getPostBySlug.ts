@@ -1,8 +1,24 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { calculateReadingTime } from './calculateReadingTime';
 
-export const getPostBySlug = (slug: string) => {
+export interface PostData {
+  title: string;
+  date: string;
+  excerpt: string;
+  coverImage: string;
+  tags: string[];
+  draft?: boolean;
+  readingTime: string;
+}
+
+export interface PostWithContent {
+  data: PostData;
+  content: string;
+}
+
+export const getPostBySlug = (slug: string): PostWithContent => {
   const mdxFilePath = path.join(process.cwd(), 'app/blog/posts', `${slug}.mdx`);
   const mdFilePath = path.join(process.cwd(), 'app/blog/posts', `${slug}.md`);
 
@@ -25,9 +41,18 @@ export const getPostBySlug = (slug: string) => {
   }
 
   const { data, content } = matter(fileContents);
+  const readingTime = calculateReadingTime(content);
   
   return {
-    data,
+    data: {
+      title: data.title,
+      date: data.date,
+      excerpt: data.excerpt,
+      coverImage: data.coverImage,
+      tags: data.tags || [],
+      draft: data.draft,
+      readingTime,
+    },
     content,
   };
 }; 

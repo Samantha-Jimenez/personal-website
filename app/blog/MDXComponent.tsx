@@ -13,16 +13,21 @@ export function useMDXComponents(components: MDXComponents = {}): MDXComponents 
     h3: ({ children }) => (
       <h3 style={{ marginTop: '1rem', marginBottom: '0.75rem' }}>{children}</h3>
     ),
-    a: ({ children, ...props }) => (
-      <a {...props} style={{ color: 'green', textDecoration: 'underline' }}>
-        {children}
-      </a>
-    ),
     p: ({ children }) => (
       <p style={{ fontWeight: '200', marginTop: '0px', marginBottom: '.75rem' }}>{children}</p>
     ),
     ul: ({ children }) => (
       <ul style={{ marginTop: '0px', marginBottom: '.75rem', listStyleType: 'circle', fontWeight: '200', fontSize: '16px' }}>{children}</ul>
+    ),
+    a: ({ href, children, ...props }) => (
+      <a
+        href={href}
+        className="text-red-main dark:text-yellow-main hover:font-bold transition-all duration-300 ease-in-out inline-block"
+        style={{ textUnderlinePosition: 'under' }}
+        {...props}
+      >
+        {children}
+      </a>
     ),
     img: (props) => {
       const { alt, width, height, src, ...rest } = props;
@@ -52,14 +57,18 @@ export function useMDXComponents(components: MDXComponents = {}): MDXComponents 
     },
     Image,
     Signature: ({ children }) => (
-      <div className="nothing-you-could-do-regular text-3xl !text-zinc-600">
+      <div className="knewave-regular text-3xl [&_p]:!text-slate-800 [&_p]:dark:!text-slate-200">
         {children}
       </div>
     ),
     Quote: ({ children }) => (
-      <div className="text-sm italic !text-zinc-500 border-l-4 border-green-800/50 pl-4 my-6 leading-6">
-       {children}
+      <div className="text-sm italic !font-bold border-l-4 border-green-800/50 pl-4 my-6 leading-6 [&_p]:!text-zinc-700 [&_p]:dark:!text-zinc-300 [&_p]:!font-semibold">
+        {children}
       </div>
+    ),
+    /** Inline “label” before a sentence—stays on the same line as the following text. */
+    LeadIn: ({ children }) => (
+      <span className="font-semibold text-zinc-800 dark:text-zinc-100">{children}</span>
     ),
     ...components,
   }

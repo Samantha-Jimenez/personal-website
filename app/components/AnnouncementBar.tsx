@@ -1,0 +1,53 @@
+'use client'
+import React, { useEffect, useState, useRef } from 'react'
+
+const AnnouncementBar = () => {
+  const [transform, setTransform] = useState(0)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect()
+        const viewportHeight = window.innerHeight
+        const elementTop = rect.top
+        const elementHeight = rect.height
+        
+        // Calculate when element enters and exits viewport
+        const elementCenter = elementTop + elementHeight / 2
+        const distanceFromCenter = viewportHeight / 2 - elementCenter
+        
+        // Parallax speed: lower value = slower scroll (0.3 = 30% of normal scroll speed)
+        const parallaxSpeed = 0.12
+        const parallaxOffset = distanceFromCenter * parallaxSpeed
+        
+        setTransform(parallaxOffset)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll() // Initial call
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  return (
+    <div className="w-full" ref={containerRef}>
+      <div className="w-full bg-white dark:bg-green-announcement overflow-hidden">
+        <div className="container mx-auto px-4 py-16">
+          <p 
+            className="text-center font-black bodoni-moda-sc-mine text-5xl md:text-7xl text-red-secondary dark:text-yellow-main"
+            style={{
+              transform: `translateY(${transform}px)`,
+              willChange: 'transform'
+            }}
+          >
+            Newsletter Coming Soon
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default AnnouncementBar

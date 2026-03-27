@@ -6,9 +6,33 @@ export const ThinInstagramIcon = () => {
     );
 }
 
+export const InstagramLineIcon = () => {
+    return (
+        <span className={`icon-[ph--instagram-logo-thin] text-[1.7rem] leading-9`}></span>
+    );
+}
+
+export const InstagramFillIcon = () => {
+    return (
+        <span className={`icon-[ph--instagram-logo-fill] text-[1.7rem] leading-9`}></span>
+    );
+}
+
 export const ThinTikTokIcon = () => {
     return (
         <span className={`icon-[arcticons--tiktok] text-[1.7rem] leading-9`}></span>
+    );
+}
+
+export const TikTokLineIcon = () => {
+    return (
+        <span className={`icon-[ph--tiktok-logo-thin] text-[1.7rem] leading-9`}></span>
+    );
+}
+
+export const TikTokFillIcon = () => {
+    return (
+        <span className={`icon-[ph--tiktok-logo-fill] text-[1.7rem] leading-9`}></span>
     );
 }
 
@@ -21,9 +45,33 @@ export const ThinYoutubeIcon = ({ onClick }: { onClick?: () => void }) => {
     );
 }
 
+export const YoutubeLineIcon = () => {
+    return (
+        <span className={`icon-[ph--youtube-logo-thin] text-[1.7rem] leading-9`}></span>
+    );
+}
+
+export const YoutubeFillIcon = () => {
+    return (
+        <span className={`icon-[ph--youtube-logo-fill] text-[1.7rem] leading-9`}></span>
+    );
+}
+
 export const ThinThreadsIcon = () => {
     return (
         <span className={`icon-[arcticons--instagram-threads] text-[1.7rem] leading-9`}></span>
+    );
+}
+
+export const ThreadsLineIcon = () => {
+    return (
+        <span className={`icon-[ph--threads-logo-thin] text-[1.7rem] leading-9`}></span>
+    );
+}
+
+export const ThreadsFillIcon = () => {
+    return (
+        <span className={`icon-[ph--threads-logo-fill] text-[1.7rem] leading-9`}></span>
     );
 }
 
@@ -33,15 +81,44 @@ export const ThinGitHubIcon = () => {
     );
 }
 
+export const GitHubLineIcon = () => {
+    return (
+        <span className={`icon-[ph--github-logo-thin] text-[1.7rem] leading-9`}></span>
+    );
+}
+
+export const GitHubFillIcon = () => {
+    return (
+        <span className={`icon-[ph--github-logo-fill] text-[1.7rem] leading-9`}></span>
+    );
+}
+
 export const ThinLinkedInIcon = () => {
     return (
         <span className={`icon-[arcticons--linkedin] text-[1.7rem] leading-9`}></span>
     );
 }
 
-export const ThinStravaIcon = () => {
+export const LinkedInLineIcon = () => {
+    return (
+        <span className={`icon-[ph--linkedin-logo-thin] text-[1.7rem] leading-9`}></span>
+    );
+}
+
+export const LinkedInFillIcon = () => {
+    return (
+        <span className={`icon-[ph--linkedin-logo-fill] text-[1.7rem] leading-9`}></span>
+    );
+}
+export const StravaLineIcon = () => {
     return (
         <span className={`icon-[arcticons--strava] text-[1.7rem] leading-9`}></span>
+    );
+}
+
+export const StravaFillIcon = () => {
+    return (
+        <span className={`icon-[simple-icons--strava] text-[1.7rem] leading-9`}></span>
     );
 }
 
@@ -51,9 +128,33 @@ export const ThinGoogleMailIcon = () => {
     );
 }
 
+export const GoogleMailLineIcon = () => {
+    return (
+        <span className={`icon-[ph--envelope-open-thin] text-[1.7rem] leading-9`}></span>
+    );
+}
+
+export const GoogleMailFillIcon = () => {
+    return (
+        <span className={`icon-[ph--envelope-simple-fill] text-[1.7rem] leading-9`}></span>
+    );
+}
+
 export const ThinPorftolioIcon = () => {
     return (
         <span className={`icon-[arcticons--emoji-web] text-[1.7rem] leading-9`}></span>
+    );
+}
+
+export const PortfolioLineIcon = () => {
+    return (
+        <span className={`icon-[ph--identification-badge-thin] text-[1.7rem] leading-9`}></span>
+    );
+}
+
+export const PortfolioFillIcon = () => {
+    return (
+        <span className={`icon-[ph--identification-badge-fill] text-[1.7rem] leading-9`}></span>
     );
 }
 
@@ -63,16 +164,44 @@ export const ThinSpotifyIcon = () => {
     );
 }
 
+export const SpotifyLineIcon = () => {
+    return (
+        <span className={`icon-[ph--spotify-logo-thin] text-[1.7rem] leading-9`}></span>
+    );
+}
+
+export const SpotifyFillIcon = () => {
+    return (
+        <span className={`icon-[ph--spotify-logo-fill] text-[1.7rem] leading-9`}></span>
+    );
+}   
+
 export const ThinMotevisIcon = () => {
     return (
         <span className={`icon-[arcticons--runnerup] text-[1.7rem] leading-9`}></span>
     );
 }
 
-// Regular Icons
-
-export const GoodReadsIcon = () => {    
+export const MotevisLineIcon = () => {
     return (
-        <span className={`icon-[mdi--goodreads] text-[1.7rem] leading-9font-light opacity-70`}></span>
+        <span className={`icon-[ph--person-simple-run-thin] text-[1.7rem] leading-9`}></span>
     );
-}   
+}
+
+export const MotevisFillIcon = () => {
+    return (
+        <span className={`icon-[ph--person-simple-run-fill] text-[1.7rem] leading-9`}></span>
+    );
+}
+
+export const GoodReadsLineIcon = () => {    
+    return (
+        <span className={`icon-[mdi--goodreads] text-[1.7rem] leading-9`}></span>
+    );
+}  
+
+export const GoodReadsFillIcon = () => {
+    return (
+        <span className={`icon-[ph--goodreads-logo-fill] text-[1.7rem] leading-9`}></span>
+    );
+}
