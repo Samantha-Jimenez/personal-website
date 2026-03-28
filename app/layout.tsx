@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     default: 'aka.jimena | Samantha Jimenez',
     template: '%s | aka.jimena',
   },
-  description: 'Personal website and blog by Samantha Jimenez. Tech, lifestyle, fitness, beauty, food, and music.',
-  keywords: ['Samantha Jimenez', 'aka.jimena', 'blog', 'tech', 'lifestyle', 'fitness', 'beauty', 'food', 'music'],
+  description: 'Personal website and blog by Samantha Jimenez. Tech, lifestyle, fitness, beauty, food, books, and music.',
+  keywords: ['Samantha Jimenez', 'aka.jimena', 'blog', 'tech', 'lifestyle', 'fitness', 'beauty', 'food', 'books', 'music'],
   authors: [{ name: 'Samantha Jimenez' }],
   creator: 'Samantha Jimenez',
   openGraph: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: 'aka.jimena',
     title: 'aka.jimena | Samantha Jimenez',
-    description: 'Personal website and blog by Samantha Jimenez. Tech, lifestyle, fitness, beauty, food, and music.',
+    description: 'Personal website and blog by Samantha Jimenez. Tech, lifestyle, fitness, beauty, food, books, and music.',
     images: [
       {
         url: '/blog-images/blog-hero.png',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'aka.jimena | Samantha Jimenez',
-    description: 'Personal website and blog by Samantha Jimenez. Tech, lifestyle, fitness, beauty, food, and music.',
+    description: 'Personal website and blog by Samantha Jimenez. Tech, lifestyle, fitness, beauty, food, books, and music.',
     images: ['/blog-images/blog-hero.png'],
     creator: '@akajimena', // Update with actual Twitter handle
   },
