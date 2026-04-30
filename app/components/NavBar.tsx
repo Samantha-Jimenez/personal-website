@@ -35,7 +35,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
             aka Jimena
           </Link>
         </motion.div>
-        <motion.span
+        {/* <motion.span
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
@@ -62,7 +62,7 @@ const NavBar: FC<NavBarProps> = ({ onPortfolioClick, onMotevisClick }) => {
           >
             blog
           </Link> 
-        </motion.div>
+        </motion.div> */}
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1 justify-items-center grid grid-flow-row grid-cols-6 tracking-wider roboto-mine">

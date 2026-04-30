@@ -13,7 +13,7 @@ import { Post } from './utils/getAllPosts'
 import ShareButtons from './components/ShareButtons'
 import PortfolioModal from '../components/PortfolioModal'
 import MotevisModal from '../components/MotevisModal'
-import Comments from './components/Comments'
+// import Comments from './components/Comments'
 
 const BlogPostComponent = ({
   post,
@@ -207,7 +207,8 @@ const BlogPostComponent = ({
           </div>
         </article>
 
-        <Comments postId={slug} />
+        {/* Supabase-backed comments are temporarily disabled. */}
+        {/* <Comments postId={slug} /> */}
 
         {/* Previous/Next Post Navigation */}
         {(previousPost || nextPost) && (

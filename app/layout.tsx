@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 import BuyMeACoffeeAnimation from './components/BuyMeACoffeeAnimation'
-import SupabaseAuthCallback from './components/SupabaseAuthCallback'
+// import SupabaseAuthCallback from './components/SupabaseAuthCallback'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -63,7 +63,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -115,8 +115,9 @@ export default function RootLayout({
           @import url(&quot;https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Chango&family=Knewave&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap&quot;);
         </style>  
       </head>
-      <body className={`${inter.className} roboto-mine`}>
-        <SupabaseAuthCallback />
+      <body className={`${inter.className} roboto-mine`} suppressHydrationWarning>
+        {/* Supabase auth is temporarily disabled while the blog/comments are hidden. */}
+        {/* <SupabaseAuthCallback /> */}
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
