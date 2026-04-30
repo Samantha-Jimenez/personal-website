@@ -42,7 +42,8 @@ const AnnouncementBar = () => {
               willChange: 'transform'
             }}
           >
-            Newsletter Coming Soon
+            Blog Coming Soon
+            {/* Newsletter Coming Soon */}
           </p>
         </div>
       </div>
