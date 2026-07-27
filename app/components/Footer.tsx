@@ -2,7 +2,7 @@
 import React, { useRef, FC } from 'react'
 import { motion } from 'framer-motion';
 import { InstagramFillIcon, InstagramLineIcon, ThreadsLineIcon, ThreadsFillIcon, TikTokLineIcon, TikTokFillIcon, GoogleMailLineIcon, GoogleMailFillIcon, LinkedInLineIcon, LinkedInFillIcon, MotevisLineIcon, MotevisFillIcon, YoutubeLineIcon, YoutubeFillIcon, SpotifyFillIcon, SpotifyLineIcon, GitHubLineIcon, GitHubFillIcon, StravaFillIcon, StravaLineIcon, GoodReadsLineIcon, GoodReadsFillIcon, PortfolioLineIcon, PortfolioFillIcon } from '../icons/Icons'
-import NewsletterSignup from './NewsletterSignup'
+// import NewsletterSignup from './NewsletterSignup'
 // import { openMenu } from '../hooks/openMenu';
 
 const Footer = () => {
@@ -417,9 +417,9 @@ const Footer = () => {
                 </motion.div> */}
             </ul>
         </nav>
-        <div className="w-full min-w-0 sm:w-auto sm:flex-shrink-0 flex justify-end">
+        {/* <div className="w-full min-w-0 sm:w-auto sm:flex-shrink-0 flex justify-end">
           <NewsletterSignup variant="footer" />
-        </div>
+        </div> */}
     </footer>   
   )
 }

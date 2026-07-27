@@ -7,11 +7,11 @@ import Footer from './components/Footer';
 import Toggle from 'react-toggle';
 import PortfolioModal from './components/PortfolioModal';
 import MotevisModal from './components/MotevisModal';
-import NewsletterModal from './components/NewsletterModal';
+// import NewsletterModal from './components/NewsletterModal';
 import InstagramEmbed from './components/InstagramEmbed';
 import YouTubeEmbed from './components/YouTubeEmbed';
 import TikTokEmbed from './components/TikTokEmbed';
-import AnnouncementBar from './components/AnnouncementBar';
+// import AnnouncementBar from './components/AnnouncementBar';
 import BioBar from './components/BioBar';
 
 // const LOG_LINE = "Writing code and stories that move people, rooted in motion, food, and community.";
@@ -222,7 +222,7 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           className="flex w-full bg-background-light-main dark:bg-green-announcement"
         >
-          <AnnouncementBar />
+          {/* <AnnouncementBar /> */}
         </motion.div>
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -245,7 +245,7 @@ export default function Home() {
           onClose={handleCloseMotevisModal}
           onConfirm={handleConfirmMotevisRedirect}
         />
-        <NewsletterModal />
+        {/* <NewsletterModal /> */}
       </main>
       <Footer />
     </>
